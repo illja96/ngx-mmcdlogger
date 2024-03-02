@@ -1,9 +1,9 @@
 # MMCd Datalogger
 Web automotive diagnostic and datalogging tool compatible with many pre-OBDII (1990-1994) Mitsubishi vehicles.
 
-# Related projects
-Original PalmOS MMCd Datalogger developer: [Dmitry Yurtaev](https://mmcdlogger.sourceforge.net)
-Extended PalmOS MMCd Datalogger developer: [Steve Schaefer](https://github.com/stephenjschaefer/MMCd)
+# Related projects / Credits
+- [Original PalmOS MMCd Datalogger](https://mmcdlogger.sourceforge.net)
+- [Extended PalmOS MMCd Datalogger](https://github.com/stephenjschaefer/MMCd)
 
 # Angular
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.2.
