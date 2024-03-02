@@ -1,55 +1,44 @@
-MMCd
+# MMCd
 Mitsubishi ALDL (OBDI) datalogger
 
-Copyright (c) 2003, Dmitry Yurtaev <dm1try@umail.ru>
-
-This is free software; you can redistribute it and/or modify it under the
-terms of the GNU General Public License as published by the Free Software
-Foundation; either version 2, or (at your option) any later version.
-
-This program is distributed in the hope that it will be useful, but
-WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
-or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
-for more details.
-
-###SETTING UP DEV ENVIRONMENT IN WINDOWS
+# SETTING UP DEV ENVIRONMENT IN WINDOWS
 1. Cygwin Install
-  - Download and 32 bit Cygwin installer. (setup-x86.exe)
-  - Execute installer via command line with the -X argument (setup-x86.exe -X)
-  - Add and select "http://prc-tools.sourceforge.net/install" as a download site.
-  - Multiselect another download site for the base Cygwin packages.
-  - Install the latest versions of the following packages in the Cygwin installer:
-    - prc-tools: GCC for Palm OS and related tools
-    - prc-tools:-arm: GCC for Palm OS on ARM (armlets)
-    - prc-tools-htmldocs: Documentation for prc-tools, GCC, etc as HTML
-    - pilrc: Palm OS resource compiler
-    - make: The GNU version of the 'make' utility
-	
+   - Download and 32 bit Cygwin installer. (setup-x86.exe)
+   - Execute installer via command line with the -X argument (setup-x86.exe -X)
+   - Add and select "http://prc-tools.sourceforge.net/install" as a download site.
+   - Multiselect another download site for the base Cygwin packages.
+   - Install the latest versions of the following packages in the Cygwin installer:
+      - prc-tools: GCC for Palm OS and related tools
+      - prc-tools:-arm: GCC for Palm OS on ARM (armlets)
+      - prc-tools-htmldocs: Documentation for prc-tools, GCC, etc as HTML
+      - pilrc: Palm OS resource compiler
+      - make: The GNU version of the 'make' utility
+
 2. Get Source
-  - Clone MMCd repo to a directory on your local machine (C:\PalmDev for example)
+   - Clone MMCd repo to a directory on your local machine (C:\PalmDev for example)
 
-3. Configure Cygwin
-  - Launch Cygwin emulation window and register the SDK mount and paths using the following commands:
-    - $ mount -f "C:\PalmDev\MMCd" /PalmDev
-    - $ palmdev-prep
+4. Configure Cygwin
+   - Launch Cygwin emulation window and register the SDK mount and paths using the following commands:
+      - $ mount -f "C:\PalmDev\MMCd" /PalmDev
+      - $ palmdev-prep
 
-4. Build MMCd
-  - Launch Cygwin emulation window and build MMCd using the following commands:
-    - $ cd C:\PalmDev\MMCd
-    - $ make
+5. Build MMCd
+   - Launch Cygwin emulation window and build MMCd using the following commands:
+      - $ cd C:\PalmDev\MMCd
+      - $ make
 
-5. Run MMCd
-  - After successful build, click on launchInSimulator.bat to launch MMCd in the Palm Simulator.
-  - If the Preferences dialog is displayed, click the home button and then launch MMCd.
-  - To simulate a data connection change Options -> Preferences -> COM to Simulate in MMCd.
+6. Run MMCd
+   - After successful build, click on launchInSimulator.bat to launch MMCd in the Palm Simulator.
+   - If the Preferences dialog is displayed, click the home button and then launch MMCd.
+   - To simulate a data connection change Options -> Preferences -> COM to Simulate in MMCd.
 
-###KNOWN ISSUES:
+# KNOWN ISSUES:
 - Buttons/checkbox controls can cause delays in log sampling rate
 - mS timing uses a pretty awful hack  - but it works ;)
 - EGRT Slugs don't immediately update
 	
 			
-###INVESTIGATION:
+# INVESTIGATION:
 - Min/Max control when monitoring (current Peak is always MAX)
 - User defined prelog / postlog times (need to use Heap to conserve RAM)
 - Consider adding default Autolog triggers (TPS > 80%)
@@ -61,7 +50,7 @@ for more details.
 - Consider adding Reset peak back to Monitor / Paused mode
 - Consider adding 4 bar sensor used on some MAP gauges
 	
-###CHANGELOG:
+# CHANGELOG:
 9-4-05: V1.8c
 - More tweaks to help system
 
