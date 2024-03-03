@@ -1,3 +1,83 @@
-<div class="container">
-  <p>test works!</p>
+<div class="card mb-3">
+  <div class="card-header text-center">
+    <h3><i class="bi bi-exclamation-triangle"></i>&nbsp;Faults</h3>
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col">
+        <ul class="list-group">
+          <app-test-fault code="11" [isStoredFault]="log?.stFaultLo?.bit0" [isActiveFault]="log?.faultHi?.bit0" description="Oxygen sensor"></app-test-fault>
+          <app-test-fault code="12" [isStoredFault]="log?.stFaultLo?.bit1" [isActiveFault]="log?.faultHi?.bit1" description="Intake air flow sensor"></app-test-fault>
+          <app-test-fault code="13" [isStoredFault]="log?.stFaultLo?.bit2" [isActiveFault]="log?.faultHi?.bit2" description="Intake air temperature sensor"></app-test-fault>
+          <app-test-fault code="14" [isStoredFault]="log?.stFaultLo?.bit3" [isActiveFault]="log?.faultHi?.bit3" description="Throttle position sensor"></app-test-fault>
+          <app-test-fault code="15" [isStoredFault]="log?.stFaultLo?.bit4" [isActiveFault]="log?.faultHi?.bit4" description="ISC motor position sensor"></app-test-fault>
+          <app-test-fault code="21" [isStoredFault]="log?.stFaultLo?.bit5" [isActiveFault]="log?.faultHi?.bit5" description="Engine coolant temperature sensor"></app-test-fault>
+          <app-test-fault code="22" [isStoredFault]="log?.stFaultLo?.bit6" [isActiveFault]="log?.faultHi?.bit6" description="Engine speed sensor"></app-test-fault>
+          <app-test-fault code="23" [isStoredFault]="log?.stFaultLo?.bit7" [isActiveFault]="log?.faultHi?.bit7" description="TDC sensor"></app-test-fault>
+        </ul>
+      </div>
+
+      <div class="col">
+        <ul class="list-group">
+          <app-test-fault code="24" [isStoredFault]="log?.stFaultHi?.bit0" [isActiveFault]="log?.faultHi?.bit0" description="Vehicle speed sensor"></app-test-fault>
+          <app-test-fault code="25" [isStoredFault]="log?.stFaultHi?.bit1" [isActiveFault]="log?.faultHi?.bit1" description="Barometric pressure sensor"></app-test-fault>
+          <app-test-fault code="31" [isStoredFault]="log?.stFaultHi?.bit2" [isActiveFault]="log?.faultHi?.bit2" description="Knock sensor"></app-test-fault>
+          <app-test-fault code="36" [isStoredFault]="log?.stFaultHi?.bit7" [isActiveFault]="log?.faultHi?.bit7" description="Ignition circuit"></app-test-fault>
+          <app-test-fault code="41" [isStoredFault]="log?.stFaultHi?.bit3" [isActiveFault]="log?.faultHi?.bit3" description="Injector circuit"></app-test-fault>
+          <app-test-fault code="42" [isStoredFault]="log?.stFaultHi?.bit4" [isActiveFault]="log?.faultHi?.bit4" description="Fuel pump relay"></app-test-fault>
+          <app-test-fault code="43" [isStoredFault]="log?.stFaultHi?.bit5" [isActiveFault]="log?.faultHi?.bit5" description="EGR"></app-test-fault>
+          <app-test-fault code="44" [isStoredFault]="log?.stFaultHi?.bit6" [isActiveFault]="log?.faultHi?.bit6" description="Ignition coil"></app-test-fault>          
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="card-footer">
+    <div class="d-grid gap-2">
+      <button class="btn btn-outline-info" type="button">
+        <i class="bi bi-arrow-clockwise"></i>&nbsp;Read all faults
+      </button>
+
+      <button class="btn btn-outline-warning" type="button">
+        <i class="bi bi-trash"></i>&nbsp;Clear all faults
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="card mb-3">
+  <div class="card-header text-center">
+    <h3><i class="bi bi-terminal"></i>&nbsp;Commands</h3>
+  </div>
+  <div class="card-body">
+    <div class="row align-items-center">
+      <div class="col-auto">
+        <label for="solenoids" class="col-form-label">Activate for ~6 seconds:</label>
+      </div>
+      <div class="col-auto">
+        <div class="btn-group btn-group-sm" role="group" aria-label="Basic outlined example" id="solenoids">
+          <button type="button" class="btn btn-outline-primary">Boost control solenoid</button>
+          <button type="button" class="btn btn-outline-primary">EGR solenoid</button>
+          <button type="button" class="btn btn-outline-primary">Fuel pressure solenoid</button>
+          <button type="button" class="btn btn-outline-primary">Purge solenoid</button>
+          <button type="button" class="btn btn-outline-primary">Fuel pump</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="row align-items-center">
+      <div class="col-auto">
+        <label for="injectors" class="col-form-label">Disable injector for ~6 seconds:</label>
+      </div>
+      <div class="col-auto">
+        <div class="btn-group btn-group-sm" role="group" aria-label="Basic outlined example" id="injectors">
+          <button type="button" class="btn btn-outline-primary">1</button>
+          <button type="button" class="btn btn-outline-primary">2</button>
+          <button type="button" class="btn btn-outline-primary">3</button>
+          <button type="button" class="btn btn-outline-primary">4</button>
+          <button type="button" class="btn btn-outline-primary">5</button>
+          <button type="button" class="btn btn-outline-primary">6</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
