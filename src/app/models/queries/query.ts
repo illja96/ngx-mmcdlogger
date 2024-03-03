@@ -2,6 +2,6 @@ export interface Query {
   address: number;
   name: string;
   description: string;
-  formula: (value: any) => any;
+  formula: (value: number) => number;
   units?: string;
 }
