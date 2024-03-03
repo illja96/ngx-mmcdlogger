@@ -67,4 +67,6 @@ export class Queries {
   public stFaultHi: Query = { address: 0x3B, name: "stFaultHi", description: "Stored faults, High byte", formula: x => x };
   public stFaultLo: Query = { address: 0x3C, name: "stFaultLo", description: "Stored faults, Low byte", formula: x => x };
   public ftrim_low_0x3D: Query = { address: 0x3D, name: "ftrim_low", description: "Fuel trim (low 0x3D)", formula: x => .78 * x, units: "%" };
+
+  public ecuVersion: Query = { address: 0xFD, name: "ecuVersion", description: "ECU Version", formula: x => x };
 }

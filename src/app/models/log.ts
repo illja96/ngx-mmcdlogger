@@ -66,6 +66,8 @@ export interface Log {
   stFaultHi?: LogFlags;
   stFaultLo?: LogFlags;
   ftrim_low_0x3D?: number;
+
+  ecuVersion?: number;
 }
 
 export interface LogFlags {
