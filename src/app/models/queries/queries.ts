@@ -1,4 +1,4 @@
-import { Curves } from "../curves/curves";
+import { Curves } from "../curves";
 import { Query } from "./query";
 
 export class Queries {
