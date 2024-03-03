@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="/">MMCd Datalogger</a>
+  <div class="container">
+    <a class="navbar-brand" routerLink="/">MMCd Datalogger</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -9,27 +9,36 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/monitor">Monitor</a>
+          <a class="nav-link" routerLink="/monitor" routerLinkActive="active">
+            <i class="bi bi-speedometer"></i>
+            Monitor
+          </a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="/test">Test</a>
+          <a class="nav-link" routerLink="/test" routerLinkActive="active">
+            <i class="bi bi-tools"></i>
+            Test
+          </a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="/review">Review</a>
+          <a class="nav-link" routerLink="/review" routerLinkActive="active">
+            <i class="bi bi-rewind-btn"></i>
+            Review
+          </a>
         </li>
       </ul>
 
       <div class="d-flex">
         <button class="btn" [class.btn-primary]="port === undefined" [class.btn-success]="port !== undefined"
           [disabled]="portAwaiting === true" (click)="onSelectSerialPortClicked()">
-          <span *ngIf="port === undefined">
-            <div *ngIf="portAwaiting === true" class="spinner-border spinner-border-sm" role="status">
-              <span class="visually-hidden">Loading...</span>
-            </div>
-            Select serial port
-          </span>
+          <i *ngIf="portAwaiting === false" class="bi bi-plug"></i>
+          <div *ngIf="portAwaiting === true" class="spinner-border spinner-border-sm" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+
+          <span *ngIf="port === undefined"> Select serial port </span>
           <span *ngIf="port !== undefined">Serial port connected</span>
         </button>
       </div>
