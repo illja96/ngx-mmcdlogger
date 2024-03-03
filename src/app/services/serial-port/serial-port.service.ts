@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 export class SerialPortService {
   private port: SerialPort | undefined;
 
-  public async select(): Promise<SerialPort | undefined> {
+  public async select(): Promise<SerialPort> {
     const options: SerialOptions = {
       baudRate: 1953,
       dataBits: 8,
@@ -12,14 +12,9 @@ export class SerialPortService {
       parity: "none"
     };
 
-    try {
-      const port = await navigator.serial.requestPort();
-      await port.open(options);
-      this.port = port;
-    }
-    catch (error) {
-      this.port = undefined;
-    }
+    const port = await navigator.serial.requestPort();
+    await port.open(options);
+    this.port = port;
 
     return this.port;
   }
@@ -35,8 +30,6 @@ export class SerialPortService {
     const writer = this.port.writable.getWriter();
     try {
       await writer.write(chunk);
-    } catch (error) {
-      throw error;
     } finally {
       writer.releaseLock();
     }
@@ -56,8 +49,6 @@ export class SerialPortService {
           values.push(value);
           if (done) break;
         }
-      } catch (error) {
-        throw error;
       } finally {
         reader.releaseLock();
       }
