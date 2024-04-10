@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
-import { SerialPortService } from '../../services/serial-port/serial-port.service';
 import { CommonModule } from '@angular/common';
+import { SerialPortProviderService } from '../../services/serial-port-provider/serial-port-provider.service';
+import { SerialPortWrapper } from '../../models/serial-port-wrapper';
 
 @Component({
   selector: 'app-root',
@@ -11,15 +12,17 @@ import { CommonModule } from '@angular/common';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  public port: SerialPort | undefined;
+  public port: SerialPortWrapper | undefined;
   public portAwaiting: boolean = false;
 
-  constructor(private serialPortService: SerialPortService) { }
+  constructor(private serialPortProviderService: SerialPortProviderService) {
+    this.serialPortProviderService.port
+      .subscribe(port => this.port = port);
+  }
 
   public onSelectSerialPortClicked(): void {
     this.portAwaiting = true;
-    this.serialPortService.select(1920)
-      .then(port => this.port = port)
+    this.serialPortProviderService.select(1920)
       .finally(() => this.portAwaiting = false);
   }
 }

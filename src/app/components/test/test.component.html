@@ -26,18 +26,18 @@
           <app-test-fault code="41" [isStoredFault]="log?.stFaultHi?.bit3" [isActiveFault]="log?.faultHi?.bit3" description="Injector circuit"></app-test-fault>
           <app-test-fault code="42" [isStoredFault]="log?.stFaultHi?.bit4" [isActiveFault]="log?.faultHi?.bit4" description="Fuel pump relay"></app-test-fault>
           <app-test-fault code="43" [isStoredFault]="log?.stFaultHi?.bit5" [isActiveFault]="log?.faultHi?.bit5" description="EGR"></app-test-fault>
-          <app-test-fault code="44" [isStoredFault]="log?.stFaultHi?.bit6" [isActiveFault]="log?.faultHi?.bit6" description="Ignition coil"></app-test-fault>          
+          <app-test-fault code="44" [isStoredFault]="log?.stFaultHi?.bit6" [isActiveFault]="log?.faultHi?.bit6" description="Ignition coil"></app-test-fault>
         </ul>
       </div>
     </div>
   </div>
   <div class="card-footer">
     <div class="d-grid gap-2">
-      <button class="btn btn-outline-info" type="button">
+      <button class="btn btn-outline-info" type="button" (click)="onReadAllFaultsClicked()">
         <i class="bi bi-arrow-clockwise"></i>&nbsp;Read all faults
       </button>
 
-      <button class="btn btn-outline-warning" type="button">
+      <button class="btn btn-outline-warning" type="button" (click)="onActivateCommandClicked(Commands.clearFaults)">
         <i class="bi bi-trash"></i>&nbsp;Clear all faults
       </button>
     </div>
@@ -55,11 +55,14 @@
       </div>
       <div class="col-auto">
         <div class="btn-group btn-group-sm" role="group" aria-label="Basic outlined example" id="solenoids">
-          <button type="button" class="btn btn-outline-primary">Boost control solenoid</button>
-          <button type="button" class="btn btn-outline-primary">EGR solenoid</button>
-          <button type="button" class="btn btn-outline-primary">Fuel pressure solenoid</button>
-          <button type="button" class="btn btn-outline-primary">Purge solenoid</button>
-          <button type="button" class="btn btn-outline-primary">Fuel pump</button>
+          <button type="button" class="btn btn-outline-primary" (click)="onActivateCommandClicked(Commands.activateBoostControlSolenoid)">Boost control solenoid</button>
+          <!--
+          <button type="button" class="btn btn-outline-primary" (click)="onActivateCommandClicked(Commands.mivecMotor)">MIVEC/VICS motor</button>
+          -->          
+          <button type="button" class="btn btn-outline-primary" (click)="onActivateCommandClicked(Commands.activateEgrSolenoid)">EGR solenoid</button>
+          <button type="button" class="btn btn-outline-primary" (click)="onActivateCommandClicked(Commands.activateFuelPressureSolenoid)">Fuel pressure solenoid</button>
+          <button type="button" class="btn btn-outline-primary" (click)="onActivateCommandClicked(Commands.activatePurgeSolenoid)">Purge solenoid</button>
+          <button type="button" class="btn btn-outline-primary" (click)="onActivateCommandClicked(Commands.turnOnFuelPump)">Fuel pump</button>
         </div>
       </div>
     </div>
@@ -70,12 +73,12 @@
       </div>
       <div class="col-auto">
         <div class="btn-group btn-group-sm" role="group" aria-label="Basic outlined example" id="injectors">
-          <button type="button" class="btn btn-outline-primary">1</button>
-          <button type="button" class="btn btn-outline-primary">2</button>
-          <button type="button" class="btn btn-outline-primary">3</button>
-          <button type="button" class="btn btn-outline-primary">4</button>
-          <button type="button" class="btn btn-outline-primary">5</button>
-          <button type="button" class="btn btn-outline-primary">6</button>
+          <button type="button" class="btn btn-outline-primary" (click)="onActivateCommandClicked(Commands.disableInjector1)">1</button>
+          <button type="button" class="btn btn-outline-primary" (click)="onActivateCommandClicked(Commands.disableInjector2)">2</button>
+          <button type="button" class="btn btn-outline-primary" (click)="onActivateCommandClicked(Commands.disableInjector3)">3</button>
+          <button type="button" class="btn btn-outline-primary" (click)="onActivateCommandClicked(Commands.disableInjector4)">4</button>
+          <button type="button" class="btn btn-outline-primary" (click)="onActivateCommandClicked(Commands.disableInjector5)">5</button>
+          <button type="button" class="btn btn-outline-primary" (click)="onActivateCommandClicked(Commands.disableInjector6)">6</button>
         </div>
       </div>
     </div>
