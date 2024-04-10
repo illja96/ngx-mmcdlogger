@@ -1,12 +1,12 @@
 export interface Log {
   date: Date;
 
-  port1flags?: LogFlags;
-  port2flags?: LogFlags;
-  port3flags?: LogFlags;
-  port4flags?: LogFlags;
-  port5flags?: LogFlags;
-  port6flags?: LogFlags;
+  port1?: LogFlags;
+  port2?: LogFlags;
+  port3?: LogFlags;
+  port4?: LogFlags;
+  port5?: LogFlags;
+  port6?: LogFlags;
   timingAdv?: number;
   ectRaw?: number;
   isc0?: number;

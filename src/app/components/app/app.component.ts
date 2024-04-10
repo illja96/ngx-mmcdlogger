@@ -18,7 +18,7 @@ export class AppComponent {
 
   public onSelectSerialPortClicked(): void {
     this.portAwaiting = true;
-    this.serialPortService.select()
+    this.serialPortService.select(1920)
       .then(port => this.port = port)
       .finally(() => this.portAwaiting = false);
   }

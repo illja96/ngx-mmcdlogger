@@ -4,9 +4,9 @@ import { Injectable } from '@angular/core';
 export class SerialPortService {
   private port: SerialPort | undefined;
 
-  public async select(): Promise<SerialPort> {
+  public async select(baudRate: 1920 | 1953 | 8192 | 9600): Promise<SerialPort> {
     const options: SerialOptions = {
-      baudRate: 1953,
+      baudRate: baudRate,
       dataBits: 8,
       stopBits: 1,
       parity: "none"
