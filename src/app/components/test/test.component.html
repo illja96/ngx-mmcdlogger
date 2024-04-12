@@ -6,33 +6,24 @@
     </h3>
   </div>
 
-  <div class="card-body">
+  <div class="card-body pb-0">
     <div class="row">
-      <div class="col-12 col-lg-6">
-        <ul class="list-group">
-          <app-test-fault i18n-description code="11" [isStoredFault]="log?.stFaultLo?.bit0" [isActiveFault]="log?.faultHi?.bit0" description="Oxygen sensor"></app-test-fault>
-          <app-test-fault i18n-description code="12" [isStoredFault]="log?.stFaultLo?.bit1" [isActiveFault]="log?.faultHi?.bit1" description="Intake air flow sensor"></app-test-fault>
-          <app-test-fault i18n-description code="13" [isStoredFault]="log?.stFaultLo?.bit2" [isActiveFault]="log?.faultHi?.bit2" description="Intake air temperature sensor"></app-test-fault>
-          <app-test-fault i18n-description code="14" [isStoredFault]="log?.stFaultLo?.bit3" [isActiveFault]="log?.faultHi?.bit3" description="Throttle position sensor"></app-test-fault>
-          <app-test-fault i18n-description code="15" [isStoredFault]="log?.stFaultLo?.bit4" [isActiveFault]="log?.faultHi?.bit4" description="ISC motor position sensor"></app-test-fault>
-          <app-test-fault i18n-description code="21" [isStoredFault]="log?.stFaultLo?.bit5" [isActiveFault]="log?.faultHi?.bit5" description="Engine coolant temperature sensor"></app-test-fault>
-          <app-test-fault i18n-description code="22" [isStoredFault]="log?.stFaultLo?.bit6" [isActiveFault]="log?.faultHi?.bit6" description="Engine speed sensor"></app-test-fault>
-          <app-test-fault i18n-description code="23" [isStoredFault]="log?.stFaultLo?.bit7" [isActiveFault]="log?.faultHi?.bit7" description="TDC sensor"></app-test-fault>
-        </ul>
-      </div>
-
-      <div class="col-12 col-lg-6">
-        <ul class="list-group">
-          <app-test-fault i18n-description code="24" [isStoredFault]="log?.stFaultHi?.bit0" [isActiveFault]="log?.faultHi?.bit0" description="Vehicle speed sensor"></app-test-fault>
-          <app-test-fault i18n-description code="25" [isStoredFault]="log?.stFaultHi?.bit1" [isActiveFault]="log?.faultHi?.bit1" description="Barometric pressure sensor"></app-test-fault>
-          <app-test-fault i18n-description code="31" [isStoredFault]="log?.stFaultHi?.bit2" [isActiveFault]="log?.faultHi?.bit2" description="Knock sensor"></app-test-fault>
-          <app-test-fault i18n-description code="36" [isStoredFault]="log?.stFaultHi?.bit7" [isActiveFault]="log?.faultHi?.bit7" description="Ignition circuit"></app-test-fault>
-          <app-test-fault i18n-description code="41" [isStoredFault]="log?.stFaultHi?.bit3" [isActiveFault]="log?.faultHi?.bit3" description="Injector circuit"></app-test-fault>
-          <app-test-fault i18n-description code="42" [isStoredFault]="log?.stFaultHi?.bit4" [isActiveFault]="log?.faultHi?.bit4" description="Fuel pump relay"></app-test-fault>
-          <app-test-fault i18n-description code="43" [isStoredFault]="log?.stFaultHi?.bit5" [isActiveFault]="log?.faultHi?.bit5" description="EGR"></app-test-fault>
-          <app-test-fault i18n-description code="44" [isStoredFault]="log?.stFaultHi?.bit6" [isActiveFault]="log?.faultHi?.bit6" description="Ignition coil"></app-test-fault>
-        </ul>
-      </div>
+      <app-test-fault i18n-description code="11" [isStoredFault]="log?.stFaultLo?.bit0" [isActiveFault]="log?.faultHi?.bit0" description="Oxygen sensor" class="mb-3 col-12 col-lg-6"></app-test-fault>
+      <app-test-fault i18n-description code="12" [isStoredFault]="log?.stFaultLo?.bit1" [isActiveFault]="log?.faultHi?.bit1" description="Intake air flow sensor" class="mb-3 col-12 col-lg-6"></app-test-fault>
+      <app-test-fault i18n-description code="13" [isStoredFault]="log?.stFaultLo?.bit2" [isActiveFault]="log?.faultHi?.bit2" description="Intake air temperature sensor" class="mb-3 col-12 col-lg-6"></app-test-fault>
+      <app-test-fault i18n-description code="14" [isStoredFault]="log?.stFaultLo?.bit3" [isActiveFault]="log?.faultHi?.bit3" description="Throttle position sensor" class="mb-3 col-12 col-lg-6"></app-test-fault>
+      <app-test-fault i18n-description code="15" [isStoredFault]="log?.stFaultLo?.bit4" [isActiveFault]="log?.faultHi?.bit4" description="ISC motor position sensor" class="mb-3 col-12 col-lg-6"></app-test-fault>
+      <app-test-fault i18n-description code="21" [isStoredFault]="log?.stFaultLo?.bit5" [isActiveFault]="log?.faultHi?.bit5" description="Engine coolant temperature sensor" class="mb-3 col-12 col-lg-6"></app-test-fault>
+      <app-test-fault i18n-description code="22" [isStoredFault]="log?.stFaultLo?.bit6" [isActiveFault]="log?.faultHi?.bit6" description="Engine speed sensor" class="mb-3 col-12 col-lg-6"></app-test-fault>
+      <app-test-fault i18n-description code="23" [isStoredFault]="log?.stFaultLo?.bit7" [isActiveFault]="log?.faultHi?.bit7" description="TDC sensor" class="mb-3 col-12 col-lg-6"></app-test-fault>
+      <app-test-fault i18n-description code="24" [isStoredFault]="log?.stFaultHi?.bit0" [isActiveFault]="log?.faultHi?.bit0" description="Vehicle speed sensor" class="mb-3 col-12 col-lg-6"></app-test-fault>
+      <app-test-fault i18n-description code="25" [isStoredFault]="log?.stFaultHi?.bit1" [isActiveFault]="log?.faultHi?.bit1" description="Barometric pressure sensor" class="mb-3 col-12 col-lg-6"></app-test-fault>
+      <app-test-fault i18n-description code="31" [isStoredFault]="log?.stFaultHi?.bit2" [isActiveFault]="log?.faultHi?.bit2" description="Knock sensor" class="mb-3 col-12 col-lg-6"></app-test-fault>
+      <app-test-fault i18n-description code="36" [isStoredFault]="log?.stFaultHi?.bit7" [isActiveFault]="log?.faultHi?.bit7" description="Ignition circuit" class="mb-3 col-12 col-lg-6"></app-test-fault>
+      <app-test-fault i18n-description code="41" [isStoredFault]="log?.stFaultHi?.bit3" [isActiveFault]="log?.faultHi?.bit3" description="Injector circuit" class="mb-3 col-12 col-lg-6"></app-test-fault>
+      <app-test-fault i18n-description code="42" [isStoredFault]="log?.stFaultHi?.bit4" [isActiveFault]="log?.faultHi?.bit4" description="Fuel pump relay" class="mb-3 col-12 col-lg-6"></app-test-fault>
+      <app-test-fault i18n-description code="43" [isStoredFault]="log?.stFaultHi?.bit5" [isActiveFault]="log?.faultHi?.bit5" description="EGR" class="mb-3 col-12 col-lg-6"></app-test-fault>
+      <app-test-fault i18n-description code="44" [isStoredFault]="log?.stFaultHi?.bit6" [isActiveFault]="log?.faultHi?.bit6" description="Ignition coil" class="mb-3 col-12 col-lg-6"></app-test-fault>
     </div>
   </div>
 
