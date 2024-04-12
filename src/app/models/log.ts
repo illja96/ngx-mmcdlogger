@@ -1,12 +1,12 @@
 export interface Log {
   date: Date;
 
-  port1?: LogFlags;
-  port2?: LogFlags;
-  port3?: LogFlags;
-  port4?: LogFlags;
-  port5?: LogFlags;
-  port6?: LogFlags;
+  port1?: number;
+  port2?: number;
+  port3?: number;
+  port4?: number;
+  port5?: number;
+  port6?: number;
   timingAdv?: number;
   ectRaw?: number;
   isc0?: number;
@@ -26,8 +26,8 @@ export interface Log {
   baroRaw?: number;
   iscStepCurr?: number;
   tpsRaw?: number;
-  closedLpFlags?: LogFlags;
-  ftrimFlags?: LogFlags;
+  closedLpFlags?: number;
+  ftrimFlags?: number;
   mafRaw?: number;
   ftrim_low_0x1B?: number;
   airVol?: number;
@@ -37,13 +37,13 @@ export interface Log {
 
   rpm8?: number;
   rpm31?: number;
-  port3Snap1?: LogFlags;
-  iscLrnFlags?: LogFlags;
+  port3Snap1?: number;
+  iscLrnFlags?: number;
   idleSpdTarg?: number;
   iscStepTarg?: number;
   knockSum?: number;
-  port3Snap0?: LogFlags;
-  port4Snap?: LogFlags;
+  port3Snap0?: number;
+  port4Snap?: number;
   injPw?: number;
   injPw1?: number;
   enerLen?: number;
@@ -52,7 +52,7 @@ export interface Log {
   injFactor?: number;
   injFactor1?: number;
 
-  iscFlags0?: LogFlags;
+  iscFlags0?: number;
   temp1?: number;
   temp2?: number;
   temp3?: number;
@@ -60,23 +60,12 @@ export interface Log {
   temp5?: number;
   o2BadCnt?: number;
   egrtBadCnt?: number;
-  faultHi?: LogFlags;
-  faultLo?: LogFlags;
+  faultHi?: number;
+  faultLo?: number;
   iatRaw?: number;
-  stFaultHi?: LogFlags;
-  stFaultLo?: LogFlags;
+  stFaultHi?: number;
+  stFaultLo?: number;
   ftrim_low_0x3D?: number;
 
   ecuVersion?: number;
-}
-
-export interface LogFlags {
-  bit0: boolean;
-  bit1: boolean;
-  bit2: boolean;
-  bit3: boolean;
-  bit4: boolean;
-  bit5: boolean;
-  bit6: boolean;
-  bit7: boolean;
 }
