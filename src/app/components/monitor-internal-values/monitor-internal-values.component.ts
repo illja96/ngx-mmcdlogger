@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Queries } from '../../models/queries/queries';
 import { MonitorValueComponent } from '../monitor-value/monitor-value.component';
+import { SerialPortWrapper } from '../../models/serial-port-wrapper';
 
 @Component({
   selector: 'app-monitor-internal-values',
@@ -10,7 +11,7 @@ import { MonitorValueComponent } from '../monitor-value/monitor-value.component'
   styleUrl: './monitor-internal-values.component.css'
 })
 export class MonitorInternalValuesComponent {
-  public get Queries() {
-    return Queries;
-  }
+  @Input() public port!: SerialPortWrapper | undefined;
+
+  public get Queries() { return Queries; }
 }

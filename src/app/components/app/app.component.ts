@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { SerialPortProviderService } from '../../services/serial-port-provider/serial-port-provider.service';
+import { SerialPortProviderService } from '../../services/serial-port-provider.service';
 import { SerialPortWrapper } from '../../models/serial-port-wrapper';
 
 @Component({

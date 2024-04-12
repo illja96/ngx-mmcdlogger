@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { SerialPortWrapper } from '../../models/serial-port-wrapper';
+import { SerialPortWrapper } from '../models/serial-port-wrapper';
 
 @Injectable({ providedIn: 'root' })
 export class SerialPortProviderService {

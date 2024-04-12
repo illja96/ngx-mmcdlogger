@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MonitorValueComponent } from '../monitor-value/monitor-value.component';
 import { Queries } from '../../models/queries/queries';
+import { SerialPortWrapper } from '../../models/serial-port-wrapper';
 
 @Component({
   selector: 'app-monitor-flags',
@@ -10,7 +11,7 @@ import { Queries } from '../../models/queries/queries';
   styleUrl: './monitor-flags.component.css'
 })
 export class MonitorFlagsComponent {
-  public get Queries() {
-    return Queries;
-  }
+  @Input() public port!: SerialPortWrapper | undefined;
+
+  public get Queries() { return Queries; }
 }

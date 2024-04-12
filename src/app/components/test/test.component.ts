@@ -4,7 +4,7 @@ import { TestFaultComponent } from '../test-fault/test-fault.component';
 import { Queries } from '../../models/queries/queries';
 import { Command } from '../../models/commands/command';
 import { Commands } from '../../models/commands/commands';
-import { SerialPortProviderService } from '../../services/serial-port-provider/serial-port-provider.service';
+import { SerialPortProviderService } from '../../services/serial-port-provider.service';
 import { SerialPortWrapper } from '../../models/serial-port-wrapper';
 
 @Component({
