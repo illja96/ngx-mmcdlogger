@@ -1,3 +1,11 @@
 main {
-  padding-top: 30px;
+    padding-top: 30px;
+}
+
+a.nav-link>i.bi {
+    margin-right: 0.25em;
+}
+
+button>i.bi {
+    margin-right: 0.25em;
 }

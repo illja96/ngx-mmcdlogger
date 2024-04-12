@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="8058994642732449354" datatype="html">
+        <source>Monitor</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/app/app.component.html</context>
+          <context context-type="linenumber">13,14</context>
+        </context-group>
+        <note priority="1" from="description">monitor</note>
+      </trans-unit>
+      <trans-unit id="6563391987554512024" datatype="html">
+        <source>Test</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/app/app.component.html</context>
+          <context context-type="linenumber">20,21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7430680760319628492" datatype="html">
+        <source>Review</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/app/app.component.html</context>
+          <context context-type="linenumber">27,28</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3894950702316166331" datatype="html">
+        <source>Loading...</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/app/app.component.html</context>
+          <context context-type="linenumber">36,37</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5938096380550959164" datatype="html">
+        <source>Select serial port </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/app/app.component.html</context>
+          <context context-type="linenumber">39,40</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8647104682915818824" datatype="html">
+        <source>Serial port connected</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/app/app.component.html</context>
+          <context context-type="linenumber">40,41</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7798195225890418363" datatype="html">
+        <source>Chart</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor/monitor.component.html</context>
+          <context context-type="linenumber">5,6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1805506778275601584" datatype="html">
+        <source>Values</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor/monitor.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2870788902465061969" datatype="html">
+        <source>Flags</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor/monitor.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4981402371695656140" datatype="html">
+        <source>Faults</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/test/test.component.html</context>
+          <context context-type="linenumber">5,6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3467529745903819945" datatype="html">
+        <source>Oxygen sensor</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/test/test.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3594022892987175111" datatype="html">
+        <source>Intake air flow sensor</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/test/test.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4520968446981789622" datatype="html">
+        <source>Intake air temperature sensor</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/test/test.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2399974009074002617" datatype="html">
+        <source>Throttle position sensor</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/test/test.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5645432707521620077" datatype="html">
+        <source>ISC motor position sensor</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/test/test.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4407927417873498344" datatype="html">
+        <source>Engine coolant temperature sensor</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/test/test.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8552086503355835842" datatype="html">
+        <source>Engine speed sensor</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/test/test.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9063079683995021431" datatype="html">
+        <source>TDC sensor</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/test/test.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1691482213012762883" datatype="html">
+        <source>Vehicle speed sensor</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/test/test.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4518634605815411248" datatype="html">
+        <source>Barometric pressure sensor</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/test/test.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3761083177091325119" datatype="html">
+        <source>Knock sensor</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/test/test.component.html</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3389387277238783055" datatype="html">
+        <source>Ignition circuit</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/test/test.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5154339798695989450" datatype="html">
+        <source>Injector circuit</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/test/test.component.html</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7190753192449455243" datatype="html">
+        <source>Fuel pump relay</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/test/test.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5933787071418767292" datatype="html">
+        <source>EGR</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/test/test.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3647995620142247694" datatype="html">
+        <source>Ignition coil</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/test/test.component.html</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7388201047338173044" datatype="html">
+        <source>Read all faults</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/test/test.component.html</context>
+          <context context-type="linenumber">43,44</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9194873252316099754" datatype="html">
+        <source>Clear all faults</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/test/test.component.html</context>
+          <context context-type="linenumber">48,49</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="21275452006765587" datatype="html">
+        <source>Commands</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/test/test.component.html</context>
+          <context context-type="linenumber">58,59</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8508296998275923036" datatype="html">
+        <source>Activate for ~6 seconds:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/test/test.component.html</context>
+          <context context-type="linenumber">65,66</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7637128577156085475" datatype="html">
+        <source>Boost control solenoid</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/test/test.component.html</context>
+          <context context-type="linenumber">69,70</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8402332668467384701" datatype="html">
+        <source>MIVEC/VICS motor</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/test/test.component.html</context>
+          <context context-type="linenumber">70,71</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="501288651602616259" datatype="html">
+        <source>EGR solenoid</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/test/test.component.html</context>
+          <context context-type="linenumber">71,72</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5182376138442604497" datatype="html">
+        <source>Fuel pressure solenoid</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/test/test.component.html</context>
+          <context context-type="linenumber">72,73</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5755597057113236440" datatype="html">
+        <source>Purge solenoid</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/test/test.component.html</context>
+          <context context-type="linenumber">73,74</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="917218889991705832" datatype="html">
+        <source>Fuel pump</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/test/test.component.html</context>
+          <context context-type="linenumber">74,75</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1739123063979147202" datatype="html">
+        <source>Disable injector for ~6 seconds:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/test/test.component.html</context>
+          <context context-type="linenumber">81,82</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

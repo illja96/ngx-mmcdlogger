@@ -1,8 +1,7 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container">
     <a class="navbar-brand" routerLink="/">MMCd Datalogger</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -11,35 +10,34 @@
         <li class="nav-item">
           <a class="nav-link" routerLink="/monitor" routerLinkActive="active">
             <i class="bi bi-speedometer"></i>
-            Monitor
+            <span i18n>Monitor</span>
           </a>
         </li>
 
         <li class="nav-item">
           <a class="nav-link" routerLink="/test" routerLinkActive="active">
             <i class="bi bi-tools"></i>
-            Test
+            <span i18n>Test</span>
           </a>
         </li>
 
         <li class="nav-item">
           <a class="nav-link" routerLink="/review" routerLinkActive="active">
             <i class="bi bi-rewind-btn"></i>
-            Review
+            <span i18n>Review</span>
           </a>
         </li>
       </ul>
 
       <div class="d-flex">
-        <button class="btn" [class.btn-primary]="!port" [class.btn-success]="port"
-          [disabled]="portSelectorOpened" (click)="onSelectSerialPortClicked()">
+        <button class="btn" [class.btn-primary]="!port" [class.btn-success]="port" [disabled]="portSelectorOpened" (click)="onSelectSerialPortClicked()">
           <i *ngIf="!portSelectorOpened" class="bi bi-plug"></i>
           <div *ngIf="portSelectorOpened" class="spinner-border spinner-border-sm" role="status">
-            <span class="visually-hidden">Loading...</span>
+            <span i18n class="visually-hidden">Loading...</span>
           </div>
 
-          <span *ngIf="!port"> Select serial port </span>
-          <span *ngIf="port">Serial port connected</span>
+          <span i18n *ngIf="!port">Select serial port </span>
+          <span i18n *ngIf="port">Serial port connected</span>
         </button>
       </div>
     </div>
