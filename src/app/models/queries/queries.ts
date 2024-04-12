@@ -29,19 +29,19 @@ export class Queries {
   public static baroRaw: Query = { address: 0x15, propertyName: "baroRaw", displayName: "BARO", formula: x => .00486 * x, type: QueryType.number, units: QueryUnit.bar };
   public static iscStepCurr: Query = { address: 0x16, propertyName: "iscStepCurr", displayName: "ISC-C", formula: x => x, type: QueryType.number, units: QueryUnit.step };
   public static tpsRaw: Query = { address: 0x17, propertyName: "tpsRaw", displayName: "TPS-R", formula: x => 100 * x / 255, type: QueryType.number, units: QueryUnit.percent };
-  public static closedLpFlags: Query = { address: 0x18, propertyName: "closedLpFlags", displayName: "CLMF", description: "Closed loop mode flags", formula: x => x, type: QueryType.flags, units: QueryUnit.flags };
-  public static ftrimFlags: Query = { address: 0x19, propertyName: "ftrimFlags", displayName: "FTRIM-F", description: "Fuel trim register flags", formula: x => x, type: QueryType.flags, units: QueryUnit.flags };
+  public static closedLpFlags: Query = { address: 0x18, propertyName: "closedLpFlags", displayName: "CLMF", formula: x => x, type: QueryType.flags, units: QueryUnit.flags };
+  public static ftrimFlags: Query = { address: 0x19, propertyName: "ftrimFlags", displayName: "FTRIM-F", formula: x => x, type: QueryType.flags, units: QueryUnit.flags };
   public static mafRaw: Query = { address: 0x1A, propertyName: "mafRaw", displayName: "MAF", formula: x => 6.25 * x, type: QueryType.number, units: QueryUnit.hertz };
   public static ftrim_low_0x1B: Query = { address: 0x1B, propertyName: "ftrim_low_0x1B", displayName: "FTRIM-1B", formula: x => .78 * x, type: QueryType.number, units: QueryUnit.percent };
   public static airVol: Query = { address: 0x1C, propertyName: "airVol", displayName: "AIRVOL", formula: x => x, type: QueryType.number, units: QueryUnit.number };
   public static accEnr: Query = { address: 0x1D, propertyName: "accEnr", displayName: "ACCENR", formula: x => 100 * x / 255, type: QueryType.number, units: QueryUnit.percent };
-  public static state1: Query = { address: 0x1E, propertyName: "state1", displayName: "STATE1", description: "Engine start-up stages and running condition state flags", formula: x => x, type: QueryType.flags, units: QueryUnit.flags };
+  public static state1: Query = { address: 0x1E, propertyName: "state1", displayName: "STATE1", formula: x => x, type: QueryType.flags, units: QueryUnit.flags };
   public static ftrim_low_0x1F: Query = { address: 0x1F, propertyName: "ftrim_low_0x1F", displayName: "FTRIM-1F", formula: x => .78 * x, type: QueryType.number, units: QueryUnit.percent };
 
   public static rpm8: Query = { address: 0x20, propertyName: "rpm8", displayName: "RPM-8", formula: x => x * 7.8125, type: QueryType.number, units: QueryUnit.rpm };
   public static rpm31: Query = { address: 0x21, propertyName: "rpm31", displayName: "RPM-31", formula: x => x * 31.25, type: QueryType.number, units: QueryUnit.rpm };
   public static port3Snap1: Query = { address: 0x22, propertyName: "port3Snap1", displayName: "PORT3-S1", formula: x => x, type: QueryType.number, units: QueryUnit.number };
-  public static iscLrnFlags: Query = { address: 0x23, propertyName: "iscLrnFlags", displayName: "ISC-F", description: "ISC learning flags", formula: x => x, type: QueryType.flags, units: QueryUnit.flags };
+  public static iscLrnFlags: Query = { address: 0x23, propertyName: "iscLrnFlags", displayName: "ISC-LF", formula: x => x, type: QueryType.flags, units: QueryUnit.flags };
   public static idleSpdTarg: Query = { address: 0x24, propertyName: "idleSpdTarg", displayName: "RPM-CT", formula: x => x * 7.8125, type: QueryType.number, units: QueryUnit.rpm };
   public static iscStepTarg: Query = { address: 0x25, propertyName: "iscStepTarg", displayName: "ISC-T", formula: x => x, type: QueryType.number, units: QueryUnit.step };
   public static knockSum: Query = { address: 0x26, propertyName: "knockSum", displayName: "KNOCK", formula: x => x, type: QueryType.number, units: QueryUnit.number };
@@ -55,7 +55,7 @@ export class Queries {
   public static injFactor: Query = { address: 0x2E, propertyName: "injFactor", displayName: "INJ-F", formula: x => x, type: QueryType.number, units: QueryUnit.number };
   public static injFactor1: Query = { address: 0x2F, propertyName: "injFactor1", displayName: "INJ-F1", formula: x => x, type: QueryType.number, units: QueryUnit.number };
 
-  public static iscFlags0: Query = { address: 0x30, propertyName: "iscFlags0", displayName: "ISC-F0", description: "ISC updating register flags", formula: x => x, type: QueryType.flags, units: QueryUnit.flags };
+  public static iscFlags0: Query = { address: 0x30, propertyName: "iscFlags0", displayName: "ISC-F0", formula: x => x, type: QueryType.flags, units: QueryUnit.flags };
   public static temp1: Query = { address: 0x31, propertyName: "temp1", displayName: "TEMP1", formula: x => x, type: QueryType.number, units: QueryUnit.number };
   public static temp2: Query = { address: 0x32, propertyName: "temp2", displayName: "TEMP2", formula: x => x, type: QueryType.number, units: QueryUnit.number };
   public static temp3: Query = { address: 0x33, propertyName: "temp3", displayName: "TEMP3", formula: x => x, type: QueryType.number, units: QueryUnit.number };
@@ -63,12 +63,12 @@ export class Queries {
   public static temp5: Query = { address: 0x35, propertyName: "temp5", displayName: "TEMP5", formula: x => x, type: QueryType.number, units: QueryUnit.number };
   public static o2BadCnt: Query = { address: 0x36, propertyName: "o2BadCnt", displayName: "O2-BC", formula: x => x, type: QueryType.number, units: QueryUnit.number };
   public static egrtBadCnt: Query = { address: 0x37, propertyName: "egrtBadCnt", displayName: "EGRT-BC", formula: x => x, type: QueryType.number, units: QueryUnit.number };
-  public static faultHi: Query = { address: 0x38, propertyName: "faultHi", displayName: "FAULT-H", description: "Faults, high byte", formula: x => x, type: QueryType.flags, units: QueryUnit.flags };
-  public static faultLo: Query = { address: 0x39, propertyName: "faultLo", displayName: "FAULT-L", description: "Faults, low byte", formula: x => x, type: QueryType.flags, units: QueryUnit.flags };
-  public static iatRaw: Query = { address: 0x3A, propertyName: "iatRaw", displayName: "IAT-R", description: "Intake air temperature (raw)", formula: x => Curves.IAT[x], type: QueryType.number, units: QueryUnit.celsius };
-  public static stFaultHi: Query = { address: 0x3B, propertyName: "stFaultHi", displayName: "FAULT-SH", description: "Stored faults, High byte", formula: x => x, type: QueryType.flags, units: QueryUnit.flags };
-  public static stFaultLo: Query = { address: 0x3C, propertyName: "stFaultLo", displayName: "FAULT-SL", description: "Stored faults, Low byte", formula: x => x, type: QueryType.flags, units: QueryUnit.flags };
+  public static faultHi: Query = { address: 0x38, propertyName: "faultHi", displayName: "FAULT-H", formula: x => x, type: QueryType.flags, units: QueryUnit.flags };
+  public static faultLo: Query = { address: 0x39, propertyName: "faultLo", displayName: "FAULT-L", formula: x => x, type: QueryType.flags, units: QueryUnit.flags };
+  public static iatRaw: Query = { address: 0x3A, propertyName: "iatRaw", displayName: "IAT-R", formula: x => Curves.IAT[x], type: QueryType.number, units: QueryUnit.celsius };
+  public static stFaultHi: Query = { address: 0x3B, propertyName: "stFaultHi", displayName: "FAULT-SH", formula: x => x, type: QueryType.flags, units: QueryUnit.flags };
+  public static stFaultLo: Query = { address: 0x3C, propertyName: "stFaultLo", displayName: "FAULT-SL", formula: x => x, type: QueryType.flags, units: QueryUnit.flags };
   public static ftrim_low_0x3D: Query = { address: 0x3D, propertyName: "ftrim_low_0x3D", displayName: "FTRIM-3D", formula: x => .78 * x, type: QueryType.number, units: QueryUnit.percent };
 
-  public static ecuVersion: Query = { address: 0xFD, propertyName: "ecuVersion", displayName: "ECUVER", description: "ECU Version", formula: x => x, type: QueryType.number, units: QueryUnit.number };
+  public static ecuVersion: Query = { address: 0xFD, propertyName: "ecuVersion", displayName: "ECUVER", formula: x => x, type: QueryType.number, units: QueryUnit.number };
 }

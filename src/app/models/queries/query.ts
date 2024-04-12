@@ -4,10 +4,9 @@ import { QueryUnit } from "./query-unit";
 export interface Query {
   propertyName: string;
   displayName: string;
-  description?: string;
 
   address: number;
   type: QueryType;
-  units?: QueryUnit;
+  units: QueryUnit;
   formula: (rawValue: number) => number;
 }

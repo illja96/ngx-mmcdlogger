@@ -28,8 +28,9 @@
       <span *ngIf="query.units === QueryUnit.kelvin"> K</span>
       <span *ngIf="query.units === QueryUnit.fahrenheit"> °F</span>
     </div>
+
     <div *ngIf="query.type === QueryType.flags">
-      <span class="placeholder w-50"></span>
+      <span>--------</span>
     </div>
   </div>
 
