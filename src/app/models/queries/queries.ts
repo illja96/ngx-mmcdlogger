@@ -32,11 +32,11 @@ export class Queries {
   public static closedLpFlags: Query = { address: 0x18, propertyName: "closedLpFlags", displayName: "CLMF", description: "Closed loop mode flags", formula: x => x, type: QueryType.flags, units: QueryUnit.flags };
   public static ftrimFlags: Query = { address: 0x19, propertyName: "ftrimFlags", displayName: "FTRIM-F", description: "Fuel trim register flags", formula: x => x, type: QueryType.flags, units: QueryUnit.flags };
   public static mafRaw: Query = { address: 0x1A, propertyName: "mafRaw", displayName: "MAF", formula: x => 6.25 * x, type: QueryType.number, units: QueryUnit.hertz };
-  public static ftrim_low_0x1B: Query = { address: 0x1B, propertyName: "ftrim_low_0x1B", displayName: "FTRIM-L1B", formula: x => .78 * x, type: QueryType.number, units: QueryUnit.percent };
+  public static ftrim_low_0x1B: Query = { address: 0x1B, propertyName: "ftrim_low_0x1B", displayName: "FTRIM-1B", formula: x => .78 * x, type: QueryType.number, units: QueryUnit.percent };
   public static airVol: Query = { address: 0x1C, propertyName: "airVol", displayName: "AIRVOL", formula: x => x, type: QueryType.number, units: QueryUnit.number };
   public static accEnr: Query = { address: 0x1D, propertyName: "accEnr", displayName: "ACCENR", formula: x => 100 * x / 255, type: QueryType.number, units: QueryUnit.percent };
   public static state1: Query = { address: 0x1E, propertyName: "state1", displayName: "STATE1", description: "Engine start-up stages and running condition state flags", formula: x => x, type: QueryType.flags, units: QueryUnit.flags };
-  public static ftrim_low_0x1F: Query = { address: 0x1F, propertyName: "ftrim_low_0x1F", displayName: "FTRIM-L1F", formula: x => .78 * x, type: QueryType.number, units: QueryUnit.percent };
+  public static ftrim_low_0x1F: Query = { address: 0x1F, propertyName: "ftrim_low_0x1F", displayName: "FTRIM-1F", formula: x => .78 * x, type: QueryType.number, units: QueryUnit.percent };
 
   public static rpm8: Query = { address: 0x20, propertyName: "rpm8", displayName: "RPM-8", formula: x => x * 7.8125, type: QueryType.number, units: QueryUnit.rpm };
   public static rpm31: Query = { address: 0x21, propertyName: "rpm31", displayName: "RPM-31", formula: x => x * 31.25, type: QueryType.number, units: QueryUnit.rpm };
@@ -68,7 +68,7 @@ export class Queries {
   public static iatRaw: Query = { address: 0x3A, propertyName: "iatRaw", displayName: "IAT-R", description: "Intake air temperature (raw)", formula: x => Curves.IAT[x], type: QueryType.number, units: QueryUnit.celsius };
   public static stFaultHi: Query = { address: 0x3B, propertyName: "stFaultHi", displayName: "FAULT-SH", description: "Stored faults, High byte", formula: x => x, type: QueryType.flags, units: QueryUnit.flags };
   public static stFaultLo: Query = { address: 0x3C, propertyName: "stFaultLo", displayName: "FAULT-SL", description: "Stored faults, Low byte", formula: x => x, type: QueryType.flags, units: QueryUnit.flags };
-  public static ftrim_low_0x3D: Query = { address: 0x3D, propertyName: "ftrim_low_0x3D", displayName: "FTRIM-L3D", formula: x => .78 * x, type: QueryType.number, units: QueryUnit.percent };
+  public static ftrim_low_0x3D: Query = { address: 0x3D, propertyName: "ftrim_low_0x3D", displayName: "FTRIM-3D", formula: x => .78 * x, type: QueryType.number, units: QueryUnit.percent };
 
-  public static ecuVersion: Query = { address: 0xFD, propertyName: "ecuVersion", displayName: "ECUVER", description: "ECU Version", formula: x => x, type: QueryType.number, units: QueryUnit.percent };
+  public static ecuVersion: Query = { address: 0xFD, propertyName: "ecuVersion", displayName: "ECUVER", description: "ECU Version", formula: x => x, type: QueryType.number, units: QueryUnit.number };
 }
