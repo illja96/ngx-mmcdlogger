@@ -31,15 +31,15 @@
       </ul>
 
       <div class="d-flex">
-        <button class="btn" [class.btn-primary]="port === undefined" [class.btn-success]="port !== undefined"
-          [disabled]="portAwaiting === true" (click)="onSelectSerialPortClicked()">
-          <i *ngIf="portAwaiting === false" class="bi bi-plug"></i>
-          <div *ngIf="portAwaiting === true" class="spinner-border spinner-border-sm" role="status">
+        <button class="btn" [class.btn-primary]="!port" [class.btn-success]="port"
+          [disabled]="portSelectorOpened" (click)="onSelectSerialPortClicked()">
+          <i *ngIf="!portSelectorOpened" class="bi bi-plug"></i>
+          <div *ngIf="portSelectorOpened" class="spinner-border spinner-border-sm" role="status">
             <span class="visually-hidden">Loading...</span>
           </div>
 
-          <span *ngIf="port === undefined"> Select serial port </span>
-          <span *ngIf="port !== undefined">Serial port connected</span>
+          <span *ngIf="!port"> Select serial port </span>
+          <span *ngIf="port">Serial port connected</span>
         </button>
       </div>
     </div>

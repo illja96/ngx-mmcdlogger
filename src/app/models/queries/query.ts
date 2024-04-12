@@ -2,11 +2,12 @@ import { QueryType } from "./query-type";
 import { QueryUnit } from "./query-unit";
 
 export interface Query {
-  address: number;
-  name: string;
-  description: string;
+  propertyName: string;
+  displayName: string;
+  description?: string;
 
-  formula: (rawValue: number) => number;
+  address: number;
   type: QueryType;
   units?: QueryUnit;
+  formula: (rawValue: number) => number;
 }

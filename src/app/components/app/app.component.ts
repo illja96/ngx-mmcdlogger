@@ -13,7 +13,7 @@ import { SerialPortWrapper } from '../../models/serial-port-wrapper';
 })
 export class AppComponent {
   public port: SerialPortWrapper | undefined;
-  public portAwaiting: boolean = false;
+  public portSelectorOpened: boolean = false;
 
   constructor(private serialPortProviderService: SerialPortProviderService) {
     this.serialPortProviderService.port
@@ -21,8 +21,8 @@ export class AppComponent {
   }
 
   public onSelectSerialPortClicked(): void {
-    this.portAwaiting = true;
-    this.serialPortProviderService.select(1920)
-      .finally(() => this.portAwaiting = false);
+    this.portSelectorOpened = true;
+    this.serialPortProviderService.select()
+      .finally(() => this.portSelectorOpened = false);
   }
 }

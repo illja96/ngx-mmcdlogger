@@ -33,11 +33,11 @@
   </div>
   <div class="card-footer">
     <div class="d-grid gap-2">
-      <button class="btn btn-outline-info" type="button" (click)="onReadAllFaultsClicked()">
+      <button class="btn btn-outline-info" type="button" [disabled]="!port" (click)="onReadAllFaultsClicked()">
         <i class="bi bi-arrow-clockwise"></i>&nbsp;Read all faults
       </button>
 
-      <button class="btn btn-outline-warning" type="button" (click)="onActivateCommandClicked(Commands.clearFaults)">
+      <button class="btn btn-outline-warning" type="button" [disabled]="!port" (click)="onActivateCommandClicked(Commands.clearFaults)">
         <i class="bi bi-trash"></i>&nbsp;Clear all faults
       </button>
     </div>
@@ -55,14 +55,12 @@
       </div>
       <div class="col-auto">
         <div class="btn-group btn-group-sm" role="group" aria-label="Basic outlined example" id="solenoids">
-          <button type="button" class="btn btn-outline-primary" (click)="onActivateCommandClicked(Commands.activateBoostControlSolenoid)">Boost control solenoid</button>
-          <!--
-          <button type="button" class="btn btn-outline-primary" (click)="onActivateCommandClicked(Commands.mivecMotor)">MIVEC/VICS motor</button>
-          -->          
-          <button type="button" class="btn btn-outline-primary" (click)="onActivateCommandClicked(Commands.activateEgrSolenoid)">EGR solenoid</button>
-          <button type="button" class="btn btn-outline-primary" (click)="onActivateCommandClicked(Commands.activateFuelPressureSolenoid)">Fuel pressure solenoid</button>
-          <button type="button" class="btn btn-outline-primary" (click)="onActivateCommandClicked(Commands.activatePurgeSolenoid)">Purge solenoid</button>
-          <button type="button" class="btn btn-outline-primary" (click)="onActivateCommandClicked(Commands.turnOnFuelPump)">Fuel pump</button>
+          <button type="button" class="btn btn-outline-primary" [disabled]="!port" (click)="onActivateCommandClicked(Commands.activateBoostControlSolenoid)">Boost control solenoid</button>
+          <button type="button" class="btn btn-outline-primary" [disabled]="!port" (click)="onActivateCommandClicked(Commands.mivecMotor)">MIVEC/VICS motor</button>
+          <button type="button" class="btn btn-outline-primary" [disabled]="!port" (click)="onActivateCommandClicked(Commands.activateEgrSolenoid)">EGR solenoid</button>
+          <button type="button" class="btn btn-outline-primary" [disabled]="!port" (click)="onActivateCommandClicked(Commands.activateFuelPressureSolenoid)">Fuel pressure solenoid</button>
+          <button type="button" class="btn btn-outline-primary" [disabled]="!port" (click)="onActivateCommandClicked(Commands.activatePurgeSolenoid)">Purge solenoid</button>
+          <button type="button" class="btn btn-outline-primary" [disabled]="!port" (click)="onActivateCommandClicked(Commands.turnOnFuelPump)">Fuel pump</button>
         </div>
       </div>
     </div>
@@ -73,12 +71,12 @@
       </div>
       <div class="col-auto">
         <div class="btn-group btn-group-sm" role="group" aria-label="Basic outlined example" id="injectors">
-          <button type="button" class="btn btn-outline-primary" (click)="onActivateCommandClicked(Commands.disableInjector1)">1</button>
-          <button type="button" class="btn btn-outline-primary" (click)="onActivateCommandClicked(Commands.disableInjector2)">2</button>
-          <button type="button" class="btn btn-outline-primary" (click)="onActivateCommandClicked(Commands.disableInjector3)">3</button>
-          <button type="button" class="btn btn-outline-primary" (click)="onActivateCommandClicked(Commands.disableInjector4)">4</button>
-          <button type="button" class="btn btn-outline-primary" (click)="onActivateCommandClicked(Commands.disableInjector5)">5</button>
-          <button type="button" class="btn btn-outline-primary" (click)="onActivateCommandClicked(Commands.disableInjector6)">6</button>
+          <button type="button" class="btn btn-outline-primary" [disabled]="!port" (click)="onActivateCommandClicked(Commands.disableInjector1)">1</button>
+          <button type="button" class="btn btn-outline-primary" [disabled]="!port" (click)="onActivateCommandClicked(Commands.disableInjector2)">2</button>
+          <button type="button" class="btn btn-outline-primary" [disabled]="!port" (click)="onActivateCommandClicked(Commands.disableInjector3)">3</button>
+          <button type="button" class="btn btn-outline-primary" [disabled]="!port" (click)="onActivateCommandClicked(Commands.disableInjector4)">4</button>
+          <button type="button" class="btn btn-outline-primary" [disabled]="!port" (click)="onActivateCommandClicked(Commands.disableInjector5)">5</button>
+          <button type="button" class="btn btn-outline-primary" [disabled]="!port" (click)="onActivateCommandClicked(Commands.disableInjector6)">6</button>
         </div>
       </div>
     </div>
