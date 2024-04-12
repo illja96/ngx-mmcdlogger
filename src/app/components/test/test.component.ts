@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Log } from '../../models/log';
 import { TestFaultComponent } from '../test-fault/test-fault.component';
-import { Queries } from '../../models/queries/queries';
 import { Command } from '../../models/commands/command';
 import { Commands } from '../../models/commands/commands';
 import { SerialPortProviderService } from '../../services/serial-port-provider.service';
@@ -28,9 +27,7 @@ export class TestComponent {
   public onReadAllFaultsClicked(): void {
     if (this.port === undefined) return;
 
-    this.port.request(Queries.battRaw.address)
-      .then(_ => console.log(_))
-      .catch(_ => console.log(_));
+    // TODO: Implement
   }
 
   public onActivateCommandClicked(command: Command): void {
