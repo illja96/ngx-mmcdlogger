@@ -1,0 +1,40 @@
+<li class="list-group-item d-flex justify-content-between align-items-center">
+  <div tooltip="{{description}}" placement="bottom">
+    <strong>
+      {{query.displayName}}
+    </strong>
+    <small>
+      <i class="bi bi-question-circle"></i>
+    </small>
+  </div>
+
+
+  <div *ngIf="query.type === QueryType.number">
+    <span>?</span>
+
+    <span *ngIf="query.units === QueryUnit.percent">%</span>
+    <span *ngIf="query.units === QueryUnit.degree">°</span>
+    <span *ngIf="query.units === QueryUnit.volt"> V</span>
+    <span *ngIf="query.units === QueryUnit.step"> step(s)</span>
+    <span *ngIf="query.units === QueryUnit.hertz"> Hz</span>
+    <span *ngIf="query.units === QueryUnit.rpm"> RPM</span>
+    <span *ngIf="query.units === QueryUnit.ms"> ms</span>
+
+    <span *ngIf="query.units === QueryUnit.bar"> bar</span>
+    <span *ngIf="query.units === QueryUnit.psi"> psi</span>
+    <span *ngIf="query.units === QueryUnit.kPa"> kPa</span>
+
+    <span *ngIf="query.units === QueryUnit.celsius"> °C</span>
+    <span *ngIf="query.units === QueryUnit.kelvin"> K</span>
+    <span *ngIf="query.units === QueryUnit.fahrenheit"> °F</span>
+  </div>
+  <div *ngIf="query.type === QueryType.flags">
+    <span>?</span>
+  </div>
+
+  <div>
+    <div class="form-check form-switch">
+      <input type="checkbox" id="{{query.propertyName}}" class="form-check-input">
+    </div>
+  </div>
+</li>

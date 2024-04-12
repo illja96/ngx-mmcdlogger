@@ -1,7 +1,9 @@
 export enum QueryUnit {
-  number,
   flags,
+
+  number,  
   percent,
+  degree,
   volt,
   step,
   hertz,
