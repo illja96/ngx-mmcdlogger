@@ -4,9 +4,7 @@ import { SerialPortWrapper } from '../models/serial-port-wrapper';
 
 @Injectable({ providedIn: 'root' })
 export class SerialPortProviderService {
-  public get port(): Observable<SerialPortWrapper | undefined> {
-    return this.portSubject.asObservable();
-  }
+  public get port(): Observable<SerialPortWrapper | undefined> { return this.portSubject.asObservable(); }
 
   private portSubject: BehaviorSubject<SerialPortWrapper | undefined> = new BehaviorSubject<SerialPortWrapper | undefined>(undefined);
 

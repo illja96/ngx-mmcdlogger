@@ -18,9 +18,7 @@ export class TestComponent {
   public log: Log | undefined;
   public port: SerialPortWrapper | undefined;
 
-  public get Commands() {
-    return Commands;
-  }
+  public get Commands() { return Commands; }
 
   constructor(private readonly serialPortProviderService: SerialPortProviderService) {
     this.serialPortProviderService.port
