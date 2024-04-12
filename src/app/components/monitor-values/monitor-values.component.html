@@ -6,94 +6,50 @@
     </h3>
   </div>
 
-  <div class="card-body">
+  <div class="card-body pb-0">
     <div class="row">
-      <div class="col-12 col-md-6 col-lg-4">
-        <ul class="list-group">
-          <app-monitor-value i18n-description [query]="Queries.timingAdv" description="Timing advance"></app-monitor-value>          
-          <app-monitor-value i18n-description [query]="Queries.battRaw" description="Battery voltage"></app-monitor-value>
-          <app-monitor-value i18n-description [query]="Queries.baroRaw" description="Atmospheric pressure"></app-monitor-value>
-          <app-monitor-value i18n-description [query]="Queries.tpsRaw" description="Throttle position"></app-monitor-value>
-          <app-monitor-value i18n-description [query]="Queries.mafRaw" description="Mass airflow sensor pulse frequency"></app-monitor-value>
-          <app-monitor-value i18n-description [query]="Queries.airVol" description="Air volume"></app-monitor-value>
-          <app-monitor-value i18n-description [query]="Queries.accEnr" description="Acceleration enrichment"></app-monitor-value>
-          <app-monitor-value i18n-description [query]="Queries.idleSpdTarg" description="Current target idle speed"></app-monitor-value>
-          <app-monitor-value i18n-description [query]="Queries.knockSum" description="Current knock sum"></app-monitor-value>
-          <app-monitor-value i18n-description [query]="Queries.enerLen" description="Coil energization time"></app-monitor-value>
-        </ul>
-      </div>      
+      <app-monitor-value i18n-description [query]="Queries.timingAdv" description="Timing advance" class="mb-3 col-12 col-md-6 col-lg-4"></app-monitor-value>
+      <app-monitor-value i18n-description [query]="Queries.battRaw" description="Battery voltage" class="mb-3 col-12 col-md-6 col-lg-4"></app-monitor-value>
+      <app-monitor-value i18n-description [query]="Queries.baroRaw" description="Atmospheric pressure" class="mb-3 col-12 col-md-6 col-lg-4"></app-monitor-value>
+      <app-monitor-value i18n-description [query]="Queries.tpsRaw" description="Throttle position" class="mb-3 col-12 col-md-6 col-lg-4"></app-monitor-value>
+      <app-monitor-value i18n-description [query]="Queries.mafRaw" description="Mass airflow sensor pulse frequency" class="mb-3 col-12 col-md-6 col-lg-4"></app-monitor-value>
+      <app-monitor-value i18n-description [query]="Queries.airVol" description="Air volume" class="mb-3 col-12 col-md-6 col-lg-4"></app-monitor-value>
+      <app-monitor-value i18n-description [query]="Queries.accEnr" description="Acceleration enrichment" class="mb-3 col-12 col-md-6 col-lg-4"></app-monitor-value>
+      <app-monitor-value i18n-description [query]="Queries.idleSpdTarg" description="Current target idle speed" class="mb-3 col-12 col-md-6 col-lg-4"></app-monitor-value>
+      <app-monitor-value i18n-description [query]="Queries.knockSum" description="Current knock sum" class="mb-3 col-12 col-md-6 col-lg-4"></app-monitor-value>
+      <app-monitor-value i18n-description [query]="Queries.enerLen" description="Coil energization time" class="mb-3 col-12 col-md-6 col-lg-4"></app-monitor-value>
 
-      <div class="col-12 col-md-6 col-lg-4">
-        <ul class="list-group">
-          <app-monitor-value i18n-description [query]="Queries.ectRaw" description="Engine coolant temperature (raw)"></app-monitor-value>
-          <app-monitor-value i18n-description [query]="Queries.ectFiltered" description="Engine coolant temperature (filtered)"></app-monitor-value>
-        </ul>
-      </div>
+      <app-monitor-value i18n-description [query]="Queries.ectRaw" description="Engine coolant temperature (raw)" class="mb-3 col-12 col-md-6 col-lg-4"></app-monitor-value>
+      <app-monitor-value i18n-description [query]="Queries.ectFiltered" description="Engine coolant temperature (filtered)" class="mb-3 col-12 col-md-6 col-lg-4"></app-monitor-value>
 
-      <div class="col-12 col-md-6 col-lg-4">
-        <ul class="list-group">
-          <app-monitor-value i18n-description [query]="Queries.iatRaw" description="Intake air temperature (raw)"></app-monitor-value>
-          <app-monitor-value i18n-description [query]="Queries.iatChecked" description="Intake air temperature (checked)"></app-monitor-value>          
-        </ul>
-      </div>
+      <app-monitor-value i18n-description [query]="Queries.iatRaw" description="Intake air temperature (raw)" class="mb-3 col-12 col-md-6 col-lg-4"></app-monitor-value>
+      <app-monitor-value i18n-description [query]="Queries.iatChecked" description="Intake air temperature (checked)" class="mb-3 col-12 col-md-6 col-lg-4"></app-monitor-value>
 
-      <div class="col-12 col-md-6 col-lg-4">
-        <ul class="list-group">
-          <app-monitor-value i18n-description [query]="Queries.egrtRaw" description="Exhaust gas recirculation temperature"></app-monitor-value>
-          <app-monitor-value i18n-description [query]="Queries.egrtBadCnt" description="Exhaust gas recirculation temperature bad counter"></app-monitor-value>
-        </ul>
-      </div>
+      <app-monitor-value i18n-description [query]="Queries.egrtRaw" description="Exhaust gas recirculation temperature" class="mb-3 col-12 col-md-6 col-lg-4"></app-monitor-value>
+      <app-monitor-value i18n-description [query]="Queries.egrtBadCnt" description="Exhaust gas recirculation temperature bad counter" class="mb-3 col-12 col-md-6 col-lg-4"></app-monitor-value>
 
-      <div class="col-12 col-md-6 col-lg-4">
-        <ul class="list-group">
-          <app-monitor-value i18n-description [query]="Queries.iscStepCurr" description="Current ISC step"></app-monitor-value>
-          <app-monitor-value i18n-description [query]="Queries.iscStepTarg" description="Target ISC step"></app-monitor-value>
-        </ul>
-      </div>
+      <app-monitor-value i18n-description [query]="Queries.iscStepCurr" description="Current ISC step" class="mb-3 col-12 col-md-6 col-lg-4"></app-monitor-value>
+      <app-monitor-value i18n-description [query]="Queries.iscStepTarg" description="Target ISC step" class="mb-3 col-12 col-md-6 col-lg-4"></app-monitor-value>
 
-      <div class="col-12 col-md-6 col-lg-4">
-        <ul class="list-group">
-          <app-monitor-value i18n-description [query]="Queries.ftrim_low" description="Fuel trim (low)"></app-monitor-value>
-          <app-monitor-value i18n-description [query]="Queries.ftrim_mid" description="Fuel trim (middle)"></app-monitor-value>
-          <app-monitor-value i18n-description [query]="Queries.ftrim_hi" description="Fuel trim (high)"></app-monitor-value>
-        </ul>
-      </div>
+      <app-monitor-value i18n-description [query]="Queries.ftrim_low" description="Fuel trim (low)" class="mb-3 col-12 col-md-6 col-lg-4"></app-monitor-value>
+      <app-monitor-value i18n-description [query]="Queries.ftrim_mid" description="Fuel trim (middle)" class="mb-3 col-12 col-md-6 col-lg-4"></app-monitor-value>
+      <app-monitor-value i18n-description [query]="Queries.ftrim_hi" description="Fuel trim (high)" class="mb-3 col-12 col-md-6 col-lg-4"></app-monitor-value>
 
-      <div class="col-12 col-md-6 col-lg-4">
-        <ul class="list-group">
-          <app-monitor-value i18n-description [query]="Queries.o2Raw" description="Oxygen sensor"></app-monitor-value>
-          <app-monitor-value i18n-description [query]="Queries.o2Fbk" description="Oxygen feedback trim"></app-monitor-value>
-          <app-monitor-value i18n-description [query]="Queries.o2BadCnt" description="Oxygen sensor bad counter"></app-monitor-value>
-        </ul>
-      </div>
+      <app-monitor-value i18n-description [query]="Queries.o2Raw" description="Oxygen sensor" class="mb-3 col-12 col-md-6 col-lg-4"></app-monitor-value>
+      <app-monitor-value i18n-description [query]="Queries.o2Fbk" description="Oxygen feedback trim" class="mb-3 col-12 col-md-6 col-lg-4"></app-monitor-value>
+      <app-monitor-value i18n-description [query]="Queries.o2BadCnt" description="Oxygen sensor bad counter" class="mb-3 col-12 col-md-6 col-lg-4"></app-monitor-value>
 
-      <div class="col-12 col-md-6 col-lg-4">
-        <ul class="list-group">
-          <app-monitor-value i18n-description [query]="Queries.rpm8" description="RPM (8)"></app-monitor-value>
-          <app-monitor-value i18n-description [query]="Queries.rpm31" description="RPM (31)"></app-monitor-value>
-        </ul>
-      </div>
+      <app-monitor-value i18n-description [query]="Queries.rpm8" description="RPM (8)" class="mb-3 col-12 col-md-6 col-lg-4"></app-monitor-value>
+      <app-monitor-value i18n-description [query]="Queries.rpm31" description="RPM (31)" class="mb-3 col-12 col-md-6 col-lg-4"></app-monitor-value>
 
-      <div class="col-12 col-md-6 col-lg-4">
-        <ul class="list-group">
-          <app-monitor-value i18n-description [query]="Queries.injPw" description="Injector pulse width"></app-monitor-value>
-          <app-monitor-value i18n-description [query]="Queries.injPw1" description="Injector pulse width (+1)"></app-monitor-value>
-        </ul>
-      </div>
+      <app-monitor-value i18n-description [query]="Queries.injPw" description="Injector pulse width" class="mb-3 col-12 col-md-6 col-lg-4"></app-monitor-value>
+      <app-monitor-value i18n-description [query]="Queries.injPw1" description="Injector pulse width (+1)" class="mb-3 col-12 col-md-6 col-lg-4"></app-monitor-value>
 
-      <div class="col-12 col-md-6 col-lg-4">
-        <ul class="list-group">
-          <app-monitor-value i18n-description [query]="Queries.airCnt0" description="Air count (0)"></app-monitor-value>
-          <app-monitor-value i18n-description [query]="Queries.airCnt1" description="Air count (1)"></app-monitor-value>
-        </ul>
-      </div>
+      <app-monitor-value i18n-description [query]="Queries.airCnt0" description="Air count (0)" class="mb-3 col-12 col-md-6 col-lg-4"></app-monitor-value>
+      <app-monitor-value i18n-description [query]="Queries.airCnt1" description="Air count (1)" class="mb-3 col-12 col-md-6 col-lg-4"></app-monitor-value>
 
-      <div class="col-12 col-md-6 col-lg-4">
-        <ul class="list-group">
-          <app-monitor-value i18n-description [query]="Queries.injFactor" description="Global injector factor"></app-monitor-value>
-          <app-monitor-value i18n-description [query]="Queries.injFactor1" description="Global injector factor (+1)"></app-monitor-value>
-        </ul>
-      </div>
+      <app-monitor-value i18n-description [query]="Queries.injFactor" description="Global injector factor" class="mb-3 col-12 col-md-6 col-lg-4"></app-monitor-value>
+      <app-monitor-value i18n-description [query]="Queries.injFactor1" description="Global injector factor (+1)" class="mb-3 col-12 col-md-6 col-lg-4"></app-monitor-value>
     </div>
   </div>
 </div>

@@ -9,3 +9,7 @@ a.nav-link>i.bi {
 button>i.bi {
     margin-right: 0.25em;
 }
+
+button>div.spinner-border {
+    margin-right: 0.25em;
+}
