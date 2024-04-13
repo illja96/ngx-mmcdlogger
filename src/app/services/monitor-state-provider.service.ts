@@ -7,8 +7,8 @@ export class MonitorStateProvider {
   public get queryState(): Observable<Query[]> { return this.queryStateSubject.asObservable(); }
   public get chartState(): Observable<Query[]> { return this.chartStateSubject.asObservable(); }
 
-  private queryStateSubject: BehaviorSubject<Query[]> = new BehaviorSubject<Query[]>([]);
-  private chartStateSubject: BehaviorSubject<Query[]> = new BehaviorSubject<Query[]>([]);
+  private queryStateSubject = new BehaviorSubject<Query[]>([]);
+  private chartStateSubject = new BehaviorSubject<Query[]>([]);
 
   constructor() {
     const queryStateJson = localStorage.getItem("queryStateJson");

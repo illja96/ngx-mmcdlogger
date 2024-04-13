@@ -6,7 +6,7 @@ import { SerialPortWrapper } from '../models/serial-port-wrapper';
 export class SerialPortProviderService {
   public get port(): Observable<SerialPortWrapper | undefined> { return this.portSubject.asObservable(); }
 
-  private portSubject: BehaviorSubject<SerialPortWrapper | undefined> = new BehaviorSubject<SerialPortWrapper | undefined>(undefined);
+  private portSubject = new BehaviorSubject<SerialPortWrapper | undefined>(undefined);
 
   public async select(): Promise<void> {
     const serialPort = await navigator.serial.requestPort();
