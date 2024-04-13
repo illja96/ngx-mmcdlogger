@@ -5,6 +5,7 @@ import { Command } from '../../models/commands/command';
 import { Commands } from '../../models/commands/commands';
 import { SerialPortProviderService } from '../../services/serial-port-provider.service';
 import { SerialPortWrapper } from '../../models/serial-port-wrapper';
+import { GlobalAlertService } from '../../services/global-alert.service';
 
 @Component({
   selector: 'app-test',
@@ -19,22 +20,27 @@ export class TestComponent {
 
   public get Commands() { return Commands; }
 
-  constructor(private readonly serialPortProviderService: SerialPortProviderService) {
+  constructor(
+    private readonly serialPortProviderService: SerialPortProviderService,
+    private readonly globalAlertService: GlobalAlertService) {
     this.serialPortProviderService.port
       .subscribe(port => this.port = port);
   }
 
   public onReadAllFaultsClicked(): void {
-    if (this.port === undefined) return;
+    this.globalAlertService.display({ type: "info", title: "test", text: "test", dismissible: true });
 
     // TODO: Implement
   }
 
-  public onActivateCommandClicked(command: Command): void {
-    if (this.port === undefined) return;
-
-    this.port.request(command.address)
-      .then(_ => console.log(_))
-      .catch(_ => console.log(_));
+  public async onActivateCommandClicked(command: Command): Promise<void> {
+    await this.port?.request(command.address).then(
+      result => {
+        if (command.expectedResults.findIndex(__ => __ === result) === -1)
+          this.globalAlertService.display({ type: "warning", title: "Command failed", text: "Command didn't meet expected result", dismissible: true, timeout: 10000 });
+        else
+          this.globalAlertService.display({ type: "success", title: "Command executed", dismissible: true, timeout: 10000 });
+      },
+      error => this.globalAlertService.display({ type: "danger", title: "Command failed", text: error.message, dismissible: true, timeout: 10000 }));
   }
 }

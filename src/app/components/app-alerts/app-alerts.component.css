@@ -1,0 +1,7 @@
+div[role=alert] {
+    position: relative;
+    top: 0;
+    right: 0;
+    min-width: 10%;
+    margin: 3rem;
+}

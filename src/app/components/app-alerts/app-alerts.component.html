@@ -1,1 +1,6 @@
-<p>app-alerts works!</p>
+<div class="position-fixed top-0 end-0">
+  <alert *ngFor="let alert of alerts" [type]="alert.type" [dismissible]="alert.dismissible" [dismissOnTimeout]="alert.timeout">
+    <strong *ngIf="alert.title">{{alert.title}}</strong>
+    <p *ngIf="alert.text">{{alert.text}}</p>
+  </alert>
+</div>

@@ -9,41 +9,54 @@ export class SerialPortWrapper {
   constructor(private readonly serialPort: SerialPort) { }
 
   public async request(uint8: number): Promise<number> {
-    if (this.serialPort.writable === null && this.serialPort.readable === null) await this.serialPort.open(this.options);
+    let writer: WritableStreamDefaultWriter<Uint8Array> | undefined;
+    let reader: ReadableStreamDefaultReader<Uint8Array> | undefined;
 
-    let writer: WritableStreamDefaultWriter<Uint8Array> = this.serialPort.writable.getWriter();
-    let reader: ReadableStreamDefaultReader<Uint8Array> = this.serialPort.readable.getReader();
+    try {
+      if (this.serialPort.writable === null && this.serialPort.readable === null) await this.serialPort.open(this.options);
+    } catch {
+      throw new Error("Failed to open serial port");
+    }
+
+    try {
+      writer = this.serialPort.writable.getWriter();
+    } catch {
+      writer?.releaseLock();
+      throw new Error("Failed to open serial port writer");
+    }
+
+    try {
+      reader = this.serialPort.readable.getReader();
+    } catch {
+      reader?.releaseLock();
+      throw new Error("Failed to open serial port reader");
+    }
 
     try {
       const writeDate = Date.now();
       const writeData = new Uint8Array([uint8]);
       await Promise.race([
-        new Promise<ReadableStreamReadResult<Uint8Array>>(e => setTimeout(() => { throw "Serial port write timeout"; })),
-        writer.write(writeData)
+        writer.write(writeData),
+        new Promise((resolve, reject) => setTimeout(() => { reject(new Error("Serial port write timeout")); }, 1000))
       ]);
 
       while (Date.now() - writeDate < 10000) {
         const readData = await Promise.race([
-          new Promise<ReadableStreamReadResult<Uint8Array>>(e => setTimeout(() => { throw "Serial port initial read timeout"; })),
-          reader.read()
+          reader.read(),
+          new Promise<ReadableStreamReadResult<Uint8Array>>((resolve, reject) => setTimeout(() => { reject(new Error("Serial port initial read timeout")); }, 10000))
         ]);
 
         if (readData.value?.length != 2) continue;
-        if (writeData[0] != readData.value[0]) {
-          throw "Serial data are inconsistent";
-        }
+        if (writeData[0] != readData.value[0]) throw new Error("Serial data are inconsistent");
 
         return readData.value[1];
       }
 
-      throw "Serial data sequential read timeout";
-    } finally {
-      await writer.abort();
-      await writer.close();
-      writer.releaseLock();
-
-      await reader.cancel();
-      reader.releaseLock();
+      throw new Error("Serial data sequential read timeout");
+    }
+    finally {
+      writer?.releaseLock();
+      reader?.releaseLock();
     }
   }
 
