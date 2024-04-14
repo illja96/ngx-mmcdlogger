@@ -1,7 +1,23 @@
+<div class="d-flex btn-group" role="group" aria-label="Monitor action buttons">
+  <button type="button" class="btn btn-outline-success">
+    <small>
+      <i class="bi bi-play-circle"></i>
+    </small>    
+    Start
+  </button>
+  <button type="button" class="btn btn-outline-danger">
+    <small>
+      <i class="bi bi-stop-circle"></i>
+    </small>    
+    Stop
+  </button>
+</div>
+<hr>
+
 <app-monitor-chart></app-monitor-chart>
 
-<app-monitor-values [port]="port"></app-monitor-values>
+<app-monitor-values [port]="port" [log]="log"></app-monitor-values>
 
-<app-monitor-internal-values [port]="port"></app-monitor-internal-values>
+<app-monitor-internal-values [port]="port" [log]="log"></app-monitor-internal-values>
 
-<app-monitor-flags [port]="port"></app-monitor-flags>
+<app-monitor-flags [port]="port" [log]="log"></app-monitor-flags>

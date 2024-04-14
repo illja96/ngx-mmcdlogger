@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
-import { Log } from '../../models/log';
+import { QueryLog } from '../../models/queries/query-log';
 import { TestFaultComponent } from '../test-fault/test-fault.component';
 import { Command } from '../../models/commands/command';
 import { Commands } from '../../models/commands/commands';
 import { SerialPortProviderService } from '../../services/serial-port-provider.service';
 import { SerialPortWrapper } from '../../models/serial-port-wrapper';
 import { GlobalAlertService } from '../../services/global-alert.service';
+import { SerialPortQueryLogService } from '../../services/serial-port-query-log.service';
 
 @Component({
   selector: 'app-test',
@@ -15,20 +16,21 @@ import { GlobalAlertService } from '../../services/global-alert.service';
   styleUrl: './test.component.css'
 })
 export class TestComponent {
-  public log: Log | undefined;
   public port: SerialPortWrapper | undefined;
+  public log: QueryLog | undefined;
 
   public get Commands() { return Commands; }
 
   constructor(
     private readonly serialPortProviderService: SerialPortProviderService,
+    private readonly serialPortQueryLogService: SerialPortQueryLogService,
     private readonly globalAlertService: GlobalAlertService) {
-    this.serialPortProviderService.port
-      .subscribe(port => this.port = port);
+    this.serialPortProviderService.port.subscribe(port => this.port = port);
+    this.serialPortQueryLogService.log.subscribe(log => this.log = log);
   }
 
   public onReadAllFaultsClicked(): void {
-    this.globalAlertService.display({ type: "info", title: "test", text: "test", dismissible: true });
+    this.globalAlertService.display({ type: "info", title: "test", text: "test", dismissible: true, timeout: 10000 });
 
     // TODO: Implement
   }

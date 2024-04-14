@@ -6,7 +6,7 @@ import { Observable, Subject } from 'rxjs';
 export class GlobalAlertService {
   public get alert(): Observable<GlobalAlertInfo> { return this.alertSubject.asObservable(); }
 
-  private alertSubject: Subject<GlobalAlertInfo> = new Subject<GlobalAlertInfo>();
+  private readonly alertSubject: Subject<GlobalAlertInfo> = new Subject<GlobalAlertInfo>();
 
   public display(info: GlobalAlertInfo): void {
     this.alertSubject.next(info);

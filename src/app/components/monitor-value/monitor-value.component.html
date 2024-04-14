@@ -10,10 +10,11 @@
 
   <div>
     <div *ngIf="query.type === QueryType.number">
-      <span>---</span>
+      <span *ngIf="log === undefined || log[query.propertyName] === undefined">---</span>
+      <span *ngIf="log !== undefined && log[query.propertyName] !== undefined">{{log[query.propertyName]}}</span>
 
       <span *ngIf="query.units === QueryUnit.percent"> %</span>
-      <span *ngIf="query.units === QueryUnit.degree">°</span>
+      <span *ngIf="query.units === QueryUnit.degree"> °</span>
       <span *ngIf="query.units === QueryUnit.volt"> V</span>
       <span *ngIf="query.units === QueryUnit.step"> step(s)</span>
       <span *ngIf="query.units === QueryUnit.hertz"> Hz</span>
@@ -30,7 +31,8 @@
     </div>
 
     <div *ngIf="query.type === QueryType.flags">
-      <span>--------</span>
+      <span *ngIf="log === undefined || log[query.propertyName] === undefined">--------</span>
+      <span *ngIf="log !== undefined && log[query.propertyName] !== undefined">{{log[query.propertyName] | numberTo8BitArray}}</span>
     </div>
   </div>
 

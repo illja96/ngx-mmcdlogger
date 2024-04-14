@@ -1,6 +1,9 @@
-export interface Log {
-  date: Date;
+export interface QueryLog {
+  date: number;
 
+  [key: string]: number;
+
+  /*
   port1?: number;
   port2?: number;
   port3?: number;
@@ -68,4 +71,5 @@ export interface Log {
   ftrim_low_0x3D?: number;
 
   ecuVersion?: number;
+  */
 }

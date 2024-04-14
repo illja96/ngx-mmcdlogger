@@ -8,18 +8,18 @@
 
   <div class="card-body pb-0">
     <div class="row">
-      <app-monitor-value i18n-description [port]="port" [query]="Queries.faultHi" description="Faults (high byte)" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
-      <app-monitor-value i18n-description [port]="port" [query]="Queries.faultLo" description="Faults (low byte)" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.faultHi" description="Faults (high byte)" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.faultLo" description="Faults (low byte)" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
 
-      <app-monitor-value i18n-description [port]="port" [query]="Queries.stFaultHi" description="Stored faults (high byte)" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
-      <app-monitor-value i18n-description [port]="port" [query]="Queries.stFaultLo" description="Stored faults (low byte)" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.stFaultHi" description="Stored faults (high byte)" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.stFaultLo" description="Stored faults (low byte)" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
 
-      <app-monitor-value i18n-description [port]="port" [query]="Queries.iscLrnFlags" description="ISC learning flags" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
-      <app-monitor-value i18n-description [port]="port" [query]="Queries.iscFlags0" description="ISC flags" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.iscLrnFlags" description="ISC learning flags" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.iscFlags0" description="ISC flags" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
 
-      <app-monitor-value i18n-description [port]="port" [query]="Queries.ftrimFlags" description="Fuel trim flags" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
-      <app-monitor-value i18n-description [port]="port" [query]="Queries.closedLpFlags" description="Closed loop mode flags" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
-      <app-monitor-value i18n-description [port]="port" [query]="Queries.state1" description="Engine start-up stages and running condition state flags" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.ftrimFlags" description="Fuel trim flags" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.closedLpFlags" description="Closed loop mode flags" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.state1" description="Engine start-up stages and running condition state flags" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
     </div>
   </div>
 </div>

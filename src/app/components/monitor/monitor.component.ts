@@ -5,6 +5,8 @@ import { MonitorFlagsComponent } from '../monitor-flags/monitor-flags.component'
 import { MonitorInternalValuesComponent } from '../monitor-internal-values/monitor-internal-values.component';
 import { SerialPortWrapper } from '../../models/serial-port-wrapper';
 import { SerialPortProviderService } from '../../services/serial-port-provider.service';
+import { SerialPortQueryLogService } from '../../services/serial-port-query-log.service';
+import { QueryLog } from '../../models/queries/query-log';
 
 @Component({
   selector: 'app-monitor',
@@ -15,8 +17,12 @@ import { SerialPortProviderService } from '../../services/serial-port-provider.s
 })
 export class MonitorComponent {
   public port: SerialPortWrapper | undefined = undefined;
+  public log: QueryLog | undefined = undefined;
 
-  constructor(private readonly serialPortProviderService: SerialPortProviderService) {
+  constructor(
+    private readonly serialPortProviderService: SerialPortProviderService,
+    private readonly serialPortQueryLogService: SerialPortQueryLogService) {
     this.serialPortProviderService.port.subscribe(port => this.port = port);
+    this.serialPortQueryLogService.log.subscribe(log => this.log = log);
   }
 }

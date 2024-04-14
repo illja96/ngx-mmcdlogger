@@ -3,12 +3,12 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { Query } from '../models/queries/query';
 
 @Injectable({ providedIn: 'root' })
-export class MonitorStateProvider {
+export class MonitorStateProviderService {
   public get queryState(): Observable<Query[]> { return this.queryStateSubject.asObservable(); }
   public get chartState(): Observable<Query[]> { return this.chartStateSubject.asObservable(); }
 
-  private queryStateSubject = new BehaviorSubject<Query[]>([]);
-  private chartStateSubject = new BehaviorSubject<Query[]>([]);
+  private readonly queryStateSubject = new BehaviorSubject<Query[]>([]);
+  private readonly chartStateSubject = new BehaviorSubject<Query[]>([]);
 
   constructor() {
     const queryStateJson = localStorage.getItem("queryStateJson");

@@ -6,19 +6,21 @@ import { QueryUnit } from '../../models/queries/query-unit';
 import { QueryType } from '../../models/queries/query-type';
 import { SerialPortWrapper } from '../../models/serial-port-wrapper';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { MonitorStateProvider } from '../../services/monitor-state-provider.service';
+import { MonitorStateProviderService } from '../../services/monitor-state-provider.service';
 import { filter, first } from 'rxjs';
+import { QueryLog } from '../../models/queries/query-log';
+import { NumberTo8BitArrayPipe } from '../../services/number-to-8bit-array.pipe';
 
 @Component({
   selector: 'app-monitor-value',
   standalone: true,
-  imports: [CommonModule, TooltipModule, ReactiveFormsModule],
+  imports: [CommonModule, TooltipModule, ReactiveFormsModule, NumberTo8BitArrayPipe],
   templateUrl: './monitor-value.component.html',
   styleUrl: './monitor-value.component.css'
 })
 export class MonitorValueComponent implements OnInit, OnChanges {
   @Input() public port!: SerialPortWrapper | undefined;
-
+  @Input() public log!: QueryLog | undefined;
   @Input() public query!: Query;
   @Input() public description!: string;
 
@@ -30,7 +32,7 @@ export class MonitorValueComponent implements OnInit, OnChanges {
     chart: new FormControl(false),
   });
 
-  constructor(private readonly monitorStateProvider: MonitorStateProvider) {
+  constructor(private readonly monitorStateProvider: MonitorStateProviderService) {
     this.form.valueChanges
       .subscribe(_ => {
         _.query ? this.monitorStateProvider.addToQuery(this.query) : this.monitorStateProvider.removeFromQuery(this.query);
