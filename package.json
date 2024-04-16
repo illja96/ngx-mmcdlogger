@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build-github-pages": "ng build --configuration production --base-href https://illja96.github.io/mmcdlogger/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:mmcdlogger": "node dist/mmcdlogger/server/server.mjs"
