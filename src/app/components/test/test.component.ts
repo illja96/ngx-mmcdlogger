@@ -19,8 +19,8 @@ import { Queries } from '../../models/queries/queries';
 export class TestComponent {
   public port: SerialPortWrapper | undefined;
   public log: QueryLog | undefined;
-  public faults: string | undefined;
-  public storedFaults: string | undefined;
+  public faults: boolean[] | undefined;
+  public storedFaults: boolean[] | undefined;
 
   public get Commands() { return Commands; }
 
@@ -35,15 +35,14 @@ export class TestComponent {
   public async onReadAllFaultsClicked(): Promise<void> {
     const queries = [Queries.faultHi, Queries.faultLo, Queries.stFaultHi, Queries.stFaultLo];
 
-    const queryResponses = [];
-    for (let i = 0; i < queries.length; i++) {
-      queryResponses[i] = await this.port?.request(queries[i].address);
-    }
-
-    this.faults = this.parseFaultsToBitArray(queryResponses[0]!, queryResponses[1]!);
-    this.storedFaults = this.parseFaultsToBitArray(queryResponses[2]!, queryResponses[3]!);
-
-    this.globalAlertService.display({ type: "info", title: "test", text: "test", dismissible: true, timeout: 10000 });
+    this.serialPortQueryLogService.startSingle(queries)
+      .subscribe({
+        next: queryResponses => {
+          this.faults = this.parseFaultsToBitArray(queryResponses[0]!, queryResponses[1]!);
+          this.storedFaults = this.parseFaultsToBitArray(queryResponses[2]!, queryResponses[3]!);
+        },
+        error: error => this.globalAlertService.display({ type: "danger", title: "Command failed", text: error.message, dismissible: true, timeout: 10000 }),
+      });
   }
 
   public async onActivateCommandClicked(command: Command): Promise<void> {
@@ -57,13 +56,9 @@ export class TestComponent {
       error => this.globalAlertService.display({ type: "danger", title: "Command failed", text: error.message, dismissible: true, timeout: 10000 }));
   }
 
-  private parseFaultsToBitArray(hiBit: number, lowBit: number): string {
-    const uint8Array = new Uint8Array([hiBit, lowBit,]);
+  private parseFaultsToBitArray(hiBit: number, lowBit: number): boolean[] {
+    const uint8Array = new Uint8Array([lowBit, hiBit]);
     const uint16Array = new Uint16Array(uint8Array.buffer);
-
-    const uint16BitArray = uint16Array[0].toString(2);
-    const valueRaw16BitArray = "0000000000000000" + uint16BitArray;
-    const value16BitArray = valueRaw16BitArray.substring(valueRaw16BitArray.length - 8, valueRaw16BitArray.length);
-    return value16BitArray;
+    return [...Array(16)].map((v, i) => (uint16Array[0] >> i & 1) === 1);
   }
 }

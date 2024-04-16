@@ -50,18 +50,16 @@ export class SerialPortQueryLogService {
     localStorage.setItem("queries", queriesJson);
   }
 
-  public async startSingle(queries: Query[]): Promise<number[]> {
+  public startSingle(queries: Query[]): Observable<number[]> {
     try {
       if (this.portBusy === true) throw new Error("Serial port busy");
       this.portBusy = true;
 
-      const queryResonsesObservable = of(queries)
+      return of(queries)
         .pipe(
           mergeMap(queries => queries, 1),
           switchMap(query => this.port!.request(query.address)),
           toArray());
-
-      return firstValueFrom(queryResonsesObservable);
     }
     finally {
       this.portBusy = false;

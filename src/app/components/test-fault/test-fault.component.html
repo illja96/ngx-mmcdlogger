@@ -4,11 +4,11 @@
   <span>{{description}}</span>
 
   <div>
-    <span *ngIf="isActiveFault == undefined || isStoredFault == undefined" class="badge text-bg-secondary rounded-pill"><i class="bi bi-question-lg"></i></span>
-    <div *ngIf="isActiveFault != undefined && isStoredFault != undefined">
-      <span *ngIf="!isActiveFault && !isStoredFault" class="badge text-bg-success rounded-pill"><i class="bi bi-check-lg"></i></span>
-      <span *ngIf="isStoredFault" class="badge text-bg-warning rounded-pill"><i class="bi bi-clock-history"></i></span>
-      <span *ngIf="isActiveFault" class="badge text-bg-danger rounded-pill"><i class="bi bi-fire"></i></span>
+    <span *ngIf="faults === undefined || storedFaults === undefined" class="badge text-bg-secondary rounded-pill"><i class="bi bi-question-lg"></i></span>
+    <div *ngIf="faults !== undefined && storedFaults !== undefined">
+      <span *ngIf="!faults[bit] && !storedFaults[bit]" class="badge text-bg-success rounded-pill"><i class="bi bi-check-lg"></i></span>
+      <span *ngIf="faults[bit]" class="badge text-bg-warning rounded-pill"><i class="bi bi-clock-history"></i></span>
+      <span *ngIf="storedFaults[bit]" class="badge text-bg-danger rounded-pill"><i class="bi bi-fire"></i></span>
     </div>
   </div>
 </div>

@@ -9,8 +9,10 @@ import { Component, Input } from '@angular/core';
   styleUrl: './test-fault.component.css'
 })
 export class TestFaultComponent {
+  @Input() public bit!: number;
   @Input() public code!: string;
-  @Input() public isStoredFault?: boolean;
-  @Input() public isActiveFault?: boolean;
   @Input() public description!: string;
+
+  @Input() public faults: boolean[] | undefined;
+  @Input() public storedFaults: boolean[] | undefined;
 }
