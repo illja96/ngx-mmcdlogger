@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, filter, from, mergeMap, of, switchMap, tap, zip } from 'rxjs';
+import { BehaviorSubject, Observable, firstValueFrom, from, mergeMap, of, switchMap, take, tap, toArray, zip } from 'rxjs';
 import { SerialPortWrapper } from '../models/serial-port-wrapper';
 import { SerialPortProviderService } from './serial-port-provider.service';
 import { QueryLog } from '../models/queries/query-log';
@@ -10,12 +10,15 @@ import { Query } from '../models/queries/query';
 export class SerialPortQueryLogService {
   public get queries(): Observable<Query[]> { return this.queriesSubject.asObservable(); }
   public get log(): Observable<QueryLog | undefined> { return this.logSubject.asObservable() };
+  public get logs(): Observable<QueryLog[]> { return this.logsSubject.asObservable() };
 
   private readonly queriesSubject = new BehaviorSubject<Query[]>([]);
   private readonly logSubject = new BehaviorSubject<QueryLog | undefined>(undefined);
+  private readonly logsSubject = new BehaviorSubject<QueryLog[]>([]);
 
   private port: SerialPortWrapper | undefined = undefined;
-  private isWorking: boolean = false;
+  private portBusy: boolean = false;
+  private portQueryAborted: boolean = false;
 
   constructor(
     private readonly serialPortProvider: SerialPortProviderService,
@@ -48,48 +51,54 @@ export class SerialPortQueryLogService {
   }
 
   public async startSingle(queries: Query[]): Promise<number[]> {
-    if (this.isWorking === true) throw new Error("Serial port busy");
-    this.isWorking = true;
+    try {
+      if (this.portBusy === true) throw new Error("Serial port busy");
+      this.portBusy = true;
 
-    for(let query of queries) {
-      const queryResults = await this.port?.request(query.address);
-    }
-
-    of(queries)
+      const queryResonsesObservable = of(queries)
         .pipe(
           mergeMap(queries => queries, 1),
-          filter(_ => this.port !== undefined && this.isWorking === true),
-          switchMap(query => zip(of(query), from(this.port!.request(query.address)))),
-          tap(zip => log[zip[0].propertyName] = zip[1]))
-        .subscribe({
-          next: () => this.logSubject.next(log),
-          error: error => this.globalAlertService.display({ type: "danger", title: "Command failed", text: error.message, dismissible: true, timeout: 10000 })
-        });
+          switchMap(query => this.port!.request(query.address)),
+          toArray());
+
+      return firstValueFrom(queryResonsesObservable);
+    }
+    finally {
+      this.portBusy = false;
+      this.portQueryAborted = false;
+    }
   }
 
   public startContinuous(): void {
-    if (this.isWorking === true) throw new Error("Serial port busy");
-    this.isWorking = true;
+    try {
+      if (this.portBusy === true) throw new Error("Serial port busy");
+      this.portBusy = true;
 
-    while (this.isWorking === true) {
-      const log: QueryLog = {
-        date: Date.now()
-      };
+      while (this.portQueryAborted === false) {
+        const log: QueryLog = {
+          date: Date.now()
+        };
 
-      this.queriesSubject
-        .pipe(
-          mergeMap(queries => queries, 1),
-          filter(_ => this.port !== undefined && this.isWorking === true),
-          switchMap(query => zip(of(query), from(this.port!.request(query.address)))),
-          tap(zip => log[zip[0].propertyName] = zip[1]))
-        .subscribe({
-          next: () => this.logSubject.next(log),
-          error: error => this.globalAlertService.display({ type: "danger", title: "Command failed", text: error.message, dismissible: true, timeout: 10000 })
-        });
+        this.queriesSubject
+          .pipe(
+            take(1),
+            mergeMap(queries => queries, 1),
+            switchMap(query => zip(of(query), from(this.port!.request(query.address)))),
+            tap(zip => log[zip[0].propertyName] = zip[1]))
+          .subscribe({
+            next: () => this.logSubject.next(log),
+            error: error => this.globalAlertService.display({ type: "danger", title: "Query failed", text: error.message, dismissible: true, timeout: 10000 }),
+            complete: () => this.logsSubject.next([...this.logsSubject.value, log])
+          });
+      }
+    }
+    finally {
+      this.portBusy = false;
+      this.portQueryAborted = false;
     }
   }
 
   public stopContinuous(): void {
-    this.isWorking = false;
+    this.portQueryAborted = false;
   }
 }

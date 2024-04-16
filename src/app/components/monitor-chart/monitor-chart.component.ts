@@ -1,10 +1,11 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { SerialPortQueryLogService } from '../../services/serial-port-query-log.service';
-import { Chart } from 'chart.js/auto';
+import { CartesianScaleTypeRegistry, Chart, ChartConfiguration, ChartData, ChartDataset, ScaleChartOptions } from 'chart.js/auto';
 import { QueryLog } from '../../models/queries/query-log';
 import { filter } from 'rxjs';
 import { Queries } from '../../models/queries/queries';
 import { Query } from '../../models/queries/query';
+import { QueryType } from '../../models/queries/query-type';
 
 @Component({
   selector: 'app-monitor-chart',
@@ -26,14 +27,6 @@ export class MonitorChartComponent implements AfterViewInit {
     this.serialPortQueryLogService.log
       .pipe(filter(log => log !== undefined))
       .subscribe(log => this.updateChartCanvas(log!));
-  }
-
-  public onStartClicked(): void {
-    this.serialPortQueryLogService.start();
-  }
-
-  public onStopClicked(): void {
-    this.serialPortQueryLogService.stop();
   }
 
   private initializeChartCanvas(): void {
@@ -107,18 +100,23 @@ export class MonitorChartComponent implements AfterViewInit {
     }
 
     const labels = months({ count: 7 });
-    const data = {
+
+    const datasets: ChartDataset<"line", (number | null)[]>[] = [];
+    const queries = (Object.entries(Queries) as [string, Query][])
+      .filter(_ => _[1].type === QueryType.number)
+      .sort((a, b) => a[1].displayName.localeCompare(b[1].displayName));
+    for (const query of queries) {
+      const dataset: ChartDataset<"line", (number | null)[]> = {
+        label: query[1].displayName,
+        data: numbers(NUMBER_CFG),
+        hidden: true
+      };
+      datasets.push(dataset);
+    }
+
+    const data: ChartData<"line", (number | null)[], string> = {
       labels: labels,
-      datasets: [
-        {
-          label: 'Dataset 1',
-          data: numbers(NUMBER_CFG)
-        },
-        {
-          label: 'Dataset 2',
-          data: numbers(NUMBER_CFG)
-        }
-      ]
+      datasets: datasets,
     };
 
     this.chart = new Chart(
@@ -128,9 +126,20 @@ export class MonitorChartComponent implements AfterViewInit {
         data: data,
         options: {
           responsive: true,
+          aspectRatio: 1,
+          maintainAspectRatio: false,
+          interaction: {
+            intersect: false,
+            mode: 'index'
+          },
           plugins: {
             legend: {
               position: "bottom",
+              maxHeight: 300,
+              onClick: (ce, li, le) => {
+                // TODO: add dataset hide state save
+                Chart.defaults.plugins.legend.onClick.call(le, ce, li, le);
+              }
             }
           }
         }

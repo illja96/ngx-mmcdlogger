@@ -11,7 +11,7 @@ import { QueryLog } from '../../models/queries/query-log';
 @Component({
   selector: 'app-monitor',
   standalone: true,
-  imports: [MonitorValuesComponent, MonitorInternalValuesComponent, MonitorFlagsComponent, MonitorChartComponent],
+  imports: [MonitorChartComponent, MonitorValuesComponent, MonitorInternalValuesComponent, MonitorFlagsComponent],
   templateUrl: './monitor.component.html',
   styleUrl: './monitor.component.css'
 })
@@ -24,5 +24,13 @@ export class MonitorComponent {
     private readonly serialPortQueryLogService: SerialPortQueryLogService) {
     this.serialPortProviderService.port.subscribe(port => this.port = port);
     this.serialPortQueryLogService.log.subscribe(log => this.log = log);
+  }
+
+  public onStartClicked(): void {
+    this.serialPortQueryLogService.startContinuous();
+  }
+
+  public onStopClicked(): void {
+    this.serialPortQueryLogService.stopContinuous();
   }
 }

@@ -1,11 +1,11 @@
 <div class="d-flex btn-group" role="group" aria-label="Monitor action buttons">
-  <button type="button" class="btn btn-outline-success">
+  <button type="button" (click)="onStartClicked()" class="btn btn-outline-success">
     <small>
       <i class="bi bi-play-circle"></i>
     </small>    
     Start
   </button>
-  <button type="button" class="btn btn-outline-danger">
+  <button type="button" (click)="onStopClicked()" class="btn btn-outline-danger">
     <small>
       <i class="bi bi-stop-circle"></i>
     </small>    
