@@ -1,3 +1,5 @@
+import { SerialPort as SerialPortPolyfill } from 'web-serial-polyfill';
+
 export class SerialPortWrapper {
   private readonly options: SerialOptions = {
     baudRate: 1953,
@@ -6,7 +8,7 @@ export class SerialPortWrapper {
     parity: "none"
   };
 
-  constructor(private readonly serialPort: SerialPort) { }
+  constructor(private readonly serialPort: SerialPort | SerialPortPolyfill) { }
 
   public async request(uint8: number): Promise<number> {
     let writer: WritableStreamDefaultWriter<Uint8Array> | undefined;
@@ -19,14 +21,14 @@ export class SerialPortWrapper {
     }
 
     try {
-      writer = this.serialPort.writable.getWriter();
+      writer = this.serialPort.writable!.getWriter();
     } catch {
       writer?.releaseLock();
       throw new Error("Failed to open serial port writer");
     }
 
     try {
-      reader = this.serialPort.readable.getReader();
+      reader = this.serialPort.readable!.getReader();
     } catch {
       reader?.releaseLock();
       throw new Error("Failed to open serial port reader");
