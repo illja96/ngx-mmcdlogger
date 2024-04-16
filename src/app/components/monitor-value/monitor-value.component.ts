@@ -6,10 +6,10 @@ import { QueryUnit } from '../../models/queries/query-unit';
 import { QueryType } from '../../models/queries/query-type';
 import { SerialPortWrapper } from '../../models/serial-port-wrapper';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { MonitorStateProviderService } from '../../services/monitor-state-provider.service';
 import { filter, first } from 'rxjs';
 import { QueryLog } from '../../models/queries/query-log';
 import { NumberTo8BitArrayPipe } from '../../services/number-to-8bit-array.pipe';
+import { SerialPortQueryLogService } from '../../services/serial-port-query-log.service';
 
 @Component({
   selector: 'app-monitor-value',
@@ -28,33 +28,22 @@ export class MonitorValueComponent implements OnInit, OnChanges {
   public get QueryUnit() { return QueryUnit; }
 
   public form = new FormGroup({
-    query: new FormControl(false),
-    chart: new FormControl(false),
+    query: new FormControl(false)
   });
 
-  constructor(private readonly monitorStateProvider: MonitorStateProviderService) {
+  constructor(private readonly serialPortQueryLogService: SerialPortQueryLogService) {
     this.form.valueChanges
-      .subscribe(_ => {
-        _.query ? this.monitorStateProvider.addToQuery(this.query) : this.monitorStateProvider.removeFromQuery(this.query);
-        _.chart ? this.monitorStateProvider.addToChart(this.query) : this.monitorStateProvider.removeFromChart(this.query);
-      });
+      .subscribe(_ => _.query ? this.serialPortQueryLogService.addToQuery(this.query) : this.serialPortQueryLogService.removeFromQuery(this.query));
   }
   public ngOnInit(): void {
-    this.monitorStateProvider.queryState
+    this.serialPortQueryLogService.queries
       .pipe(
         first(),
         filter(queryState => queryState.findIndex(query => query.propertyName === this.query.propertyName) !== -1))
       .subscribe(_ => this.form.controls.query.setValue(true, { emitEvent: false }));
-
-    this.monitorStateProvider.chartState
-      .pipe(
-        first(),
-        filter(chartState => chartState.findIndex(query => query.propertyName === this.query.propertyName) !== -1))
-      .subscribe(_ => this.form.controls.chart.setValue(true, { emitEvent: false }));
   }
 
   public ngOnChanges(): void {
-    if (this.query.type === QueryType.flags) this.form.controls.chart.disable({ emitEvent: false });
     if (this.port === undefined) this.form.disable({ emitEvent: false }); else this.form.enable({ emitEvent: false });
   }
 }

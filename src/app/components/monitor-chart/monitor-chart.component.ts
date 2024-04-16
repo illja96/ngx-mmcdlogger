@@ -1,6 +1,10 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { SerialPortQueryLogService } from '../../services/serial-port-query-log.service';
 import { Chart } from 'chart.js/auto';
+import { QueryLog } from '../../models/queries/query-log';
+import { filter } from 'rxjs';
+import { Queries } from '../../models/queries/queries';
+import { Query } from '../../models/queries/query';
 
 @Component({
   selector: 'app-monitor-chart',
@@ -12,11 +16,27 @@ import { Chart } from 'chart.js/auto';
 export class MonitorChartComponent implements AfterViewInit {
   @ViewChild("chartCanvas") chartCanvas!: ElementRef<HTMLCanvasElement>;
 
-  private chart?: Chart;
+  private chart!: Chart;
 
   constructor(private readonly serialPortQueryLogService: SerialPortQueryLogService) { }
 
   public ngAfterViewInit(): void {
+    this.initializeChartCanvas();
+
+    this.serialPortQueryLogService.log
+      .pipe(filter(log => log !== undefined))
+      .subscribe(log => this.updateChartCanvas(log!));
+  }
+
+  public onStartClicked(): void {
+    this.serialPortQueryLogService.start();
+  }
+
+  public onStopClicked(): void {
+    this.serialPortQueryLogService.stop();
+  }
+
+  private initializeChartCanvas(): void {
     const DATA_COUNT = 7;
     const NUMBER_CFG = { count: DATA_COUNT, min: -100, max: 100 };
 
@@ -101,7 +121,6 @@ export class MonitorChartComponent implements AfterViewInit {
       ]
     };
 
-
     this.chart = new Chart(
       this.chartCanvas.nativeElement,
       {
@@ -118,11 +137,14 @@ export class MonitorChartComponent implements AfterViewInit {
       });
   }
 
-  public onStartClicked(): void {
-    this.serialPortQueryLogService.start();
-  }
+  private updateChartCanvas(log: QueryLog): void {
+    for (let i = 0; i < (this.chart.data.labels ?? []).length; i++) {
+      this.chart.data.labels?.pop();
+    }
 
-  public onStopClicked(): void {
-    this.serialPortQueryLogService.stop();
+    const queries = Object.entries(Queries).map(_ => _[1] as Query);
+    for (const query of queries) {
+      const dataset = this.chart.data.datasets.find(dataset => dataset.label === query.displayName);
+    }
   }
 }
