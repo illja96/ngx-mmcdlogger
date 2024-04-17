@@ -1,6 +1,11 @@
 # MMCd Datalogger
 Web automotive diagnostic and datalogging tool compatible with many pre-OBDII (1990-1994) Mitsubishi vehicles.
 
+Application is fully functional only on platforms with native [Web Serial API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Serial_API) support: Windows, Linux or ChromeOS based ones.
+***Android, iOS and MacOS devices aren't supported.***
+
+[Serial API Polyfill](https://github.com/google/web-serial-polyfill) are already in use, but it supports only USB-CDC mode. Most of serial adapters doesn't use this standard, so they are incompatible.
+
 # Demo
 You can try this application hosted on [GitHub pages](https://illja96.github.io/mmcdlogger/).
 
@@ -8,7 +13,7 @@ You can try this application hosted on [GitHub pages](https://illja96.github.io/
 In order to exchange diagnostic data between web application and car you will need an adapter.
 You can find ready-to-use USB or COM adapters or build one your self, [like I did](https://oshwlab.com/saskiuhia/mitsubishi-aldl-rs232-adapter-max233).
 
-***Notes:*** most of the adapters mulpiplex TX data to RX wire, so any request messaage will be duplicated as a reply imidietly and should be ignored.
+***Notes:*** most of the adapters multiplex TX data to RX wire, so any request message will be duplicated as a reply immediately and should be ignored.
 
 # Diagnostic protocol
 Diagnostic data communication protocol is UART based (1953 baud, 8 bit, 1 stop bit, no parity) in 1 byte request-reply mode with 12V logic level utilizing only a single wire.
@@ -105,7 +110,7 @@ Diagnostic data communication protocol is UART based (1953 baud, 8 bit, 1 stop b
 - Run `npm run serve` in project folder
 - Open [localhost:4200](http://localhost:4200) in web browser
 
-# Related / ispired-by projects
+# Related / inspired-by projects
 - [E932-E931 Commented source](https://github.com/Data-ptr/E932-E931-Commented-Source)
 - [Original PalmOS MMCd Datalogger](https://mmcdlogger.sourceforge.net)
 - [Extended PalmOS MMCd Datalogger](https://github.com/stephenjschaefer/MMCd)
