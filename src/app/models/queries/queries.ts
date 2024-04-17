@@ -12,8 +12,8 @@ export class Queries {
   public static port6: Query = { address: 0x05, propertyName: "port6", displayName: "PORT6", formula: x => x, type: QueryType.number, units: QueryUnit.number };
   public static timingAdv: Query = { address: 0x06, propertyName: "timingAdv", displayName: "TIMADV", formula: x => x - 10, type: QueryType.number, units: QueryUnit.degree };
   public static ectRaw: Query = { address: 0x07, propertyName: "ectRaw", displayName: "ETC-R", formula: x => Curves.ECT[x], type: QueryType.number, units: QueryUnit.celsius };
-  public static isc0: Query = { address: 0x08, propertyName: "isc0", displayName: "ISC-0", formula: x => x, type: QueryType.number, units: QueryUnit.step };
-  public static iscY0: Query = { address: 0x09, propertyName: "iscY0", displayName: "ISC-Y0", formula: x => x, type: QueryType.number, units: QueryUnit.step };
+  public static isc0: Query = { address: 0x08, propertyName: "isc0", displayName: "ISC-0", formula: x => x, type: QueryType.number, units: QueryUnit.number };
+  public static iscY0: Query = { address: 0x09, propertyName: "iscY0", displayName: "ISC-Y0", formula: x => x, type: QueryType.number, units: QueryUnit.number };
   public static isc1: Query = { address: 0x0A, propertyName: "isc1", displayName: "ISC-1", formula: x => x, type: QueryType.number, units: QueryUnit.number };
   public static iscY1: Query = { address: 0x0B, propertyName: "iscY1", displayName: "ISC-Y1", formula: x => x, type: QueryType.number, units: QueryUnit.number };
   public static ftrim_low: Query = { address: 0x0C, propertyName: "ftrim_low", displayName: "FTRIM-L", formula: x => .78 * x, type: QueryType.number, units: QueryUnit.percent };
