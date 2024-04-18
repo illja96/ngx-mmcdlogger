@@ -4,7 +4,7 @@ Web automotive diagnostic and datalogging tool compatible with many pre-OBDII (1
 Application is fully functional only on platforms with native [Web Serial API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Serial_API) support: Windows, Linux or ChromeOS based ones.
 ***Android, iOS and MacOS devices aren't supported.***
 
-[Serial API Polyfill](https://github.com/google/web-serial-polyfill) are already in use, but it supports only USB-CDC mode. Most of serial adapters doesn't use this standard, so they are incompatible.
+[Serial API Polyfill](https://github.com/google/web-serial-polyfill) are already in use, but it supports only USB-CDC mode. Most of serial adapters (Prologic, FTDI, CH340, CP2102) use proprietary drivers, so doesn't use this standard and are incompatible.
 
 # Demo
 You can try this application hosted on [GitHub pages](https://illja96.github.io/mmcdlogger/).
