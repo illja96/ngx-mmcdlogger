@@ -32,26 +32,32 @@ export class TestComponent {
     this.serialPortQueryLogService.log.subscribe(log => this.log = log);
   }
 
-  public async onReadAllFaultsClicked(): Promise<void> {
+  public onReadAllFaultsClicked(): void {
     const queries = [Queries.faultHi, Queries.faultLo, Queries.stFaultHi, Queries.stFaultLo];
-
     this.serialPortQueryLogService.startSingle(queries)
-      .subscribe({
-        next: queryResponses => {
+      .then(
+        queryResponses => {
           this.faults = this.parseFaultsToBitArray(queryResponses[0]!, queryResponses[1]!);
           this.storedFaults = this.parseFaultsToBitArray(queryResponses[2]!, queryResponses[3]!);
         },
-        error: error => this.globalAlertService.display({ type: "danger", title: "Command failed", text: error.message, dismissible: true, timeout: 10000 }),
-      });
+        error => this.globalAlertService.display({ type: "danger", title: "Command failed", text: error.message, dismissible: true, timeout: 10000 })
+      );
   }
 
-  public async onActivateCommandClicked(command: Command): Promise<void> {
-    await this.port?.request(command.address).then(
+  public onActivateCommandClicked(command: Command): void {
+    this.port?.request(command.address).then(
       result => {
-        if (command.expectedResults.findIndex(__ => __ === result) === -1)
-          this.globalAlertService.display({ type: "warning", title: "Command failed", text: "Command didn't meet expected result", dismissible: true, timeout: 10000 });
-        else
+        if (result === command.successResult) {
           this.globalAlertService.display({ type: "success", title: "Command executed", dismissible: true, timeout: 10000 });
+          return;
+        }
+
+        if (result === command.failedResult) {
+          this.globalAlertService.display({ type: "warning", title: "Command failed", text: "Try another engine state and check command compatibility", dismissible: true, timeout: 10000 });
+          return;
+        }
+
+        this.globalAlertService.display({ type: "warning", title: "Command failed", text: "Command finished with unexpected result", dismissible: true, timeout: 10000 });
       },
       error => this.globalAlertService.display({ type: "danger", title: "Command failed", text: error.message, dismissible: true, timeout: 10000 }));
   }

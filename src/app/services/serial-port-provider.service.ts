@@ -9,8 +9,16 @@ export class SerialPortProviderService {
 
   private readonly portSubject = new BehaviorSubject<SerialPortWrapper | undefined>(undefined);
 
+  private readonly serialPortOptions: SerialOptions = {
+    baudRate: 1953,
+    dataBits: 8,
+    stopBits: 1,
+    parity: "none"
+  };
+
   public async select(): Promise<void> {
     const serialPort = navigator.serial !== undefined ? await navigator.serial.requestPort() : await serialpolyfill.requestPort();
+    await serialPort.open(this.serialPortOptions);
     const serialPortWrapper = new SerialPortWrapper(serialPort);
 
     this.portSubject.next(serialPortWrapper);

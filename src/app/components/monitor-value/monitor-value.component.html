@@ -11,7 +11,7 @@
   <div>
     <div *ngIf="query.type === QueryType.number">
       <span *ngIf="log === undefined || log[query.propertyName] === undefined">---</span>
-      <span *ngIf="log !== undefined && log[query.propertyName] !== undefined">{{log[query.propertyName]}}</span>
+      <span *ngIf="log !== undefined && log[query.propertyName] !== undefined">{{log[query.propertyName] | number}}</span>
 
       <span *ngIf="query.units === QueryUnit.percent"> %</span>
       <span *ngIf="query.units === QueryUnit.degree"> °</span>

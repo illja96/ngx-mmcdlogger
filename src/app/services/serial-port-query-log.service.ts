@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, firstValueFrom, from, mergeMap, of, switchMap, take, tap, toArray, zip } from 'rxjs';
+import { BehaviorSubject, Observable, firstValueFrom, lastValueFrom } from 'rxjs';
 import { SerialPortWrapper } from '../models/serial-port-wrapper';
 import { SerialPortProviderService } from './serial-port-provider.service';
 import { QueryLog } from '../models/queries/query-log';
-import { GlobalAlertService } from './global-alert.service';
 import { Query } from '../models/queries/query';
 
 @Injectable({ providedIn: 'root' })
@@ -20,19 +19,18 @@ export class SerialPortQueryLogService {
   private portBusy: boolean = false;
   private portQueryAborted: boolean = false;
 
-  constructor(
-    private readonly serialPortProvider: SerialPortProviderService,
-    private readonly globalAlertService: GlobalAlertService) {
+  constructor(private readonly serialPortProvider: SerialPortProviderService) {
     this.serialPortProvider.port.subscribe(port => this.port = port);
   }
 
   public addToQuery(query: Query): void {
     let queries = this.queriesSubject.getValue();
-    const queryIndex = queries.findIndex(query => query.propertyName === query.propertyName);
+    const queryIndex = queries.findIndex(_ => _.propertyName === query.propertyName);
     if (queryIndex !== -1) return;
 
     queries = [...queries, query];
     this.queriesSubject.next(queries);
+    console.log(queries);
 
     const queriesJson = JSON.stringify(queries);
     localStorage.setItem("queries", queriesJson);
@@ -40,26 +38,29 @@ export class SerialPortQueryLogService {
 
   public removeFromQuery(query: Query): void {
     const queries = this.queriesSubject.getValue();
-    const queryIndex = queries.findIndex(query_ => query.propertyName === query.propertyName);
+    const queryIndex = queries.findIndex(_ => _.propertyName === query.propertyName);
     if (queryIndex === -1) return;
 
     queries.splice(queryIndex, 1);
     this.queriesSubject.next(queries);
+    console.log(queries);
 
     const queriesJson = JSON.stringify(queries);
     localStorage.setItem("queries", queriesJson);
   }
 
-  public startSingle(queries: Query[]): Observable<number[]> {
+  public async startSingle(queries: Query[]): Promise<number[]> {
     try {
       if (this.portBusy === true) throw new Error("Serial port busy");
       this.portBusy = true;
 
-      return of(queries)
-        .pipe(
-          mergeMap(queries => queries, 1),
-          switchMap(query => this.port!.request(query.address)),
-          toArray());
+      const responses: number[] = [];
+      for (let query of queries) {
+        await this.port!.request(query.address)
+          .then(value => responses.push(value));
+      }
+
+      return responses;
     }
     finally {
       this.portBusy = false;
@@ -67,7 +68,7 @@ export class SerialPortQueryLogService {
     }
   }
 
-  public startContinuous(): void {
+  public async startContinuous(): Promise<void> {
     try {
       if (this.portBusy === true) throw new Error("Serial port busy");
       this.portBusy = true;
@@ -77,17 +78,18 @@ export class SerialPortQueryLogService {
           date: Date.now()
         };
 
-        this.queriesSubject
-          .pipe(
-            take(1),
-            mergeMap(queries => queries, 1),
-            switchMap(query => zip(of(query), from(this.port!.request(query.address)))),
-            tap(zip => log[zip[0].propertyName] = zip[1]))
-          .subscribe({
-            next: () => this.logSubject.next(log),
-            error: error => this.globalAlertService.display({ type: "danger", title: "Query failed", text: error.message, dismissible: true, timeout: 10000 }),
-            complete: () => this.logsSubject.next([...this.logsSubject.value, log])
-          });
+        const queries = this.queriesSubject.getValue();
+        console.log(queries);
+        for (const query of queries) {
+          console.log(query);
+
+          const queryRawValue = await this.port!.request(query.address);
+          const queryValue = query.formula(queryRawValue);
+          log[query.propertyName] = queryValue;
+
+          this.logSubject.next(log);
+        }
+        this.logsSubject.next([...this.logsSubject.value, log]);
       }
     }
     finally {
@@ -97,6 +99,6 @@ export class SerialPortQueryLogService {
   }
 
   public stopContinuous(): void {
-    this.portQueryAborted = false;
+    this.portQueryAborted = true;
   }
 }

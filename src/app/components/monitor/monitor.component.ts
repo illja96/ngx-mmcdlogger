@@ -7,6 +7,7 @@ import { SerialPortWrapper } from '../../models/serial-port-wrapper';
 import { SerialPortProviderService } from '../../services/serial-port-provider.service';
 import { SerialPortQueryLogService } from '../../services/serial-port-query-log.service';
 import { QueryLog } from '../../models/queries/query-log';
+import { GlobalAlertService } from '../../services/global-alert.service';
 
 @Component({
   selector: 'app-monitor',
@@ -21,13 +22,17 @@ export class MonitorComponent {
 
   constructor(
     private readonly serialPortProviderService: SerialPortProviderService,
-    private readonly serialPortQueryLogService: SerialPortQueryLogService) {
+    private readonly serialPortQueryLogService: SerialPortQueryLogService,
+    private readonly globalAlertService: GlobalAlertService) {
     this.serialPortProviderService.port.subscribe(port => this.port = port);
     this.serialPortQueryLogService.log.subscribe(log => this.log = log);
   }
 
   public onStartClicked(): void {
-    this.serialPortQueryLogService.startContinuous();
+    this.serialPortQueryLogService.startContinuous()
+      .then(
+        () => { },
+        error => this.globalAlertService.display({ type: "danger", title: "Query failed", text: error.message, dismissible: true, timeout: 10000 }));
   }
 
   public onStopClicked(): void {

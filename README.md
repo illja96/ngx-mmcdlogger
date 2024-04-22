@@ -88,20 +88,20 @@ Diagnostic data communication protocol is UART based (1953 baud, 8 bit, 1 stop b
 ## Commands
 |Description|Address|Duration|Return values|Notes|
 |-----------|-------|--------|-------------|-----|
-|Clear faults|0xCA|Immediately|0x00 or 0xFF||
-|Activate boost control solenoid|0xF1|~6 seconds|0xFF||
-|Activate EGR solenoid|0xF3|~6 seconds|0xFF||
-|Activate fuel pressure solenoid|0xF4|~6 seconds|0xFF||
-|Activate purge solenoid|0xF5|~6 seconds|0xFF||
-|Turn on fuel pump|0xF6|~6 seconds|0xFF||
-|Disable injector 6|0xF7|~6 seconds|0xFF|Works only when engine is running|
-|Disable injector 5|0xF8|~6 seconds|0xFF|Works only when engine is running|
-|Disable injector 4|0xF9|~6 seconds|0xFF|Works only when engine is running|
-|Disable injector 3|0xFA|~6 seconds|0xFF|Works only when engine is running|
-|Disable injector 2|0xFB|~6 seconds|0xFF|Works only when engine is running|
-|Disable injector 1|0xFC|~6 seconds|0xFF|Works only when engine is running|
-|Resistor strapping low word|0xFE||||
-|Resistor strapping high word|0xFF||||
+|Clear faults|0xCA|Immediately|0x80 or 0x83 if engine is stopped, 0x80 or 0xFF if engine is running||
+|Activate boost control solenoid|0xF1|~6 seconds|0x80|Not tested|
+|Activate EGR solenoid|0xF3|~6 seconds|0x80|Not tested|
+|Activate fuel pressure solenoid|0xF4|~6 seconds|0x80|Not tested|
+|Activate purge solenoid|0xF5|~6 seconds|0x80|Not tested|
+|Turn on fuel pump|0xF6|~6 seconds if engine is stopped, immediately seconds if engine is running|0x80 if engine is stopped, 0xFF if engine is running||
+|Disable injector 6|0xF7|Immediately if engine is stopped, ~6 seconds if engine is running|0x80||
+|Disable injector 5|0xF8|Immediately if engine is stopped, ~6 seconds if engine is running|0x80||
+|Disable injector 4|0xF9|Immediately if engine is stopped, ~6 seconds if engine is running|0x80||
+|Disable injector 3|0xFA|Immediately if engine is stopped, ~6 seconds if engine is running|0x80||
+|Disable injector 2|0xFB|Immediately if engine is stopped, ~6 seconds if engine is running|0x80||
+|Disable injector 1|0xFC|Immediately if engine is stopped, ~6 seconds if engine is running|0x80||
+|Resistor strapping low word|0xFE|||Not tested|
+|Resistor strapping high word|0xFF|||Not tested|
 
 # Development
 - Install [Node.JS](https://nodejs.org/en/download)
