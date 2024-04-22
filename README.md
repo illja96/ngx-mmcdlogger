@@ -1,24 +1,53 @@
 # MMCd Datalogger
 Web automotive diagnostic and datalogging tool compatible with many pre-OBDII (1990-1994) Mitsubishi vehicles.
 
-Application is fully functional only on platforms with native [Web Serial API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Serial_API) support: Windows, Linux or ChromeOS based ones.
-***Android, iOS and MacOS devices aren't supported.***
+Heavily inspired by original PalmOS [MMCd Datalogger](https://mmcdlogger.sourceforge.net).
+Also big thanks for [E932-E931 commented source](https://github.com/Data-ptr/E932-E931-Commented-Source).
 
-[Serial API Polyfill](https://github.com/google/web-serial-polyfill) are already in use, but it supports only USB-CDC mode. Most of serial adapters (Prologic, FTDI, CH340, CP2102) use proprietary drivers, so doesn't use this standard and are incompatible.
+# Disclaimer
+ALL INCLUDED SOFTWARE, HARDWARE AND DOCUMENTATION ARE PROVIDED "AS IS".
+THE CONTENT IS PROVIDED WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, WARRANTIES OF TITLE, NON-INFRINGEMENT OR IMPLIED WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE OR OTHERWISE, OTHER THAN THOSE WARRANTIES WHICH ARE INCAPABLE OF EXCLUSION, RESTRICTION OR MODIFICATION UNDER APPLICABLE LAW.
+THERE IS NO WARRANTY THAT THE INFORMATION OF THE SITE IS ACCURATE, RELIABLE OR CORRECT; THAT THE SITE WILL BE AVAILABLE AT ANY PARTICULAR TIME OR LOCATION; THAT ANY DEFECTS OR ERRORS WILL BE CORRECTED; THAT THE CONTENT IS FREE OF VIRUSES OR OTHER HARMFUL COMPONENTS; OR THAT YOU WILL ACHIEVE SUCCESSFUL RESULTS FROM FOLLOWING ANY INSTRUCTIONS, DIRECTIONS OR RECOMMENDATIONS ON THE SITE.
 
 # Demo
 You can try this application hosted on [GitHub pages](https://illja96.github.io/mmcdlogger/).
 
+# Limitations
+Application is fully functional only on platforms with native [Web Serial API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Serial_API) support.
+
+[Serial API polyfill](https://github.com/google/web-serial-polyfill) is installed to expand list of compatible platforms utilizing [USB Web API](https://developer.mozilla.org/en-US/docs/Web/API/USB) instead.
+Only [USB CDC](https://en.wikipedia.org/wiki/USB_communications_device_class) friendly adapters will work in this case.
+Most of serial adapters (FTDI, Prologic, Silicon Labs, CH340, etc.) requires proprietary drivers and aren't USB CDC compatible.
+
+- Full support: Windows and Linux OS
+- Partial support (USB CDC supported adapters only): ChromeOS and Android
+- No support: iOS and macOS
+
 # Hardware
-In order to exchange diagnostic data between web application and car you will need an adapter.
-You can find ready-to-use USB or COM adapters or build one your self, [like I did](https://oshwlab.com/saskiuhia/mitsubishi-aldl-rs232-adapter-max233).
+In order to exchange diagnostic data between web application and car you will need 1 or 2 adapter(s) depending on your system:
 
-***Notes:*** most of the adapters multiplex TX data to RX wire, so any request message will be duplicated as a reply immediately and should be ignored.
+1. ADLD/ODB1 to RS232 adapter
 
-# Diagnostic protocol
+   You can find ready-to-use USB or COM adapters on the web.
+   Also you can use my [PCB design](https://oshwlab.com/saskiuhia/mitsubishi-aldl-rs232-adapter-max233) to build this adapter yourself.
+
+   ***Notes:*** most of the adapters multiplex TX data to RX wire, so any request message will be duplicated as a reply immediately and should be ignored.
+
+2. RS232 to USB adapter, if your system doesn't have physical COM port built-in
+
+   RS232 to USB adapters tend to have problems.
+   In theory, almost anyone should work.
+   In practice, many USB-UART ICs are counterfeited and/or have poor QC, so it will vary even for the same chip.
+   
+   Personally, I have encountered problems with Prologic based adapter: response data corruption, only commands work, but queries won't.
+   FTDI based adapter works perfectly.
+   To debug adapter, I would recommend send queries/commands via simplistic terminal application, like: [RealTerm](https://sourceforge.net/projects/realterm)
+
+# Software
+## Diagnostic protocol
 Diagnostic data communication protocol is UART based (1953 baud, 8 bit, 1 stop bit, no parity) in 1 byte request-reply mode with 12V logic level utilizing only a single wire.
 
-## Queries
+### Queries
 |Name|Address|Description|Formula|Units|
 |----|-------|-----------|-------|-----|
 |PORT1|0x00|Port 1 data register|||
@@ -85,32 +114,27 @@ Diagnostic data communication protocol is UART based (1953 baud, 8 bit, 1 stop b
 |FTRIM-3D|0x3D|Fuel trim (low 0x3D)|.78 * x|%|
 |ECUVER|0xFD|ECU Version|||
 
-## Commands
+### Commands
 |Description|Address|Duration|Return values|Notes|
 |-----------|-------|--------|-------------|-----|
-|Clear faults|0xCA|Immediately|0x80 or 0x83 if engine is stopped, 0x80 or 0xFF if engine is running||
-|Activate boost control solenoid|0xF1|~6 seconds|0x80|Not tested|
-|Activate EGR solenoid|0xF3|~6 seconds|0x80|Not tested|
-|Activate fuel pressure solenoid|0xF4|~6 seconds|0x80|Not tested|
-|Activate purge solenoid|0xF5|~6 seconds|0x80|Not tested|
-|Turn on fuel pump|0xF6|~6 seconds if engine is stopped, immediately seconds if engine is running|0x80 if engine is stopped, 0xFF if engine is running||
-|Disable injector 6|0xF7|Immediately if engine is stopped, ~6 seconds if engine is running|0x80||
-|Disable injector 5|0xF8|Immediately if engine is stopped, ~6 seconds if engine is running|0x80||
-|Disable injector 4|0xF9|Immediately if engine is stopped, ~6 seconds if engine is running|0x80||
-|Disable injector 3|0xFA|Immediately if engine is stopped, ~6 seconds if engine is running|0x80||
-|Disable injector 2|0xFB|Immediately if engine is stopped, ~6 seconds if engine is running|0x80||
-|Disable injector 1|0xFC|Immediately if engine is stopped, ~6 seconds if engine is running|0x80||
-|Resistor strapping low word|0xFE|||Not tested|
-|Resistor strapping high word|0xFF|||Not tested|
+|Clear faults|0xCA|Immediately|0x00 if engine is stopped, 0xFF if engine is running|Works only if engine is stopped|
+|Activate boost control solenoid|0xF1|~6 seconds|0x00 if engine is stopped, 0xFF if engine is running|Works only if engine is stopped|
+|Activate EGR solenoid|0xF3|~6 seconds|0x00 if engine is stopped, 0xFF if engine is running|Works only if engine is stopped|
+|Activate fuel pressure solenoid|0xF4|~6 seconds|0x00 if engine is stopped, 0xFF if engine is running|Works only if engine is stopped|
+|Activate purge solenoid|0xF5|~6 seconds|0x00 if engine is stopped, 0xFF if engine is running|Works only if engine is stopped|
+|Turn on fuel pump|0xF6|~6 seconds|0x00 if engine is stopped, 0xFF if engine is running|Works only if engine is stopped|
+|Disable injector 6|0xF7|~6 seconds|0x00||
+|Disable injector 5|0xF8|~6 seconds|0x00||
+|Disable injector 4|0xF9|~6 seconds|0x00||
+|Disable injector 3|0xFA|~6 seconds|0x00||
+|Disable injector 2|0xFB|~6 seconds|0x00||
+|Disable injector 1|0xFC|~6 seconds|0x00||
+|Resistor strapping low word|0x00|||Not tested|
+|Resistor strapping high word|0x00|||Not tested|
 
-# Development
+## Development
 - Install [Node.JS](https://nodejs.org/en/download)
 - Download source files
 - Run `npm install` in project folder
 - Run `npm run serve` in project folder
 - Open [localhost:4200](http://localhost:4200) in web browser
-
-# Related / inspired-by projects
-- [E932-E931 Commented source](https://github.com/Data-ptr/E932-E931-Commented-Source)
-- [Original PalmOS MMCd Datalogger](https://mmcdlogger.sourceforge.net)
-- [Extended PalmOS MMCd Datalogger](https://github.com/stephenjschaefer/MMCd)
