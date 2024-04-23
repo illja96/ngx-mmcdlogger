@@ -72,7 +72,7 @@ export class MonitorChartComponent implements AfterViewInit {
           plugins: {
             legend: {
               position: "bottom",
-              maxHeight: 300,
+              maxHeight: 350,
               onClick: (ce, li, le) => {
                 // TODO: add dataset hide state save
                 Chart.defaults.plugins.legend.onClick.call(le, ce, li, le);
