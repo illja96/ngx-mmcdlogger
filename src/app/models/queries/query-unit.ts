@@ -1,7 +1,8 @@
 export enum QueryUnit {
   flags,
 
-  number,  
+  numberDec,
+  numberHex,
   percent,
   degree,
   volt,
@@ -10,11 +11,11 @@ export enum QueryUnit {
   rpm,
   ms,
 
+  kPa,
   bar,
   psi,
-  kPa,
 
   celsius,
-  kelvin,
-  fahrenheit
+  fahrenheit,
+  kelvin
 }

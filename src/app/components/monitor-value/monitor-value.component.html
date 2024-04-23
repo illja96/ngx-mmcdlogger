@@ -9,31 +9,40 @@
   </div>
 
   <div>
-    <div *ngIf="query.type === QueryType.number">
-      <span *ngIf="log === undefined || log[query.propertyName] === undefined">---</span>
-      <span *ngIf="log !== undefined && log[query.propertyName] !== undefined">{{log[query.propertyName] | number}}</span>
+    <span [ngSwitch]="query.units">
+      <span *ngSwitchCase="QueryUnit.flags">
+        <span *ngIf="log === undefined || log[query.propertyName] === undefined">--------</span>
+        <span *ngIf="log !== undefined && log[query.propertyName] !== undefined">{{log[query.propertyName] | numberTo8BitArray}}</span>
+      </span>
 
-      <span *ngIf="query.units === QueryUnit.percent"> %</span>
-      <span *ngIf="query.units === QueryUnit.degree"> °</span>
-      <span *ngIf="query.units === QueryUnit.volt"> V</span>
-      <span *ngIf="query.units === QueryUnit.step"> step(s)</span>
-      <span *ngIf="query.units === QueryUnit.hertz"> Hz</span>
-      <span *ngIf="query.units === QueryUnit.rpm"> RPM</span>
-      <span *ngIf="query.units === QueryUnit.ms"> ms</span>
+      <span *ngSwitchCase="QueryUnit.numberHex">
+        <span *ngIf="log === undefined || log[query.propertyName] === undefined">----</span>
+        <span *ngIf="log !== undefined && log[query.propertyName] !== undefined">0x{{log[query.propertyName].toString(16)}}</span>
+      </span>
 
-      <span *ngIf="query.units === QueryUnit.bar"> bar</span>
-      <span *ngIf="query.units === QueryUnit.psi"> psi</span>
-      <span *ngIf="query.units === QueryUnit.kPa"> kPa</span>
+      <span *ngSwitchDefault>
+        <span *ngIf="log === undefined || log[query.propertyName] === undefined">---</span>
+        <span *ngIf="log !== undefined && log[query.propertyName] !== undefined">{{log[query.propertyName] | number}}</span>
+      </span>
+    </span>
 
-      <span *ngIf="query.units === QueryUnit.celsius"> °C</span>
-      <span *ngIf="query.units === QueryUnit.kelvin"> K</span>
-      <span *ngIf="query.units === QueryUnit.fahrenheit"> °F</span>
-    </div>
+    <span [ngSwitch]="query.units">
+      <span *ngSwitchCase="QueryUnit.percent"> %</span>
+      <span *ngSwitchCase="QueryUnit.degree"> °</span>
+      <span *ngSwitchCase="QueryUnit.volt"> V</span>
+      <span *ngSwitchCase="QueryUnit.step"> step(s)</span>
+      <span *ngSwitchCase="QueryUnit.hertz"> Hz</span>
+      <span *ngSwitchCase="QueryUnit.rpm"> RPM</span>
+      <span *ngSwitchCase="QueryUnit.ms"> ms</span>
 
-    <div *ngIf="query.type === QueryType.flags">
-      <span *ngIf="log === undefined || log[query.propertyName] === undefined">--------</span>
-      <span *ngIf="log !== undefined && log[query.propertyName] !== undefined">{{log[query.propertyName] | numberTo8BitArray}}</span>
-    </div>
+      <span *ngSwitchCase="QueryUnit.kPa"> kPa</span>
+      <span *ngSwitchCase="QueryUnit.bar"> bar</span>
+      <span *ngSwitchCase="QueryUnit.psi"> psi</span>
+
+      <span *ngSwitchCase="QueryUnit.celsius"> °C</span>
+      <span *ngSwitchCase="QueryUnit.fahrenheit"> °F</span>
+      <span *ngSwitchCase="QueryUnit.kelvin"> K</span>
+    </span>
   </div>
 
   <form [formGroup]="form">

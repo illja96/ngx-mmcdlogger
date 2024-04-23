@@ -1,4 +1,6 @@
 export enum QueryType {
+  flags,
   number,
-  flags
+  pressure,
+  temperature
 }

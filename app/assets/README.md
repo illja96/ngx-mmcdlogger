@@ -68,7 +68,7 @@ Diagnostic data communication protocol is UART based (1953 baud, 8 bit, 1 stop b
 |O2-FBK|0x0F|Oxygen feedback trim|.78 * x|%|
 |ECT-F|0x10|Engine coolant temperature (filtered)|ECT curve|°C|
 |IAT-C|0x11|Intake air temperature (checked)|IAT curve|°C|
-|EGRT|0x12|Exhaust gas recirculation temperature|-2.7 * x + 597.7|°F|
+|EGRT|0x12|Exhaust gas recirculation temperature|-1.5 * x + 314.28|°C|
 |O2-R|0x13|Oxygen sensor|.0195 * x|V|
 |BATT|0x14|Battery voltage|.0733 * x|V|
 |BARO|0x15|Atmospheric pressure|.00486 * x|bar|
