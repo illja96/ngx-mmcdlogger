@@ -10,7 +10,7 @@ THE CONTENT IS PROVIDED WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIE
 THERE IS NO WARRANTY THAT THE INFORMATION OF THE SITE IS ACCURATE, RELIABLE OR CORRECT; THAT THE SITE WILL BE AVAILABLE AT ANY PARTICULAR TIME OR LOCATION; THAT ANY DEFECTS OR ERRORS WILL BE CORRECTED; THAT THE CONTENT IS FREE OF VIRUSES OR OTHER HARMFUL COMPONENTS; OR THAT YOU WILL ACHIEVE SUCCESSFUL RESULTS FROM FOLLOWING ANY INSTRUCTIONS, DIRECTIONS OR RECOMMENDATIONS ON THE SITE.
 
 # Demo
-You can try this application hosted on [GitHub pages](https://illja96.github.io/mmcdlogger/).
+Application hosted on [GitHub pages](https://illja96.github.io/mmcdlogger/).
 
 # Limitations
 Application is fully functional only on platforms with native [Web Serial API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Serial_API) support.
@@ -132,7 +132,7 @@ Diagnostic data communication protocol is UART based (1953 baud, 8 bit, 1 stop b
 |Resistor strapping low word|0x00|||Not tested|
 |Resistor strapping high word|0x00|||Not tested|
 
-## Development
+# Development
 - Install [Node.JS](https://nodejs.org/en/download)
 - Download source files
 - Run `npm install` in project folder

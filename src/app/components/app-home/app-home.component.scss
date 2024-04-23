@@ -1,9 +1,14 @@
-@import "bootstrap";
+@import "../../../../node_modules/bootstrap/scss/functions";
+@import "../../../../node_modules/bootstrap/scss/variables";
+@import "../../../../node_modules/bootstrap/scss/variables-dark";
+@import "../../../../node_modules/bootstrap/scss/mixins";
+@import "../../../../node_modules/bootstrap/scss/tables";
 
 table {
   @extend .table;
   @extend .table-sm;
   @extend .table-hover;
+  @extend .table-striped;
   @extend .table-striped;
 }
 
