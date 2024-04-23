@@ -14,7 +14,7 @@ import { GlobalAlertService } from '../../services/global-alert.service';
   standalone: true,
   imports: [MonitorChartComponent, MonitorValuesComponent, MonitorInternalValuesComponent, MonitorFlagsComponent],
   templateUrl: './monitor.component.html',
-  styleUrl: './monitor.component.css'
+  styleUrl: './monitor.component.scss'
 })
 export class MonitorComponent {
   public port: SerialPortWrapper | undefined = undefined;

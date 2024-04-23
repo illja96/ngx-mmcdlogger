@@ -1,5 +1,5 @@
 import { HttpClientModule } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { MarkdownModule, provideMarkdown } from 'ngx-markdown';
 
 @Component({
@@ -10,5 +10,6 @@ import { MarkdownModule, provideMarkdown } from 'ngx-markdown';
     provideMarkdown(),
   ],
   templateUrl: './app-home.component.html',
-  styleUrl: './app-home.component.css'
+  styleUrl: './app-home.component.scss',
+  encapsulation: ViewEncapsulation.None
 }) export class AppHomeComponent { }

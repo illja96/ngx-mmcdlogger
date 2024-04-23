@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule, AlertModule],
   templateUrl: './app-alerts.component.html',
-  styleUrl: './app-alerts.component.css',
+  styleUrl: './app-alerts.component.scss',
   encapsulation: ViewEncapsulation.None
 })
 export class AppAlertsComponent {

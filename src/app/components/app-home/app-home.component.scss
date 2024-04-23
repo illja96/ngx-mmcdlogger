@@ -1,0 +1,9 @@
+@import "bootstrap";
+
+table {
+  @extend .table;
+  @extend .table-sm;
+  @extend .table-hover;
+  @extend .table-striped;
+}
+

@@ -16,7 +16,7 @@ import { SerialPortQueryLogService } from '../../services/serial-port-query-log.
   standalone: true,
   imports: [CommonModule, TooltipModule, ReactiveFormsModule, NumberTo8BitArrayPipe],
   templateUrl: './monitor-value.component.html',
-  styleUrl: './monitor-value.component.css'
+  styleUrl: './monitor-value.component.scss'
 })
 export class MonitorValueComponent implements OnInit, OnChanges {
   @Input() public port!: SerialPortWrapper | undefined;

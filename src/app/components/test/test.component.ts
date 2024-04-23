@@ -14,7 +14,7 @@ import { Queries } from '../../models/queries/queries';
   standalone: true,
   imports: [TestFaultComponent],
   templateUrl: './test.component.html',
-  styleUrl: './test.component.css'
+  styleUrl: './test.component.scss'
 })
 export class TestComponent {
   public port: SerialPortWrapper | undefined;

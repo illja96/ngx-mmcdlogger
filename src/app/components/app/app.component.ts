@@ -8,6 +8,6 @@ import { AppAlertsComponent } from '../app-alerts/app-alerts.component';
   standalone: true,
   imports: [AppNavComponent, RouterOutlet, AppAlertsComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.scss'
 })
 export class AppComponent { }

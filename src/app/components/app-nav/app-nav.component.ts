@@ -9,7 +9,7 @@ import { SerialPortProviderService } from '../../services/serial-port-provider.s
   standalone: true,
   imports: [CommonModule, RouterLink, RouterLinkActive],
   templateUrl: './app-nav.component.html',
-  styleUrl: './app-nav.component.css'
+  styleUrl: './app-nav.component.scss'
 })
 export class AppNavComponent {
   public port: SerialPortWrapper | undefined;

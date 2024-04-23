@@ -9,7 +9,7 @@ import { QueryLog } from '../../models/queries/query-log';
   standalone: true,
   imports: [MonitorValueComponent],
   templateUrl: './monitor-values.component.html',
-  styleUrl: './monitor-values.component.css'
+  styleUrl: './monitor-values.component.scss'
 })
 export class MonitorValuesComponent {
   @Input() public port!: SerialPortWrapper | undefined;

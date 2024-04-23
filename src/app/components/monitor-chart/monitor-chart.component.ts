@@ -12,7 +12,7 @@ import { QueryType } from '../../models/queries/query-type';
   standalone: true,
   imports: [],
   templateUrl: './monitor-chart.component.html',
-  styleUrl: './monitor-chart.component.css'
+  styleUrl: './monitor-chart.component.scss'
 })
 export class MonitorChartComponent implements AfterViewInit {
   @ViewChild("chartCanvas") chartCanvas!: ElementRef<HTMLCanvasElement>;

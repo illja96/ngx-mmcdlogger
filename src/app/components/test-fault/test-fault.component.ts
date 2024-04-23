@@ -6,7 +6,7 @@ import { Component, Input } from '@angular/core';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './test-fault.component.html',
-  styleUrl: './test-fault.component.css'
+  styleUrl: './test-fault.component.scss'
 })
 export class TestFaultComponent {
   @Input() public bit!: number;
