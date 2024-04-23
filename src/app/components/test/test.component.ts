@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
-import { QueryLog } from '../../models/queries/query-log';
 import { TestFaultComponent } from '../test-fault/test-fault.component';
 import { Command } from '../../models/commands/command';
 import { Commands } from '../../models/commands/commands';
 import { SerialPortProviderService } from '../../services/serial-port-provider.service';
 import { SerialPortWrapper } from '../../models/serial-port-wrapper';
 import { GlobalAlertService } from '../../services/global-alert.service';
-import { SerialPortQueryLogService } from '../../services/serial-port-query-log.service';
 import { Queries } from '../../models/queries/queries';
+import { SerialPortCommunicationService } from '../../services/serial-port-communication-service.service';
 
 @Component({
   selector: 'app-test',
@@ -18,7 +17,6 @@ import { Queries } from '../../models/queries/queries';
 })
 export class TestComponent {
   public port: SerialPortWrapper | undefined;
-  public log: QueryLog | undefined;
   public faults: boolean[] | undefined;
   public storedFaults: boolean[] | undefined;
 
@@ -26,26 +24,25 @@ export class TestComponent {
 
   constructor(
     private readonly serialPortProviderService: SerialPortProviderService,
-    private readonly serialPortQueryLogService: SerialPortQueryLogService,
+    private readonly serialPortCommunicationService: SerialPortCommunicationService,
     private readonly globalAlertService: GlobalAlertService) {
     this.serialPortProviderService.port.subscribe(port => this.port = port);
-    this.serialPortQueryLogService.log.subscribe(log => this.log = log);
   }
 
-  public onReadAllFaultsClicked(): void {
+  public async onReadAllFaultsClicked(): Promise<void> {
     const queries = [Queries.faultHi, Queries.faultLo, Queries.stFaultHi, Queries.stFaultLo];
-    this.serialPortQueryLogService.startSingle(queries)
+
+    this.serialPortCommunicationService.send(queries)
       .then(
-        queryResponses => {
-          this.faults = this.parseFaultsToBitArray(queryResponses[0]!, queryResponses[1]!);
-          this.storedFaults = this.parseFaultsToBitArray(queryResponses[2]!, queryResponses[3]!);
+        log => {
+          this.faults = this.parseFaultsToBitArray(log[Queries.faultHi.propertyName], log[Queries.faultLo.propertyName]);
+          this.storedFaults = this.parseFaultsToBitArray(log[Queries.stFaultHi.propertyName], log[Queries.stFaultLo.propertyName]);
         },
-        error => this.globalAlertService.display({ type: "danger", title: "Command failed", text: error.message, dismissible: true, timeout: 10000 })
-      );
+        error => this.globalAlertService.display({ type: "danger", title: "Command failed", text: error.message, dismissible: true, timeout: 10000 }));
   }
 
   public onActivateCommandClicked(command: Command): void {
-    this.port?.request(command.address).then(
+    this.port!.request(command.address).then(
       result => {
         if (result === command.successResult) {
           this.globalAlertService.display({ type: "success", title: "Command executed", dismissible: true, timeout: 10000 });

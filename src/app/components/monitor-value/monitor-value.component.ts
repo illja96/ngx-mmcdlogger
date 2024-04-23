@@ -9,7 +9,7 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { filter, first } from 'rxjs';
 import { QueryLog } from '../../models/queries/query-log';
 import { NumberTo8BitArrayPipe } from '../../services/number-to-8bit-array.pipe';
-import { SerialPortQueryLogService } from '../../services/serial-port-query-log.service';
+import { QueriesProviderService } from '../../services/queries-provider-service.service';
 
 @Component({
   selector: 'app-monitor-value',
@@ -18,7 +18,7 @@ import { SerialPortQueryLogService } from '../../services/serial-port-query-log.
   templateUrl: './monitor-value.component.html',
   styleUrl: './monitor-value.component.scss'
 })
-export class MonitorValueComponent implements OnInit, OnChanges {
+export class MonitorValueComponent implements OnChanges, OnInit {
   @Input() public port!: SerialPortWrapper | undefined;
   @Input() public log!: QueryLog | undefined;
   @Input() public query!: Query;
@@ -31,19 +31,22 @@ export class MonitorValueComponent implements OnInit, OnChanges {
     query: new FormControl(false)
   });
 
-  constructor(private readonly serialPortQueryLogService: SerialPortQueryLogService) {
+  constructor(private readonly queriesProviderService: QueriesProviderService) {
     this.form.valueChanges
-      .subscribe(_ => _.query ? this.serialPortQueryLogService.addToQuery(this.query) : this.serialPortQueryLogService.removeFromQuery(this.query));
+      .subscribe(_ => _.query ? this.queriesProviderService.addToActiveQueries(this.query) : this.queriesProviderService.addToActiveQueries(this.query));
   }
+
   public ngOnInit(): void {
-    this.serialPortQueryLogService.queries
+    this.queriesProviderService.activeQueries
       .pipe(
+        filter(activeQueries => activeQueries !== undefined),
         first(),
-        filter(queryState => queryState.findIndex(query => query.propertyName === this.query.propertyName) !== -1))
+        filter(activeQueries => activeQueries!.findIndex(activeQuery => activeQuery.propertyName === this.query.propertyName) !== -1))
       .subscribe(_ => this.form.controls.query.setValue(true, { emitEvent: false }));
   }
 
   public ngOnChanges(): void {
-    if (this.port === undefined) this.form.disable({ emitEvent: false }); else this.form.enable({ emitEvent: false });
+    if (this.port === undefined) this.form.disable({ emitEvent: false });
+    else this.form.enable({ emitEvent: false });
   }
 }

@@ -41,7 +41,6 @@ export class SerialPortWrapper {
         for (let i = 0; i < (readData.value?.length ?? 0); i++) {
           readDataBuffer.push(readData.value![i]);
         }
-        console.log(readDataBuffer);
         if (readDataBuffer.length < 2) continue;
         if (readDataBuffer.length === 2) {
           if (writeData[0] !== readDataBuffer[0]) throw new Error("Serial data are inconsistent: no multiplex");
