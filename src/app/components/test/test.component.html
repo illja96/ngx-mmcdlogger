@@ -58,7 +58,9 @@
       <div class="col-auto">
         <div class="btn-group btn-group-sm" role="group" aria-label="Components" id="components">
           <button i18n class="btn btn-outline-primary" [disabled]="!port" (click)="onActivateCommandClicked(Commands.activateBoostControlSolenoid)">Boost control solenoid</button>
+          <!--
           <button i18n class="btn btn-outline-primary" [disabled]="!port" (click)="onActivateCommandClicked(Commands.mivecMotor)">MIVEC/VICS motor</button>
+          -->
           <button i18n class="btn btn-outline-primary" [disabled]="!port" (click)="onActivateCommandClicked(Commands.activateEgrSolenoid)">EGR solenoid</button>
           <button i18n class="btn btn-outline-primary" [disabled]="!port" (click)="onActivateCommandClicked(Commands.activateFuelPressureSolenoid)">Fuel pressure solenoid</button>
           <button i18n class="btn btn-outline-primary" [disabled]="!port" (click)="onActivateCommandClicked(Commands.activatePurgeSolenoid)">Purge solenoid</button>
@@ -77,8 +79,10 @@
           <button class="btn btn-outline-primary" [disabled]="!port" (click)="onActivateCommandClicked(Commands.disableInjector2)">2</button>
           <button class="btn btn-outline-primary" [disabled]="!port" (click)="onActivateCommandClicked(Commands.disableInjector3)">3</button>
           <button class="btn btn-outline-primary" [disabled]="!port" (click)="onActivateCommandClicked(Commands.disableInjector4)">4</button>
+          <!--
           <button class="btn btn-outline-primary" [disabled]="!port" (click)="onActivateCommandClicked(Commands.disableInjector5)">5</button>
           <button class="btn btn-outline-primary" [disabled]="!port" (click)="onActivateCommandClicked(Commands.disableInjector6)">6</button>
+          -->
         </div>
       </div>
     </div>

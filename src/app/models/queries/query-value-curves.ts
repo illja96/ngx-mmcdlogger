@@ -1,5 +1,5 @@
 // https://github.com/Data-ptr/E932-E931-Commented-Source/blob/main/standard_E932_E931_source.asm
-export class Curves {
+export class QueryValueCurves {
   public static ECT: { [value: number]: number; } = {
     0x00: 158,
     0x01: 154.4,

@@ -1,0 +1,65 @@
+<div class="card mb-3">
+  <div class="card-header text-center">
+    <h3>
+      <i class="bi bi-bug"></i>
+      <span i18n>Debug values</span>
+    </h3>
+  </div>
+
+  <div class="card-body pb-0">
+    <div class="row">
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.isc0" description="Long term correction factors/feedback for the ISC step adjustment" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.iscY0" description="Short term correction factors/feedback for the ISC step adjustment" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.isc1" description="Long term learning variable when A/C is on" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.iscY1" description="ISC learning variable when A/C is on and PS is off" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.ftrim_low_0x1B" description="Fuel trim (low 0x1B)" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.ftrim_low_0x1F" description="Fuel trim (low 0x1F)" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.ftrim_low_0x3D" description="Fuel trim (low 0x3D)" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.injFactor" description="Global injector factor" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.temp1" description="Temporary value 1" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.temp2" description="Temporary value 2" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.temp3" description="Temporary value 3" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.temp4" description="Temporary value 4" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.temp5" description="Temporary value 5" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.iscStepCom" description="ISC step complement" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.iscPatrnIdx" description="Current ISC pattern index" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.temp6" description="Temporary value 6" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.temp7" description="Temporary value 7" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.temp8" description="Temporary value 8" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.temp9" description="Temporary value 9" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.tCasLast" description="Last CAS time value that was valid" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.tCasNew" description="New value of CAS time calculated during the CAS interrupt" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.casRiseTime" description="Clock value when last CAS rising edge interrupt occurred" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.casFallTime" description="Clock value when last CAS falling edge interrupt occurred" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.timCas" description="CAS time" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.tCasLast128" description="Last CAS time value that was valid (128 by divided)" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.tdcMask" description="Toggled on every CAS rising edge" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.tim61" description="Current timing" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.temp20" description="Temporary value 20" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.temp21" description="Temporary value 21" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.temp22" description="Temporary value 22" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.temp23" description="Temporary value 23" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.temp24" description="Temporary value 24" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.tdcCasCount" description="CAS rising edge counter when key is not in start, incremented on every CAS rising edge up to a maximum value of 6, used in TDC synch" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.t40s_casInt" description="Initialized on every CAS rising edge interrupt and decremented in first subroutine. Will reach expire only when no CAS interrupt was received for over 1.275 seconds" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.tim61Tot0" description="New target timing" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.airCntNew" description="New air count" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.oldAirCnt" description="Old air count" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.airDiffPos" description="Contains difference between air count and old air count if positive" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.airDiffNeg" description="Contains difference between air count and old air count if negative" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.t1_lastCas" description="Latest value of CAS sensor input capture register when CAS interrupt was called" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.t2_lastMas" description="Latest value of airflow sensor input capture register when CAS interrupt was called" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.t2_diff8" description=" Time between 2 edges of the airflow sensor with timer based rounding" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.airQuantum" description="Amount of air corresponding to 1 airflow sensor pulse" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.airFiltFact" description="Air count (filtered)" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.airCntMax" description="Air count based on RPM" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.oldReedVal" description="Old value of the reed switch sensor" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.last_t1t2_clk" description="" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.tdcCheck" description="Used to check that TDC sensor is working correctly" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.rtiCnt" description="Free counter increased on every real time interrupt" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.rtiCnt48" description="Counter increased on every real time interrupt" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.ecuVersion" description="ECU version" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+    </div>
+  </div>
+</div>

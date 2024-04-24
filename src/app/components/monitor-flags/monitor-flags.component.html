@@ -1,25 +1,48 @@
 <div class="card mb-3">
   <div class="card-header text-center">
     <h3>
-      <i class="bi bi-flag"></i>
+      <i class="bi bi-database-fill-gear"></i>
       <span i18n>Flags</span>
     </h3>
   </div>
 
   <div class="card-body pb-0">
     <div class="row">
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.port1" description="Port 1 data register" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.port2" description="Port 2 data register" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.port3" description="Port 3 data register" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.port4" description="Port 4 data register" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.port5" description="Port 5 data register" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.port6" description="Port 6 data register" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.closedLpFlags" description="Closed loop mode flags" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.ftrimFlags" description="Fuel trim flags" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.state1" description="Engine start-up stages and running condition state flags" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.port3Snap1" description="Port 3 snapshot (1)" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.iscLrnFlags" description="ISC learning flags" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.port3Snap0" description="Port 3 snapshot (0)" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>      
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.port4Snap" description="Port 4 snapshot" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.iscFlags0" description="ISC flags" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
       <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.faultHi" description="Faults (high byte)" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
       <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.faultLo" description="Faults (low byte)" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
-
       <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.stFaultHi" description="Stored faults (high byte)" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
       <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.stFaultLo" description="Stored faults (low byte)" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
-
-      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.iscLrnFlags" description="ISC learning flags" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
-      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.iscFlags0" description="ISC flags" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
-
-      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.ftrimFlags" description="Fuel trim flags" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
-      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.closedLpFlags" description="Closed loop mode flags" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
-      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.state1" description="Engine start-up stages and running condition state flags" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.casFlags0" description="CAS flag register" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.ignFallFlags" description="Coil ignition scheduling on the cas falling edge" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.enerFlags" description="Coil energization state" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.coilChkFlags" description="Flag register used to validate the ignition signal using the ignition coil sensing circuit" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.p4Latched" description="Loaded with port4 and checked for bit #$04 in CAS interrupt" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.timAdjFlags" description="Timing adjustment mode flags" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.masCasFlags" description="MAS and CAS flag register" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.state3" description="Flag register" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.injToAct" description=" Indicate which injectors are currently active or should be activated" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.tdcCasFlags" description="TDC CAS flag register" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.casCylIndex" description="CAS current cylinder index" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.newInjToAct" description="Indicate which injector should be activated" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.oldInjToAct" description="Old value of which injector should be activated" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.injToTest" description="The current injector to test for proper operation" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.injBad" description="Injector testing flags" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.obdInjCmd" description="Processing of OBD code to injectors being turned on/off  " class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.rtiReedFlags" description="RTI redd flag register" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
     </div>
   </div>
 </div>

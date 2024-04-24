@@ -10,6 +10,7 @@ export enum QueryUnit {
   hertz,
   rpm,
   ms,
+  us,
 
   kPa,
   bar,

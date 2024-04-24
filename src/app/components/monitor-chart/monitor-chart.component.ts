@@ -6,6 +6,7 @@ import { Queries } from '../../models/queries/queries';
 import { Query } from '../../models/queries/query';
 import { QueryLogsProviderService } from '../../services/query-logs-provider-service.service';
 import { QueriesProviderService } from '../../services/queries-provider-service.service';
+import { QueryGroup } from '../../models/queries/query-group';
 
 @Component({
   selector: 'app-monitor-chart',
@@ -23,7 +24,7 @@ export class MonitorChartComponent implements AfterViewInit {
   constructor(
     private readonly queriesProviderService: QueriesProviderService,
     private readonly queryLogsProviderService: QueryLogsProviderService) {
-    const queries = Object.entries(Queries).map(_ => _[1] as Query).sort((a, b) => a.displayName.localeCompare(b.displayName));
+    const queries = Object.entries(Queries).map(_ => _[1] as Query);
     for (const query of queries) {
       this.queriesByDisplayName[query.displayName] = query;
     }
@@ -41,7 +42,10 @@ export class MonitorChartComponent implements AfterViewInit {
     const labels: string[] = [];
 
     const datasets: ChartDataset<"line", (number | null)[]>[] = [];
-    const queries = Object.entries(Queries).map(_ => _[1] as Query).sort((a, b) => a.displayName.localeCompare(b.displayName));
+    const queries = Object.entries(Queries)
+      .map(_ => _[1] as Query)
+      .filter(_ => _.group === QueryGroup.common || _.group === QueryGroup.advanced)
+      .sort((a, b) => a.addresses[0] - b.addresses[0]);
     const chartQueries = await firstValueFrom(this.queriesProviderService.chartQueries);
     for (const query of queries) {
       const dataset: ChartDataset<"line", (number | null)[]> = {

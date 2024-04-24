@@ -16,8 +16,8 @@
 
 <app-monitor-chart></app-monitor-chart>
 
-<app-monitor-values [port]="port" [log]="log"></app-monitor-values>
-
-<app-monitor-internal-values [port]="port" [log]="log"></app-monitor-internal-values>
+<app-monitor-values-common [port]="port" [log]="log"></app-monitor-values-common>
+<app-monitor-values-advanced [port]="port" [log]="log"></app-monitor-values-advanced>
+<app-monitor-values-debug [port]="port" [log]="log"></app-monitor-values-debug>
 
 <app-monitor-flags [port]="port" [log]="log"></app-monitor-flags>

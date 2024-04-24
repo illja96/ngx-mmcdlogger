@@ -28,8 +28,13 @@ export class SerialPortCommunicationService {
       };
 
       for (const query of queries) {
-        const queryRawValue = await this.port!.request(query.address);
-        const queryValue = query.formula(queryRawValue);
+        const queryRawValues = [];
+        for (const address of query.addresses) {
+          const queryRawValue = await this.port!.request(address);
+          queryRawValues.push(queryRawValue);
+        }
+
+        const queryValue = query.formula(queryRawValues);
         log[query.propertyName] = queryValue;
       }
 

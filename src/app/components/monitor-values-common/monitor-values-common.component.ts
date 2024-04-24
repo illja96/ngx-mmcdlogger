@@ -1,17 +1,17 @@
 import { Component, Input } from '@angular/core';
-import { Queries } from '../../models/queries/queries';
 import { MonitorValueComponent } from '../monitor-value/monitor-value.component';
+import { Queries } from '../../models/queries/queries';
 import { SerialPortWrapper } from '../../models/serial-port-wrapper';
 import { QueryLog } from '../../models/queries/query-log';
 
 @Component({
-  selector: 'app-monitor-internal-values',
+  selector: 'app-monitor-values-common',
   standalone: true,
   imports: [MonitorValueComponent],
-  templateUrl: './monitor-internal-values.component.html',
-  styleUrl: './monitor-internal-values.component.scss'
+  templateUrl: './monitor-values-common.component.html',
+  styleUrl: './monitor-values-common.component.scss'
 })
-export class MonitorInternalValuesComponent {
+export class MonitorValuesCommonComponent {
   @Input() public port!: SerialPortWrapper | undefined;
   @Input() public log!: QueryLog | undefined;
 

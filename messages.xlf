@@ -58,470 +58,936 @@
           <context context-type="linenumber">5,6</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="2735836752985416529" datatype="html">
-        <source>Faults (high byte)</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/monitor-flags/monitor-flags.component.html</context>
-          <context context-type="linenumber">11</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="3085670483090091140" datatype="html">
-        <source>Faults (low byte)</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/monitor-flags/monitor-flags.component.html</context>
-          <context context-type="linenumber">12</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="532707068948782572" datatype="html">
-        <source>Stored faults (high byte)</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/monitor-flags/monitor-flags.component.html</context>
-          <context context-type="linenumber">14</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="8860497913341581062" datatype="html">
-        <source>Stored faults (low byte)</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/monitor-flags/monitor-flags.component.html</context>
-          <context context-type="linenumber">15</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="3064134502732627122" datatype="html">
-        <source>ISC learning flags</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/monitor-flags/monitor-flags.component.html</context>
-          <context context-type="linenumber">17</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="2626813627339750924" datatype="html">
-        <source>ISC flags</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/monitor-flags/monitor-flags.component.html</context>
-          <context context-type="linenumber">18</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="5455180677748446524" datatype="html">
-        <source>Fuel trim flags</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/monitor-flags/monitor-flags.component.html</context>
-          <context context-type="linenumber">20</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="8978960458688724829" datatype="html">
-        <source>Closed loop mode flags</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/monitor-flags/monitor-flags.component.html</context>
-          <context context-type="linenumber">21</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="6429070710131235780" datatype="html">
-        <source>Engine start-up stages and running condition state flags</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/monitor-flags/monitor-flags.component.html</context>
-          <context context-type="linenumber">22</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="4376959505157476920" datatype="html">
-        <source>Internal values</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/monitor-internal-values/monitor-internal-values.component.html</context>
-          <context context-type="linenumber">5,6</context>
-        </context-group>
-      </trans-unit>
       <trans-unit id="6283126126600861378" datatype="html">
         <source>Port 1 data register</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/monitor-internal-values/monitor-internal-values.component.html</context>
+          <context context-type="sourcefile">src/app/components/monitor-flags/monitor-flags.component.html</context>
           <context context-type="linenumber">11</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6132136708489181765" datatype="html">
         <source>Port 2 data register</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/monitor-internal-values/monitor-internal-values.component.html</context>
+          <context context-type="sourcefile">src/app/components/monitor-flags/monitor-flags.component.html</context>
           <context context-type="linenumber">12</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3366113253465879573" datatype="html">
         <source>Port 3 data register</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/monitor-internal-values/monitor-internal-values.component.html</context>
+          <context context-type="sourcefile">src/app/components/monitor-flags/monitor-flags.component.html</context>
           <context context-type="linenumber">13</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6784261948548519338" datatype="html">
         <source>Port 4 data register</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/monitor-internal-values/monitor-internal-values.component.html</context>
+          <context context-type="sourcefile">src/app/components/monitor-flags/monitor-flags.component.html</context>
           <context context-type="linenumber">14</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4748124656564894082" datatype="html">
         <source>Port 5 data register</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/monitor-internal-values/monitor-internal-values.component.html</context>
+          <context context-type="sourcefile">src/app/components/monitor-flags/monitor-flags.component.html</context>
           <context context-type="linenumber">15</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4489636476548907223" datatype="html">
         <source>Port 6 data register</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/monitor-internal-values/monitor-internal-values.component.html</context>
+          <context context-type="sourcefile">src/app/components/monitor-flags/monitor-flags.component.html</context>
           <context context-type="linenumber">16</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="1618481764894474923" datatype="html">
-        <source>Port 3 snapshot (0)</source>
+      <trans-unit id="8978960458688724829" datatype="html">
+        <source>Closed loop mode flags</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/monitor-internal-values/monitor-internal-values.component.html</context>
+          <context context-type="sourcefile">src/app/components/monitor-flags/monitor-flags.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5455180677748446524" datatype="html">
+        <source>Fuel trim flags</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-flags/monitor-flags.component.html</context>
           <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6429070710131235780" datatype="html">
+        <source>Engine start-up stages and running condition state flags</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-flags/monitor-flags.component.html</context>
+          <context context-type="linenumber">19</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7742566705248647834" datatype="html">
         <source>Port 3 snapshot (1)</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/monitor-internal-values/monitor-internal-values.component.html</context>
-          <context context-type="linenumber">19</context>
+          <context context-type="sourcefile">src/app/components/monitor-flags/monitor-flags.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3064134502732627122" datatype="html">
+        <source>ISC learning flags</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-flags/monitor-flags.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1618481764894474923" datatype="html">
+        <source>Port 3 snapshot (0)</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-flags/monitor-flags.component.html</context>
+          <context context-type="linenumber">22</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8061212679430420477" datatype="html">
         <source>Port 4 snapshot</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/monitor-internal-values/monitor-internal-values.component.html</context>
-          <context context-type="linenumber">20</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="7681824674441947027" datatype="html">
-        <source>Temporary value 1</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/monitor-internal-values/monitor-internal-values.component.html</context>
-          <context context-type="linenumber">22</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="743090890494403972" datatype="html">
-        <source>Temporary value 2</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/monitor-internal-values/monitor-internal-values.component.html</context>
+          <context context-type="sourcefile">src/app/components/monitor-flags/monitor-flags.component.html</context>
           <context context-type="linenumber">23</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="4388607019327245830" datatype="html">
-        <source>Temporary value 3</source>
+      <trans-unit id="2626813627339750924" datatype="html">
+        <source>ISC flags</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/monitor-internal-values/monitor-internal-values.component.html</context>
+          <context context-type="sourcefile">src/app/components/monitor-flags/monitor-flags.component.html</context>
           <context context-type="linenumber">24</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="8368100751389993223" datatype="html">
-        <source>Temporary value 4</source>
+      <trans-unit id="2735836752985416529" datatype="html">
+        <source>Faults (high byte)</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/monitor-internal-values/monitor-internal-values.component.html</context>
+          <context context-type="sourcefile">src/app/components/monitor-flags/monitor-flags.component.html</context>
           <context context-type="linenumber">25</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="7662285457048600014" datatype="html">
-        <source>Temporary value 5</source>
+      <trans-unit id="3085670483090091140" datatype="html">
+        <source>Faults (low byte)</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/monitor-internal-values/monitor-internal-values.component.html</context>
+          <context context-type="sourcefile">src/app/components/monitor-flags/monitor-flags.component.html</context>
           <context context-type="linenumber">26</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="2509354528245140255" datatype="html">
-        <source>Long term correction factors/feedback for the ISC step adjustment</source>
+      <trans-unit id="532707068948782572" datatype="html">
+        <source>Stored faults (high byte)</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/monitor-internal-values/monitor-internal-values.component.html</context>
+          <context context-type="sourcefile">src/app/components/monitor-flags/monitor-flags.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8860497913341581062" datatype="html">
+        <source>Stored faults (low byte)</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-flags/monitor-flags.component.html</context>
           <context context-type="linenumber">28</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="8994072806726396789" datatype="html">
-        <source>Short term correction factors/feedback for the ISC step adjustment</source>
+      <trans-unit id="3953585938299865599" datatype="html">
+        <source>CAS flag register</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/monitor-internal-values/monitor-internal-values.component.html</context>
+          <context context-type="sourcefile">src/app/components/monitor-flags/monitor-flags.component.html</context>
           <context context-type="linenumber">29</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="1029963235064467244" datatype="html">
-        <source>Long term learning variable when A/C is on</source>
+      <trans-unit id="8093342222828504837" datatype="html">
+        <source>Coil ignition scheduling on the cas falling edge</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/monitor-internal-values/monitor-internal-values.component.html</context>
+          <context context-type="sourcefile">src/app/components/monitor-flags/monitor-flags.component.html</context>
           <context context-type="linenumber">30</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="3778488190313530127" datatype="html">
-        <source>ISC learning variable when A/C is on and PS is off</source>
+      <trans-unit id="4911217153743677490" datatype="html">
+        <source>Coil energization state</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/monitor-internal-values/monitor-internal-values.component.html</context>
+          <context context-type="sourcefile">src/app/components/monitor-flags/monitor-flags.component.html</context>
           <context context-type="linenumber">31</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="4494917535153477322" datatype="html">
-        <source>Fuel trim (low 0x1B)</source>
+      <trans-unit id="8720458245809253143" datatype="html">
+        <source>Flag register used to validate the ignition signal using the ignition coil sensing circuit</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/monitor-internal-values/monitor-internal-values.component.html</context>
+          <context context-type="sourcefile">src/app/components/monitor-flags/monitor-flags.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2568899747410931270" datatype="html">
+        <source>Loaded with port4 and checked for bit #$04 in CAS interrupt</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-flags/monitor-flags.component.html</context>
           <context context-type="linenumber">33</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="835170474961789660" datatype="html">
-        <source>Fuel trim (low 0x1F)</source>
+      <trans-unit id="4428844405314270102" datatype="html">
+        <source>Timing adjustment mode flags</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/monitor-internal-values/monitor-internal-values.component.html</context>
+          <context context-type="sourcefile">src/app/components/monitor-flags/monitor-flags.component.html</context>
           <context context-type="linenumber">34</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="8494438525946714057" datatype="html">
-        <source>Fuel trim (low 0x3D)</source>
+      <trans-unit id="7767643823828304652" datatype="html">
+        <source>MAS and CAS flag register</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/monitor-internal-values/monitor-internal-values.component.html</context>
+          <context context-type="sourcefile">src/app/components/monitor-flags/monitor-flags.component.html</context>
           <context context-type="linenumber">35</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="9123006310598559634" datatype="html">
-        <source>ECU Version</source>
+      <trans-unit id="199160132945149267" datatype="html">
+        <source>Flag register</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/monitor-internal-values/monitor-internal-values.component.html</context>
+          <context context-type="sourcefile">src/app/components/monitor-flags/monitor-flags.component.html</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6160947371258237712" datatype="html">
+        <source> Indicate which injectors are currently active or should be activated</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-flags/monitor-flags.component.html</context>
           <context context-type="linenumber">37</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="1805506778275601584" datatype="html">
-        <source>Values</source>
+      <trans-unit id="4223207897643040596" datatype="html">
+        <source>TDC CAS flag register</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/monitor-values/monitor-values.component.html</context>
+          <context context-type="sourcefile">src/app/components/monitor-flags/monitor-flags.component.html</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="952256864444313730" datatype="html">
+        <source>CAS current cylinder index</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-flags/monitor-flags.component.html</context>
+          <context context-type="linenumber">39</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6196776608229470484" datatype="html">
+        <source>Indicate which injector should be activated</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-flags/monitor-flags.component.html</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6800522760295170244" datatype="html">
+        <source>Old value of which injector should be activated</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-flags/monitor-flags.component.html</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8528284224885610034" datatype="html">
+        <source>The current injector to test for proper operation</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-flags/monitor-flags.component.html</context>
+          <context context-type="linenumber">42</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8007883942682791257" datatype="html">
+        <source>Injector testing flags</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-flags/monitor-flags.component.html</context>
+          <context context-type="linenumber">43</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8730337499761155191" datatype="html">
+        <source>Processing of OBD code to injectors being turned on/off  </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-flags/monitor-flags.component.html</context>
+          <context context-type="linenumber">44</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="524376487436016122" datatype="html">
+        <source>RTI redd flag register</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-flags/monitor-flags.component.html</context>
+          <context context-type="linenumber">45</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="660540878984127600" datatype="html">
+        <source>Advanced values</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-values-advanced/monitor-values-advanced.component.html</context>
           <context context-type="linenumber">5,6</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="4172070568432181953" datatype="html">
-        <source>Engine coolant temperature (raw)</source>
+      <trans-unit id="4633330009495766488" datatype="html">
+        <source>Air volume</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/monitor-values/monitor-values.component.html</context>
+          <context context-type="sourcefile">src/app/components/monitor-values-advanced/monitor-values-advanced.component.html</context>
           <context context-type="linenumber">11</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="7602598990498324355" datatype="html">
-        <source>Engine coolant temperature (filtered)</source>
+      <trans-unit id="4185163406921245314" datatype="html">
+        <source>Injector pulse width</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/monitor-values/monitor-values.component.html</context>
+          <context context-type="sourcefile">src/app/components/monitor-values-advanced/monitor-values-advanced.component.html</context>
           <context context-type="linenumber">12</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="9027327404183200707" datatype="html">
-        <source>Intake air temperature (raw)</source>
+      <trans-unit id="7707941224834282778" datatype="html">
+        <source>Coil energization time</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/monitor-values/monitor-values.component.html</context>
+          <context context-type="sourcefile">src/app/components/monitor-values-advanced/monitor-values-advanced.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3341879197524190618" datatype="html">
+        <source>Air count (16 bits)</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-values-advanced/monitor-values-advanced.component.html</context>
           <context context-type="linenumber">14</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="7776541165131187841" datatype="html">
-        <source>Intake air temperature (checked)</source>
+      <trans-unit id="7096338460255881288" datatype="html">
+        <source>Oxygen sensor bad counter</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/monitor-values/monitor-values.component.html</context>
+          <context context-type="sourcefile">src/app/components/monitor-values-advanced/monitor-values-advanced.component.html</context>
           <context context-type="linenumber">15</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="7616370936058509296" datatype="html">
-        <source>Exhaust gas recirculation temperature</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/monitor-values/monitor-values.component.html</context>
-          <context context-type="linenumber">17</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8991982280863122185" datatype="html">
         <source>Exhaust gas recirculation temperature bad counter</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/monitor-values/monitor-values.component.html</context>
+          <context context-type="sourcefile">src/app/components/monitor-values-advanced/monitor-values-advanced.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3755429009853056563" datatype="html">
+        <source>Fuel trim counter</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-values-advanced/monitor-values-advanced.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4981402371695656140" datatype="html">
+        <source>Faults</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-values-advanced/monitor-values-advanced.component.html</context>
           <context context-type="linenumber">18</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/test/test.component.html</context>
+          <context context-type="linenumber">5,6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3598201041233656575" datatype="html">
+        <source>Stored faults</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-values-advanced/monitor-values-advanced.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3540490660789910701" datatype="html">
+        <source>Current ignition time</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-values-advanced/monitor-values-advanced.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5583525325105875828" datatype="html">
+        <source>Current ignition time measured from te cas falling edge</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-values-advanced/monitor-values-advanced.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6900324394285587083" datatype="html">
+        <source>One of the coil energization durations</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-values-advanced/monitor-values-advanced.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4996372399829506315" datatype="html">
+        <source>Coil energization absolute time</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-values-advanced/monitor-values-advanced.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="914884018366567765" datatype="html">
+        <source>Coil ignition absolute time</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-values-advanced/monitor-values-advanced.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6740609490260766616" datatype="html">
+        <source>Knock attenuation timer</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-values-advanced/monitor-values-advanced.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4697228189532121018" datatype="html">
+        <source>Air count (24 bits)</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-values-advanced/monitor-values-advanced.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7598058267296500668" datatype="html">
+        <source>Injector deadtime</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-values-advanced/monitor-values-advanced.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3121483311573239196" datatype="html">
+        <source>Injector #1 deactivation time</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-values-advanced/monitor-values-advanced.component.html</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3008326131884229697" datatype="html">
+        <source>Injector #3 deactivation time</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-values-advanced/monitor-values-advanced.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6441209945007476642" datatype="html">
+        <source>Injector #4 deactivation time</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-values-advanced/monitor-values-advanced.component.html</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9045962751041505601" datatype="html">
+        <source>Injector #2 deactivation time</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-values-advanced/monitor-values-advanced.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5108417030622169605" datatype="html">
+        <source>Common values</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-values-common/monitor-values-common.component.html</context>
+          <context context-type="linenumber">5,6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8960350526820611799" datatype="html">
+        <source>Timing advance</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-values-common/monitor-values-common.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4172070568432181953" datatype="html">
+        <source>Engine coolant temperature (raw)</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-values-common/monitor-values-common.component.html</context>
+          <context context-type="linenumber">12</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2866406953975034923" datatype="html">
         <source>Fuel trim (low)</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/monitor-values/monitor-values.component.html</context>
-          <context context-type="linenumber">20</context>
+          <context context-type="sourcefile">src/app/components/monitor-values-common/monitor-values-common.component.html</context>
+          <context context-type="linenumber">13</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4068829324826120046" datatype="html">
         <source>Fuel trim (middle)</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/monitor-values/monitor-values.component.html</context>
-          <context context-type="linenumber">21</context>
+          <context context-type="sourcefile">src/app/components/monitor-values-common/monitor-values-common.component.html</context>
+          <context context-type="linenumber">14</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2379579653222933240" datatype="html">
         <source>Fuel trim (high)</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/monitor-values/monitor-values.component.html</context>
-          <context context-type="linenumber">22</context>
+          <context context-type="sourcefile">src/app/components/monitor-values-common/monitor-values-common.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4280886669993489708" datatype="html">
+        <source>Oxygen feedback trim</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-values-common/monitor-values-common.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7602598990498324355" datatype="html">
+        <source>Engine coolant temperature (filtered)</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-values-common/monitor-values-common.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7776541165131187841" datatype="html">
+        <source>Intake air temperature (checked)</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-values-common/monitor-values-common.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7616370936058509296" datatype="html">
+        <source>Exhaust gas recirculation temperature</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-values-common/monitor-values-common.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3467529745903819945" datatype="html">
+        <source>Oxygen sensor</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-values-common/monitor-values-common.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/test/test.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5178935662791117213" datatype="html">
+        <source>Battery voltage</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-values-common/monitor-values-common.component.html</context>
+          <context context-type="linenumber">21</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7704218965626386029" datatype="html">
         <source>Atmospheric pressure</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/monitor-values/monitor-values.component.html</context>
+          <context context-type="sourcefile">src/app/components/monitor-values-common/monitor-values-common.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8791317001104672254" datatype="html">
+        <source>Current ISC step</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-values-common/monitor-values-common.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2414172333019472658" datatype="html">
+        <source>Throttle position</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-values-common/monitor-values-common.component.html</context>
           <context context-type="linenumber">24</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1941232468946645412" datatype="html">
         <source>Mass airflow sensor pulse frequency</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/monitor-values/monitor-values.component.html</context>
+          <context context-type="sourcefile">src/app/components/monitor-values-common/monitor-values-common.component.html</context>
           <context context-type="linenumber">25</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="4633330009495766488" datatype="html">
-        <source>Air volume</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/monitor-values/monitor-values.component.html</context>
-          <context context-type="linenumber">26</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="3467529745903819945" datatype="html">
-        <source>Oxygen sensor</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/monitor-values/monitor-values.component.html</context>
-          <context context-type="linenumber">28</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/test/test.component.html</context>
-          <context context-type="linenumber">11</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="4280886669993489708" datatype="html">
-        <source>Oxygen feedback trim</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/monitor-values/monitor-values.component.html</context>
-          <context context-type="linenumber">29</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="7096338460255881288" datatype="html">
-        <source>Oxygen sensor bad counter</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/monitor-values/monitor-values.component.html</context>
-          <context context-type="linenumber">30</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="6529521477443908730" datatype="html">
-        <source>RPM (8)</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/monitor-values/monitor-values.component.html</context>
-          <context context-type="linenumber">32</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="3518915560494643410" datatype="html">
-        <source>RPM (31)</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/monitor-values/monitor-values.component.html</context>
-          <context context-type="linenumber">33</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="76473896107505007" datatype="html">
-        <source>Current target idle speed</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/monitor-values/monitor-values.component.html</context>
-          <context context-type="linenumber">34</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="8791317001104672254" datatype="html">
-        <source>Current ISC step</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/monitor-values/monitor-values.component.html</context>
-          <context context-type="linenumber">36</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="5946720344158741269" datatype="html">
-        <source>Target ISC step</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/monitor-values/monitor-values.component.html</context>
-          <context context-type="linenumber">37</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="5178935662791117213" datatype="html">
-        <source>Battery voltage</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/monitor-values/monitor-values.component.html</context>
-          <context context-type="linenumber">39</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="2414172333019472658" datatype="html">
-        <source>Throttle position</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/monitor-values/monitor-values.component.html</context>
-          <context context-type="linenumber">41</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5888746852740068283" datatype="html">
         <source>Acceleration enrichment</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/monitor-values/monitor-values.component.html</context>
-          <context context-type="linenumber">42</context>
+          <context context-type="sourcefile">src/app/components/monitor-values-common/monitor-values-common.component.html</context>
+          <context context-type="linenumber">26</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="8960350526820611799" datatype="html">
-        <source>Timing advance</source>
+      <trans-unit id="3590909083673389859" datatype="html">
+        <source>RPM (x8 multiplier)</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/monitor-values/monitor-values.component.html</context>
-          <context context-type="linenumber">43</context>
+          <context context-type="sourcefile">src/app/components/monitor-values-common/monitor-values-common.component.html</context>
+          <context context-type="linenumber">27</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="7707941224834282778" datatype="html">
-        <source>Coil energization time</source>
+      <trans-unit id="800016426399983297" datatype="html">
+        <source>RPM (x31 multiplier)</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/monitor-values/monitor-values.component.html</context>
-          <context context-type="linenumber">44</context>
+          <context context-type="sourcefile">src/app/components/monitor-values-common/monitor-values-common.component.html</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="76473896107505007" datatype="html">
+        <source>Current target idle speed</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-values-common/monitor-values-common.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5946720344158741269" datatype="html">
+        <source>Target ISC step</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-values-common/monitor-values-common.component.html</context>
+          <context context-type="linenumber">30</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3598659382770948092" datatype="html">
         <source>Current knock sum</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/monitor-values/monitor-values.component.html</context>
-          <context context-type="linenumber">45</context>
+          <context context-type="sourcefile">src/app/components/monitor-values-common/monitor-values-common.component.html</context>
+          <context context-type="linenumber">31</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="4185163406921245314" datatype="html">
-        <source>Injector pulse width</source>
+      <trans-unit id="9027327404183200707" datatype="html">
+        <source>Intake air temperature (raw)</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/monitor-values/monitor-values.component.html</context>
-          <context context-type="linenumber">47</context>
+          <context context-type="sourcefile">src/app/components/monitor-values-common/monitor-values-common.component.html</context>
+          <context context-type="linenumber">32</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="434977515366670793" datatype="html">
-        <source>Injector pulse width (+1)</source>
+      <trans-unit id="4953138709793378918" datatype="html">
+        <source>Octane</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/monitor-values/monitor-values.component.html</context>
-          <context context-type="linenumber">48</context>
+          <context context-type="sourcefile">src/app/components/monitor-values-common/monitor-values-common.component.html</context>
+          <context context-type="linenumber">33</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="6471281844798838360" datatype="html">
-        <source>Air count (0)</source>
+      <trans-unit id="6541805213067581689" datatype="html">
+        <source>Debug values</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/monitor-values/monitor-values.component.html</context>
-          <context context-type="linenumber">50</context>
+          <context context-type="sourcefile">src/app/components/monitor-values-debug/monitor-values-debug.component.html</context>
+          <context context-type="linenumber">5,6</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="4722606328187116722" datatype="html">
-        <source>Air count (1)</source>
+      <trans-unit id="2509354528245140255" datatype="html">
+        <source>Long term correction factors/feedback for the ISC step adjustment</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/monitor-values/monitor-values.component.html</context>
-          <context context-type="linenumber">51</context>
+          <context context-type="sourcefile">src/app/components/monitor-values-debug/monitor-values-debug.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8994072806726396789" datatype="html">
+        <source>Short term correction factors/feedback for the ISC step adjustment</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-values-debug/monitor-values-debug.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1029963235064467244" datatype="html">
+        <source>Long term learning variable when A/C is on</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-values-debug/monitor-values-debug.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3778488190313530127" datatype="html">
+        <source>ISC learning variable when A/C is on and PS is off</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-values-debug/monitor-values-debug.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4494917535153477322" datatype="html">
+        <source>Fuel trim (low 0x1B)</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-values-debug/monitor-values-debug.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="835170474961789660" datatype="html">
+        <source>Fuel trim (low 0x1F)</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-values-debug/monitor-values-debug.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8494438525946714057" datatype="html">
+        <source>Fuel trim (low 0x3D)</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-values-debug/monitor-values-debug.component.html</context>
+          <context context-type="linenumber">17</context>
         </context-group>
       </trans-unit>
       <trans-unit id="122062200575559405" datatype="html">
         <source>Global injector factor</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/monitor-values/monitor-values.component.html</context>
+          <context context-type="sourcefile">src/app/components/monitor-values-debug/monitor-values-debug.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7681824674441947027" datatype="html">
+        <source>Temporary value 1</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-values-debug/monitor-values-debug.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="743090890494403972" datatype="html">
+        <source>Temporary value 2</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-values-debug/monitor-values-debug.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4388607019327245830" datatype="html">
+        <source>Temporary value 3</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-values-debug/monitor-values-debug.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8368100751389993223" datatype="html">
+        <source>Temporary value 4</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-values-debug/monitor-values-debug.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7662285457048600014" datatype="html">
+        <source>Temporary value 5</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-values-debug/monitor-values-debug.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8010182579862317465" datatype="html">
+        <source>ISC step complement</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-values-debug/monitor-values-debug.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5685235158809558435" datatype="html">
+        <source>Current ISC pattern index</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-values-debug/monitor-values-debug.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7649488136113512585" datatype="html">
+        <source>Temporary value 6</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-values-debug/monitor-values-debug.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="535660849149620979" datatype="html">
+        <source>Temporary value 7</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-values-debug/monitor-values-debug.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4605458847923439633" datatype="html">
+        <source>Temporary value 8</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-values-debug/monitor-values-debug.component.html</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6665944604423467143" datatype="html">
+        <source>Temporary value 9</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-values-debug/monitor-values-debug.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6262500210237885616" datatype="html">
+        <source>Last CAS time value that was valid</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-values-debug/monitor-values-debug.component.html</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2577831400034611456" datatype="html">
+        <source>New value of CAS time calculated during the CAS interrupt</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-values-debug/monitor-values-debug.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4623592316043299648" datatype="html">
+        <source>Clock value when last CAS rising edge interrupt occurred</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-values-debug/monitor-values-debug.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="756799079735452423" datatype="html">
+        <source>Clock value when last CAS falling edge interrupt occurred</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-values-debug/monitor-values-debug.component.html</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8416570066625226074" datatype="html">
+        <source>CAS time</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-values-debug/monitor-values-debug.component.html</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8187607624130407119" datatype="html">
+        <source>Last CAS time value that was valid (128 by divided)</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-values-debug/monitor-values-debug.component.html</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9166521791630693687" datatype="html">
+        <source>Toggled on every CAS rising edge</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-values-debug/monitor-values-debug.component.html</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2400623133856529201" datatype="html">
+        <source>Current timing</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-values-debug/monitor-values-debug.component.html</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6866691608323960759" datatype="html">
+        <source>Temporary value 20</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-values-debug/monitor-values-debug.component.html</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5589324193416555029" datatype="html">
+        <source>Temporary value 21</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-values-debug/monitor-values-debug.component.html</context>
+          <context context-type="linenumber">39</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1323898606116714529" datatype="html">
+        <source>Temporary value 22</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-values-debug/monitor-values-debug.component.html</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6874429997377758202" datatype="html">
+        <source>Temporary value 23</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-values-debug/monitor-values-debug.component.html</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8457390341221539783" datatype="html">
+        <source>Temporary value 24</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-values-debug/monitor-values-debug.component.html</context>
+          <context context-type="linenumber">42</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4203072561599378341" datatype="html">
+        <source>CAS rising edge counter when key is not in start, incremented on every CAS rising edge up to a maximum value of 6, used in TDC synch</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-values-debug/monitor-values-debug.component.html</context>
+          <context context-type="linenumber">43</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1350497496521114497" datatype="html">
+        <source>Initialized on every CAS rising edge interrupt and decremented in first subroutine. Will reach expire only when no CAS interrupt was received for over 1.275 seconds</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-values-debug/monitor-values-debug.component.html</context>
+          <context context-type="linenumber">44</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3580438311470891695" datatype="html">
+        <source>New target timing</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-values-debug/monitor-values-debug.component.html</context>
+          <context context-type="linenumber">45</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5825508061495085333" datatype="html">
+        <source>New air count</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-values-debug/monitor-values-debug.component.html</context>
+          <context context-type="linenumber">46</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="968395621803614196" datatype="html">
+        <source>Old air count</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-values-debug/monitor-values-debug.component.html</context>
+          <context context-type="linenumber">47</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5443332144834239709" datatype="html">
+        <source>Contains difference between air count and old air count if positive</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-values-debug/monitor-values-debug.component.html</context>
+          <context context-type="linenumber">48</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8840866346868151275" datatype="html">
+        <source>Contains difference between air count and old air count if negative</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-values-debug/monitor-values-debug.component.html</context>
+          <context context-type="linenumber">49</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="588146889394865020" datatype="html">
+        <source>Latest value of CAS sensor input capture register when CAS interrupt was called</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-values-debug/monitor-values-debug.component.html</context>
+          <context context-type="linenumber">50</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5953720417083407751" datatype="html">
+        <source>Latest value of airflow sensor input capture register when CAS interrupt was called</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-values-debug/monitor-values-debug.component.html</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4630507140682764382" datatype="html">
+        <source> Time between 2 edges of the airflow sensor with timer based rounding</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-values-debug/monitor-values-debug.component.html</context>
+          <context context-type="linenumber">52</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="950055977707167617" datatype="html">
+        <source>Amount of air corresponding to 1 airflow sensor pulse</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-values-debug/monitor-values-debug.component.html</context>
           <context context-type="linenumber">53</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="9119716504192119111" datatype="html">
-        <source>Global injector factor (+1)</source>
+      <trans-unit id="1173948662524661112" datatype="html">
+        <source>Air count (filtered)</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/monitor-values/monitor-values.component.html</context>
+          <context context-type="sourcefile">src/app/components/monitor-values-debug/monitor-values-debug.component.html</context>
           <context context-type="linenumber">54</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="4981402371695656140" datatype="html">
-        <source>Faults</source>
+      <trans-unit id="1395372575763595990" datatype="html">
+        <source>Air count based on RPM</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/test/test.component.html</context>
-          <context context-type="linenumber">5,6</context>
+          <context context-type="sourcefile">src/app/components/monitor-values-debug/monitor-values-debug.component.html</context>
+          <context context-type="linenumber">55</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1384876544667366693" datatype="html">
+        <source>Old value of the reed switch sensor</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-values-debug/monitor-values-debug.component.html</context>
+          <context context-type="linenumber">56</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6593965096950502517" datatype="html">
+        <source>Used to check that TDC sensor is working correctly</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-values-debug/monitor-values-debug.component.html</context>
+          <context context-type="linenumber">58</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8244144666646018295" datatype="html">
+        <source>Free counter increased on every real time interrupt</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-values-debug/monitor-values-debug.component.html</context>
+          <context context-type="linenumber">59</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7540652007890973465" datatype="html">
+        <source>Counter increased on every real time interrupt</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-values-debug/monitor-values-debug.component.html</context>
+          <context context-type="linenumber">60</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4186646695096502062" datatype="html">
+        <source>ECU version</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/monitor-values-debug/monitor-values-debug.component.html</context>
+          <context context-type="linenumber">62</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3594022892987175111" datatype="html">
@@ -664,46 +1130,39 @@
           <context context-type="linenumber">60,61</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="8402332668467384701" datatype="html">
-        <source>MIVEC/VICS motor</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/test/test.component.html</context>
-          <context context-type="linenumber">61,62</context>
-        </context-group>
-      </trans-unit>
       <trans-unit id="501288651602616259" datatype="html">
         <source>EGR solenoid</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/test/test.component.html</context>
-          <context context-type="linenumber">62,63</context>
+          <context context-type="linenumber">64,65</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5182376138442604497" datatype="html">
         <source>Fuel pressure solenoid</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/test/test.component.html</context>
-          <context context-type="linenumber">63,64</context>
+          <context context-type="linenumber">65,66</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5755597057113236440" datatype="html">
         <source>Purge solenoid</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/test/test.component.html</context>
-          <context context-type="linenumber">64,65</context>
+          <context context-type="linenumber">66,67</context>
         </context-group>
       </trans-unit>
       <trans-unit id="917218889991705832" datatype="html">
         <source>Fuel pump</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/test/test.component.html</context>
-          <context context-type="linenumber">65,66</context>
+          <context context-type="linenumber">67,68</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1739123063979147202" datatype="html">
         <source>Disable injector for ~6 seconds:</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/test/test.component.html</context>
-          <context context-type="linenumber">72,73</context>
+          <context context-type="linenumber">74,75</context>
         </context-group>
       </trans-unit>
     </body>

@@ -1,0 +1,34 @@
+<div class="card mb-3">
+  <div class="card-header text-center">
+    <h3>
+      <i class="bi bi-gear-wide-connected"></i>
+      <span i18n>Advanced values</span>
+    </h3>
+  </div>
+
+  <div class="card-body pb-0">
+    <div class="row">
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.airVol" description="Air volume" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.injPw" description="Injector pulse width" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.enerLen" description="Coil energization time" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.airCnt16" description="Air count (16 bits)" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.o2BadCnt" description="Oxygen sensor bad counter" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.egrtBadCnt" description="Exhaust gas recirculation temperature bad counter" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.ftrimCntr" description="Fuel trim counter" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.faults" description="Faults" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.stFaults" description="Stored faults" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.ignRelTime" description="Current ignition time" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.ignFallRelTime" description="Current ignition time measured from te cas falling edge" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.enerLenX" description="One of the coil energization durations" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.enerAbsTime" description="Coil energization absolute time" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.ignTime" description="Coil ignition absolute time" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.t200s_knock" description="Knock attenuation timer" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.airCnt24" description="Air count (24 bits)" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.deadTime" description="Injector deadtime" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.inj1_offT" description="Injector #1 deactivation time" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.inj3_offT" description="Injector #3 deactivation time" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.inj4_offT" description="Injector #4 deactivation time" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.inj2_offT" description="Injector #2 deactivation time" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+    </div>
+  </div>
+</div>
