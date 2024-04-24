@@ -6,6 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "build-github-pages": "ng build --configuration production --base-href https://illja96.github.io/ngx-mmcdlogger/",
+    "extract-i18n": "ng extract-i18n",
     "watch": "ng build --watch --configuration development"
   },
   "private": true,

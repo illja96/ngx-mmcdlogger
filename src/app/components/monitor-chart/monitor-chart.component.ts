@@ -18,14 +18,14 @@ export class MonitorChartComponent implements AfterViewInit {
   @ViewChild("chartCanvas") chartCanvas!: ElementRef<HTMLCanvasElement>;
   private chart!: Chart<keyof ChartTypeRegistry, (number | null)[], string>;
 
-  private queriesByDispyaName: { [displayName: string]: Query } = {};
+  private queriesByDisplayName: { [displayName: string]: Query } = {};
 
   constructor(
     private readonly queriesProviderService: QueriesProviderService,
     private readonly queryLogsProviderService: QueryLogsProviderService) {
     const queries = Object.entries(Queries).map(_ => _[1] as Query).sort((a, b) => a.displayName.localeCompare(b.displayName));
     for (const query of queries) {
-      this.queriesByDispyaName[query.displayName] = query;
+      this.queriesByDisplayName[query.displayName] = query;
     }
   }
 
@@ -88,7 +88,7 @@ export class MonitorChartComponent implements AfterViewInit {
     this.chart.data.labels!.push(newLabel);
 
     for (const dataset of this.chart.data.datasets) {
-      const query = this.queriesByDispyaName[dataset.label!];
+      const query = this.queriesByDisplayName[dataset.label!];
       const newQueryValue: number | undefined = log[query.propertyName];
       const newDatasetValue = newQueryValue === undefined ? null : newQueryValue;
       dataset.data.push(newDatasetValue);

@@ -1,5 +1,25 @@
 {
   "editor.wordWrap": "wordWrapColumn",
   "editor.wordWrapColumn": 250,
-  "html.format.wrapLineLength": 0
+  "html.format.wrapLineLength": 0,
+  "cSpell.words": [
+    "ACCENR",
+    "AIRVOL",
+    "baro",
+    "CLMF",
+    "Curr",
+    "Datalogger",
+    "devkit",
+    "ECUVER",
+    "egrt",
+    "ener",
+    "energization",
+    "ftrim",
+    "mivec",
+    "mmcdlogger",
+    "offcanvas",
+    "serialpolyfill",
+    "Targ",
+    "TIMADV"
+  ]
 }
