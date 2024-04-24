@@ -23,7 +23,7 @@ export class MonitorChartComponent implements AfterViewInit {
   constructor(
     private readonly queriesProviderService: QueriesProviderService,
     private readonly queryLogsProviderService: QueryLogsProviderService) {
-    const queries = Object.entries(Queries).map(_ => _[1] as Query);
+    const queries = Object.entries(Queries).map(_ => _[1] as Query).sort((a, b) => a.displayName.localeCompare(b.displayName));
     for (const query of queries) {
       this.queriesByDispyaName[query.displayName] = query;
     }
@@ -41,8 +41,8 @@ export class MonitorChartComponent implements AfterViewInit {
     const labels: string[] = [];
 
     const datasets: ChartDataset<"line", (number | null)[]>[] = [];
-    const queries = Object.entries(Queries).map(_ => _[1] as Query);
-    const chartQueries = await firstValueFrom(this.queriesProviderService.chartQueries);        
+    const queries = Object.entries(Queries).map(_ => _[1] as Query).sort((a, b) => a.displayName.localeCompare(b.displayName));
+    const chartQueries = await firstValueFrom(this.queriesProviderService.chartQueries);
     for (const query of queries) {
       const dataset: ChartDataset<"line", (number | null)[]> = {
         label: query.displayName,
