@@ -1,4 +1,4 @@
-# MMCd Datalogger
+# NGX MMCd Datalogger
 Web automotive diagnostic and datalogging tool compatible with many pre-OBDII (1990-1994) Mitsubishi vehicles.
 
 Heavily inspired by original PalmOS [MMCd Datalogger](https://mmcdlogger.sourceforge.net).
@@ -10,7 +10,7 @@ THE CONTENT IS PROVIDED WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIE
 THERE IS NO WARRANTY THAT THE INFORMATION OF THE SITE IS ACCURATE, RELIABLE OR CORRECT; THAT THE SITE WILL BE AVAILABLE AT ANY PARTICULAR TIME OR LOCATION; THAT ANY DEFECTS OR ERRORS WILL BE CORRECTED; THAT THE CONTENT IS FREE OF VIRUSES OR OTHER HARMFUL COMPONENTS; OR THAT YOU WILL ACHIEVE SUCCESSFUL RESULTS FROM FOLLOWING ANY INSTRUCTIONS, DIRECTIONS OR RECOMMENDATIONS ON THE SITE.
 
 # Demo
-Application hosted on [GitHub pages](https://illja96.github.io/mmcdlogger/).
+Application hosted on [GitHub pages](https://illja96.github.io/ngx-mmcdlogger/).
 
 # Limitations
 Application is fully functional only on platforms with native [Web Serial API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Serial_API) support.

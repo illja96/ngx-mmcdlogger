@@ -1,11 +1,11 @@
 {
-  "name": "mmcdlogger",
+  "name": "ngx-mmcdlogger",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "build-github-pages": "ng build --configuration production --base-href https://illja96.github.io/mmcdlogger/",
+    "build-github-pages": "ng build --configuration production --base-href https://illja96.github.io/ngx-mmcdlogger/",
     "watch": "ng build --watch --configuration development"
   },
   "private": true,
