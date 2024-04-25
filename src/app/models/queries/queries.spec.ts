@@ -15,11 +15,24 @@ describe("Queries", () => {
     }
 
     for (const [address, queries] of Object.entries(queriesByAddress)) {
-      expect(queries.length).withContext(`Address ${address} are used by multiple Queries`).toBe(1);
+      expect(queries.length).withContext(`Address ${address} are used by multiple queries`).toBe(1);
     }
   });
 
-  it("should contains only unique addresses", () => {
+  it("should contains only unique property names", () => {
+    const queriesByPropertyName: { [address: string]: Query[] } = {};
+    const queries = Object.entries(Queries).map(_ => _[1] as Query);
+    for (const query of queries) {
+        if (queriesByPropertyName[query.propertyName] === undefined) queriesByPropertyName[query.propertyName] = [];
+        queriesByPropertyName[query.propertyName].push(query);
+    }
+
+    for (const [propertyName, queries] of Object.entries(queriesByPropertyName)) {
+      expect(queries.length).withContext(`Property name ${propertyName} are used by multiple queries`).toBe(1);
+    }
+  });
+
+  it("should contains only unique display names", () => {
     const queriesByDisplayName: { [address: string]: Query[] } = {};
     const queries = Object.entries(Queries).map(_ => _[1] as Query);
     for (const query of queries) {
@@ -28,7 +41,7 @@ describe("Queries", () => {
     }
 
     for (const [displayName, queries] of Object.entries(queriesByDisplayName)) {
-      expect(queries.length).withContext(`Display name ${displayName} are used by multiple Queries`).toBe(1);
+      expect(queries.length).withContext(`Display name ${displayName} are used by multiple queries`).toBe(1);
     }
   });
 });
