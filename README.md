@@ -47,6 +47,17 @@ In order to exchange diagnostic data between web application and car you will ne
 ## Diagnostic protocol
 Diagnostic data communication protocol is UART based (1953 baud, 8 bit, 1 stop bit, no parity) in 1 byte request-reply mode with 12V logic level utilizing only a single wire.
 
+### Request-reply overview
+- Requests from 0x00 to 0x3D will reply what is stored in RAM by address mapped via ODB lookup table.
+- Requests from 0x3E to 0x3F will be converted to 0x3D request.
+- Requests from 0x40 to 0xF0 will reply what is stored in RAM by address from request.
+- Requests from 0xCA to 0xCA will erase all fault codes and returns 0x00 if engine not rotating. If engine is rotating, all actuators/injector commands are reset and 0xFF is returned.
+- Requests from 0xCB to 0xF0 will reply what is stored in RAM by address from request.
+- Requests from 0xF1 to 0xFC will run components diagnostics (injector/actuators) and returns 0xFF if successful.
+- Requests from 0xFD to 0xFD will reply with ECU version and return 0xB5 for E931 or 0xB7 for E932.
+- Requests from 0xFE to 0xFE will apply resistor strapping low word from t_strap3
+- Requests from 0xFF to 0xFF will apply resistor strapping high word from t_strap3
+
 ### Queries
 |Name|Address|Description|Formula|Units|
 |----|-------|-----------|-------|-----|
