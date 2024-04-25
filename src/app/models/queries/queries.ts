@@ -51,7 +51,7 @@ export class Queries {
   public static port4Snap: Query = { addresses: [0x28], group: QueryGroup.flags, propertyName: "port4Snap", displayName: "PORT4-S", formula: x => x[0], type: QueryType.flags, units: QueryUnit.flags };
   public static injPw: Query = { addresses: [0x29, 0x2A], group: QueryGroup.advanced, propertyName: "injPw", displayName: "INJ-PW", formula: x => .256 * x[0], type: QueryType.number, units: QueryUnit.ms };
   public static enerLen: Query = { addresses: [0x2B], group: QueryGroup.advanced, propertyName: "enerLen", displayName: "ENER-L", formula: x => x[0], type: QueryType.number, units: QueryUnit.numberDec };
-  public static airCnt16: Query = { addresses: [0x2C, 0x2D, 0x8F], group: QueryGroup.advanced, propertyName: "airCnt16", displayName: "AIR-C16", formula: x => QueryValueHelper.uint16(x) * 256, type: QueryType.number, units: QueryUnit.numberDec };
+  public static airCnt16: Query = { addresses: [0x2C, 0x2D], group: QueryGroup.advanced, propertyName: "airCnt16", displayName: "AIR-C16", formula: x => QueryValueHelper.uint16(x) * 256, type: QueryType.number, units: QueryUnit.numberDec };
   public static injFactor: Query = { addresses: [0x2E, 0x2F], group: QueryGroup.debug, propertyName: "injFactor", displayName: "INJ-F", formula: x => QueryValueHelper.uint16(x), type: QueryType.number, units: QueryUnit.numberDec };
 
   public static iscFlags0: Query = { addresses: [0x30], group: QueryGroup.flags, propertyName: "iscFlags0", displayName: "ISC-F0", formula: x => x[0], type: QueryType.flags, units: QueryUnit.flags };
@@ -74,7 +74,7 @@ export class Queries {
   // 0x42 is ftrim_high. Accessible in 0x0E via obdTable mapping
   public static ftrimCntr: Query = { addresses: [0x43], group: QueryGroup.advanced, propertyName: "ftrimCntr", displayName: "FTRIM-C", formula: x => x[0], type: QueryType.number, units: QueryUnit.numberDec };
   public static isc0: Query = { addresses: [0x44, 0x45], group: QueryGroup.debug, propertyName: "isc0", displayName: "ISC-0", formula: x => QueryValueHelper.uint16(x), type: QueryType.number, units: QueryUnit.numberDec };
-  public static isc1: Query = { addresses: [0x46, 47], group: QueryGroup.debug, propertyName: "isc1", displayName: "ISC-1", formula: x => QueryValueHelper.uint16(x), type: QueryType.number, units: QueryUnit.numberDec };
+  public static isc1: Query = { addresses: [0x46, 0x47], group: QueryGroup.debug, propertyName: "isc1", displayName: "ISC-1", formula: x => QueryValueHelper.uint16(x), type: QueryType.number, units: QueryUnit.numberDec };
 
   public static iscStepCom: Query = { addresses: [0x48], group: QueryGroup.debug, propertyName: "iscStepCom", displayName: "ISC-SC", formula: x => x[0], type: QueryType.number, units: QueryUnit.numberDec };
   // 0x49 iscStepCurr. Accessible in 0x16 via obdTable mapping
@@ -171,8 +171,8 @@ export class Queries {
   public static injBad: Query = { addresses: [0xB9], group: QueryGroup.flags, propertyName: "injBad", displayName: "INJ-B", formula: x => x[0], type: QueryType.flags, units: QueryUnit.flags };
   public static obdInjCmd: Query = { addresses: [0xBA], group: QueryGroup.flags, propertyName: "obdInjCmd", displayName: "INJ-OC", formula: x => x[0], type: QueryType.flags, units: QueryUnit.flags };
   public static rtiCnt: Query = { addresses: [0xBB], group: QueryGroup.debug, propertyName: "rtiCnt", displayName: "RTI-C", formula: x => x[0], type: QueryType.number, units: QueryUnit.numberDec };
-  public static rtiCnt48: Query = { addresses: [0xBB], group: QueryGroup.debug, propertyName: "rtiCnt48", displayName: "RTI-C48", formula: x => x[0], type: QueryType.number, units: QueryUnit.numberDec };
-  public static rtiReedFlags: Query = { addresses: [0xBC], group: QueryGroup.flags, propertyName: "rtiReedFlags", displayName: "RTI-RF", formula: x => x[0], type: QueryType.flags, units: QueryUnit.flags };
+  public static rtiCnt48: Query = { addresses: [0xBC], group: QueryGroup.debug, propertyName: "rtiCnt48", displayName: "RTI-C48", formula: x => x[0], type: QueryType.number, units: QueryUnit.numberDec };
+  public static rtiReedFlags: Query = { addresses: [0xBD], group: QueryGroup.flags, propertyName: "rtiReedFlags", displayName: "RTI-RF", formula: x => x[0], type: QueryType.flags, units: QueryUnit.flags };
 
   public static ecuVersion: Query = { addresses: [0xFD], group: QueryGroup.debug, propertyName: "ecuVersion", displayName: "ECUVER", formula: x => x[0], type: QueryType.number, units: QueryUnit.numberHex };
 }
