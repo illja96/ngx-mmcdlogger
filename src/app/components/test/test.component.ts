@@ -7,6 +7,7 @@ import { SerialPortWrapper } from '../../models/serial-port-wrapper';
 import { GlobalAlertService } from '../../services/global-alert.service';
 import { Queries } from '../../models/queries/queries';
 import { SerialPortCommunicationService } from '../../services/serial-port-communication-service.service';
+import { QueryValueHelper } from '../../models/queries/query-value-helper';
 
 @Component({
   selector: 'app-test',
@@ -30,13 +31,13 @@ export class TestComponent {
   }
 
   public async onReadAllFaultsClicked(): Promise<void> {
-    const queries = [Queries.faultHi, Queries.faultLo, Queries.stFaultHi, Queries.stFaultLo];
+    const queries = [Queries.faults, Queries.stFaults];
 
     this.serialPortCommunicationService.send(queries)
       .then(
         log => {
-          this.faults = this.parseFaultsToBitArray(log[Queries.faultHi.propertyName], log[Queries.faultLo.propertyName]);
-          this.storedFaults = this.parseFaultsToBitArray(log[Queries.stFaultHi.propertyName], log[Queries.stFaultLo.propertyName]);
+          this.faults = QueryValueHelper.uintToBitArray(log[Queries.faults.propertyName], 16);
+          this.storedFaults = QueryValueHelper.uintToBitArray(log[Queries.stFaults.propertyName], 16);;
         },
         error => this.globalAlertService.display({ type: "danger", title: "Command failed", text: error.message, dismissible: true, timeout: 10000 }));
   }
@@ -57,11 +58,5 @@ export class TestComponent {
         this.globalAlertService.display({ type: "warning", title: "Command failed", text: "Command finished with unexpected result", dismissible: true, timeout: 10000 });
       },
       error => this.globalAlertService.display({ type: "danger", title: "Command failed", text: error.message, dismissible: true, timeout: 10000 }));
-  }
-
-  private parseFaultsToBitArray(hiBit: number, lowBit: number): boolean[] {
-    const uint8Array = new Uint8Array([lowBit, hiBit]);
-    const uint16Array = new Uint16Array(uint8Array.buffer);
-    return [...Array(16)].map((v, i) => (uint16Array[0] >> i & 1) === 1);
   }
 }

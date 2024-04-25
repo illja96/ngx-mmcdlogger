@@ -8,19 +8,19 @@
 
   <div class="card-body pb-0">
     <div class="row">
-      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.isc0" description="Long term correction factors/feedback for the ISC step adjustment" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
       <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.iscY0" description="Short term correction factors/feedback for the ISC step adjustment" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
-      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.isc1" description="Long term learning variable when A/C is on" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
       <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.iscY1" description="ISC learning variable when A/C is on and PS is off" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
       <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.ftrim_low_0x1B" description="Fuel trim (low 0x1B)" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
-      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.ftrim_low_0x1F" description="Fuel trim (low 0x1F)" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
-      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.ftrim_low_0x3D" description="Fuel trim (low 0x3D)" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.ftrim_low_0x1F" description="Fuel trim (low 0x1F)" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>      
       <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.injFactor" description="Global injector factor" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
       <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.temp1" description="Temporary value 1" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
       <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.temp2" description="Temporary value 2" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
       <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.temp3" description="Temporary value 3" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
       <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.temp4" description="Temporary value 4" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
       <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.temp5" description="Temporary value 5" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.ftrim_low_0x3D" description="Fuel trim (low 0x3D)" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.isc0" description="Long term correction factors/feedback for the ISC step adjustment" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.isc1" description="Long term learning variable when A/C is on" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
       <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.iscStepCom" description="ISC step complement" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
       <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.iscPatrnIdx" description="Current ISC pattern index" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
       <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.temp6" description="Temporary value 6" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
@@ -58,7 +58,7 @@
       <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.tdcCheck" description="Used to check that TDC sensor is working correctly" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
       <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.rtiCnt" description="Free counter increased on every real time interrupt" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
       <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.rtiCnt48" description="Counter increased on every real time interrupt" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
-      
+
       <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.ecuVersion" description="ECU version" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
     </div>
   </div>
