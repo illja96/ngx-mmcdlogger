@@ -1,15 +1,17 @@
+import { Uint8HexPipe } from '../../pipes/uint8-hex.pipe';
 import { Command } from './command';
 import { Commands } from './commands';
 
 describe("Commands", () => {
+  const uint8HexPipe = new Uint8HexPipe();
+  
   it("should contains only unique addresses", () => {
     const commandsByAddress: { [address: string]: Command[] } = {};
     const commands = Object.entries(Commands).map(_ => _[1] as Command);
     for (const command of commands) {
-      const addressInHex = command.address.toString(16).toUpperCase();
-      const fullAddressInHex = "0x" + ((addressInHex.length === 2) ? addressInHex : "0" + addressInHex);
-      if (commandsByAddress[fullAddressInHex] === undefined) commandsByAddress[fullAddressInHex] = [];
-      commandsByAddress[fullAddressInHex].push(command);
+      const addressInHex = uint8HexPipe.transform(command.address);
+      if (commandsByAddress[addressInHex] === undefined) commandsByAddress[addressInHex] = [];
+      commandsByAddress[addressInHex].push(command);
     }
 
     for (const [address, commands] of Object.entries(commandsByAddress)) {

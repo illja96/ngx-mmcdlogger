@@ -4,15 +4,11 @@ import { Queries } from '../../models/queries/queries';
 import { Query } from '../../models/queries/query';
 import { QueryGroup } from '../../models/queries/query-group';
 import { MonitorValueComponent } from '../monitor-value/monitor-value.component';
-import { NumberTo8BitArrayPipe } from '../../services/number-to-8bit-array.pipe';
-import { ReactiveFormsModule } from '@angular/forms';
-import { TooltipModule } from 'ngx-bootstrap/tooltip';
-import { CommonModule } from '@angular/common';
 
 describe("MonitorValuesCommonComponent", () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [MonitorValuesCommonComponent, MonitorValueComponent, CommonModule, TooltipModule, ReactiveFormsModule, NumberTo8BitArrayPipe]
+      imports: [MonitorValuesCommonComponent, MonitorValueComponent]
     }).compileComponents();
   });
 

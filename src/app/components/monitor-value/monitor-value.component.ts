@@ -8,13 +8,14 @@ import { SerialPortWrapper } from '../../models/serial-port-wrapper';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { filter, first } from 'rxjs';
 import { QueryLog } from '../../models/queries/query-log';
-import { NumberTo8BitArrayPipe } from '../../services/number-to-8bit-array.pipe';
+import { Uint8BitArrayPipe } from '../../pipes/uint8-bit-array.pipe';
 import { QueriesProviderService } from '../../services/queries-provider-service.service';
+import { Uint8HexPipe } from '../../pipes/uint8-hex.pipe';
 
 @Component({
   selector: 'app-monitor-value',
   standalone: true,
-  imports: [CommonModule, TooltipModule, ReactiveFormsModule, NumberTo8BitArrayPipe],
+  imports: [CommonModule, TooltipModule, ReactiveFormsModule, Uint8BitArrayPipe, Uint8HexPipe],
   templateUrl: './monitor-value.component.html',
   styleUrl: './monitor-value.component.scss'
 })

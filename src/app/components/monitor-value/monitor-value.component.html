@@ -12,12 +12,12 @@
     <span [ngSwitch]="query.units">
       <span *ngSwitchCase="QueryUnit.flags">
         <span *ngIf="log === undefined || log[query.propertyName] === undefined">--------</span>
-        <span *ngIf="log !== undefined && log[query.propertyName] !== undefined">{{log[query.propertyName] | numberTo8BitArray}}</span>
+        <span *ngIf="log !== undefined && log[query.propertyName] !== undefined">{{log[query.propertyName] | uint8BitArray}}</span>
       </span>
 
       <span *ngSwitchCase="QueryUnit.numberHex">
         <span *ngIf="log === undefined || log[query.propertyName] === undefined">----</span>
-        <span *ngIf="log !== undefined && log[query.propertyName] !== undefined">0x{{log[query.propertyName].toString(16)}}</span>
+        <span *ngIf="log !== undefined && log[query.propertyName] !== undefined">{{log[query.propertyName] | uint8Hex}}</span>
       </span>
 
       <span *ngSwitchDefault>
