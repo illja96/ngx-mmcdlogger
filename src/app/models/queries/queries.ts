@@ -33,7 +33,7 @@ export class Queries {
   public static tpsRaw: Query = { addresses: [0x17], group: QueryGroup.common, propertyName: "tpsRaw", displayName: "TPS-R", formula: x => 100 * x[0] / 255, type: QueryType.number, units: QueryUnit.percent };
   public static closedLpFlags: Query = { addresses: [0x18], group: QueryGroup.flags, propertyName: "closedLpFlags", displayName: "CLMF", formula: x => x[0], type: QueryType.flags, units: QueryUnit.flags };
   public static ftrimFlags: Query = { addresses: [0x19], group: QueryGroup.flags, propertyName: "ftrimFlags", displayName: "FTRIM-F", formula: x => x[0], type: QueryType.flags, units: QueryUnit.flags };
-  public static mafRaw: Query = { addresses: [0x1A], group: QueryGroup.common, propertyName: "mafRaw", displayName: "MAF", formula: x => 6.25 * x[0], type: QueryType.number, units: QueryUnit.hertz };
+  public static mafRaw: Query = { addresses: [0x1A], group: QueryGroup.common, propertyName: "mafRaw", displayName: "MAF", formula: x => 6.25 * x[0], type: QueryType.number, units: QueryUnit.hz };
   public static ftrim_low_0x1B: Query = { addresses: [0x1B], group: QueryGroup.debug, propertyName: "ftrim_low_0x1B", displayName: "FTRIM-L1B", formula: x => .78 * x[0], type: QueryType.number, units: QueryUnit.percent };
   public static airVol: Query = { addresses: [0x1C], group: QueryGroup.advanced, propertyName: "airVol", displayName: "AIR-VOL", formula: x => x[0], type: QueryType.number, units: QueryUnit.numberDec };
   public static accEnr: Query = { addresses: [0x1D], group: QueryGroup.common, propertyName: "accEnr", displayName: "ACCENR", formula: x => 100 * x[0] / 255, type: QueryType.number, units: QueryUnit.percent };
@@ -102,17 +102,17 @@ export class Queries {
   public static casFlags0: Query = { addresses: [0x61], group: QueryGroup.flags, propertyName: "casFlags0", displayName: "CAS-F0", formula: x => x[0], type: QueryType.flags, units: QueryUnit.flags };
   public static ignFallFlags: Query = { addresses: [0x62], group: QueryGroup.flags, propertyName: "ignFallFlags", displayName: "IGN-FF", formula: x => x[0], type: QueryType.flags, units: QueryUnit.flags };
   public static enerFlags: Query = { addresses: [0x63], group: QueryGroup.flags, propertyName: "enerFlags", displayName: "ENER-F", formula: x => x[0], type: QueryType.flags, units: QueryUnit.flags };
-  public static tCasLast: Query = { addresses: [0x64, 0x65], group: QueryGroup.debug, propertyName: "tCasLast", displayName: "CAS-L", formula: x => x[0], type: QueryType.number, units: QueryUnit.numberDec };
-  public static tCasNew: Query = { addresses: [0x66, 0x67], group: QueryGroup.debug, propertyName: "tCasNew", displayName: "CAS-N", formula: x => QueryValueHelper.uint16(x), type: QueryType.number, units: QueryUnit.numberDec };
-  public static casRiseTime: Query = { addresses: [0x68, 0x69], group: QueryGroup.debug, propertyName: "casRiseTime", displayName: "CAS-RT", formula: x => QueryValueHelper.uint16(x), type: QueryType.number, units: QueryUnit.numberDec };
-  public static casFallTime: Query = { addresses: [0x6A, 0x6B], group: QueryGroup.debug, propertyName: "casFallTime", displayName: "CAS-FT", formula: x => QueryValueHelper.uint16(x), type: QueryType.number, units: QueryUnit.numberDec };
-  public static timCas: Query = { addresses: [0x6C, 0x6D], group: QueryGroup.debug, propertyName: "timCas", displayName: "CAS-TIM", formula: x => QueryValueHelper.uint16(x), type: QueryType.number, units: QueryUnit.numberDec };
-  public static ignRelTime: Query = { addresses: [0x6E, 0x6F], group: QueryGroup.advanced, propertyName: "ignRelTime", displayName: "IGN-RT", formula: x => QueryValueHelper.uint16(x), type: QueryType.number, units: QueryUnit.numberDec };
+  public static tCasLast: Query = { addresses: [0x64, 0x65], group: QueryGroup.debug, propertyName: "tCasLast", displayName: "CAS-L", formula: x => QueryValueHelper.uint16(x) * 250, type: QueryType.number, units: QueryUnit.kHz };
+  public static tCasNew: Query = { addresses: [0x66, 0x67], group: QueryGroup.debug, propertyName: "tCasNew", displayName: "CAS-N", formula: x => QueryValueHelper.uint16(x) * 250, type: QueryType.number, units: QueryUnit.kHz };
+  public static casRiseTime: Query = { addresses: [0x68, 0x69], group: QueryGroup.debug, propertyName: "casRiseTime", displayName: "CAS-RT", formula: x => QueryValueHelper.uint16(x) * 250, type: QueryType.number, units: QueryUnit.kHz };
+  public static casFallTime: Query = { addresses: [0x6A, 0x6B], group: QueryGroup.debug, propertyName: "casFallTime", displayName: "CAS-FT", formula: x => QueryValueHelper.uint16(x) * 250, type: QueryType.number, units: QueryUnit.kHz };
+  public static timCas: Query = { addresses: [0x6C, 0x6D], group: QueryGroup.debug, propertyName: "timCas", displayName: "CAS-TIM", formula: x => QueryValueHelper.uint16(x) / 256 * 90, type: QueryType.number, units: QueryUnit.degree };
+  public static ignRelTime: Query = { addresses: [0x6E, 0x6F], group: QueryGroup.advanced, propertyName: "ignRelTime", displayName: "IGN-RT", formula: x => QueryValueHelper.uint16(x), type: QueryType.number, units: QueryUnit.us };
 
-  public static ignFallRelTime: Query = { addresses: [0x70, 0x71], group: QueryGroup.advanced, propertyName: "ignFallRelTime", displayName: "IGN-FRT", formula: x => QueryValueHelper.uint16(x), type: QueryType.number, units: QueryUnit.numberDec };
+  public static ignFallRelTime: Query = { addresses: [0x70, 0x71], group: QueryGroup.advanced, propertyName: "ignFallRelTime", displayName: "IGN-FRT", formula: x => QueryValueHelper.uint16(x), type: QueryType.number, units: QueryUnit.us };
   public static enerLenX: Query = { addresses: [0x72, 0x73], group: QueryGroup.advanced, propertyName: "enerLenX", displayName: "ENER-LX", formula: x => QueryValueHelper.uint16(x), type: QueryType.number, units: QueryUnit.numberDec };
-  public static enerAbsTime: Query = { addresses: [0x74, 0x75], group: QueryGroup.advanced, propertyName: "enerAbsTime", displayName: "ENER-AT", formula: x => QueryValueHelper.uint16(x), type: QueryType.number, units: QueryUnit.numberDec };
-  public static ignTime: Query = { addresses: [0x76, 0x77], group: QueryGroup.advanced, propertyName: "ignTime", displayName: "IGN-T", formula: x => QueryValueHelper.uint16(x), type: QueryType.number, units: QueryUnit.numberDec };
+  public static enerAbsTime: Query = { addresses: [0x74, 0x75], group: QueryGroup.advanced, propertyName: "enerAbsTime", displayName: "ENER-AT", formula: x => QueryValueHelper.uint16(x) * 250, type: QueryType.number, units: QueryUnit.kHz };
+  public static ignTime: Query = { addresses: [0x76, 0x77], group: QueryGroup.advanced, propertyName: "ignTime", displayName: "IGN-T", formula: x => QueryValueHelper.uint16(x) * 250, type: QueryType.number, units: QueryUnit.kHz };
   public static enerAbsTimeNext: Query = { addresses: [0x78, 0x79], group: QueryGroup.advanced, propertyName: "enerAbsTimeNext", displayName: "ENER-ATN", formula: x => QueryValueHelper.uint16(x), type: QueryType.number, units: QueryUnit.numberDec };
   public static tCasLast128: Query = { addresses: [0x7A], group: QueryGroup.debug, propertyName: "tCasLast128", displayName: "CAS-L128", formula: x => x[0], type: QueryType.number, units: QueryUnit.numberDec };
   public static tdcMask: Query = { addresses: [0x7B, 0x7C], group: QueryGroup.debug, propertyName: "tdcMask", displayName: "TDC-M", formula: x => x[0], type: QueryType.number, units: QueryUnit.numberDec };
@@ -123,24 +123,24 @@ export class Queries {
   public static temp22: Query = { addresses: [0x80], group: QueryGroup.debug, propertyName: "temp22", displayName: "TEMP-22", formula: x => x[0], type: QueryType.number, units: QueryUnit.numberHex };
   public static temp23: Query = { addresses: [0x81], group: QueryGroup.debug, propertyName: "temp23", displayName: "TEMP-23", formula: x => x[0], type: QueryType.number, units: QueryUnit.numberHex };
   public static temp24: Query = { addresses: [0x82], group: QueryGroup.debug, propertyName: "temp24", displayName: "TEMP-24", formula: x => x[0], type: QueryType.number, units: QueryUnit.numberHex };
-  public static tdcCasCount: Query = { addresses: [0x83], group: QueryGroup.debug, propertyName: "tdcCasCount", displayName: "TDC-CC", formula: x => x[0], type: QueryType.number, units: QueryUnit.numberHex };
-  public static t40s_casInt: Query = { addresses: [0x84], group: QueryGroup.debug, propertyName: "t40s_casInt", displayName: "CAS-IT", formula: x => x[0], type: QueryType.number, units: QueryUnit.numberHex };
+  public static tdcCasCount: Query = { addresses: [0x83], group: QueryGroup.debug, propertyName: "tdcCasCount", displayName: "TDC-CC", formula: x => x[0], type: QueryType.number, units: QueryUnit.numberDec };
+  public static t40s_casInt: Query = { addresses: [0x84], group: QueryGroup.debug, propertyName: "t40s_casInt", displayName: "CAS-IT", formula: x => x[0], type: QueryType.number, units: QueryUnit.numberDec };
   public static coilChkFlags: Query = { addresses: [0x85], group: QueryGroup.flags, propertyName: "coilChkFlags", displayName: "COIL-CF", formula: x => x[0], type: QueryType.flags, units: QueryUnit.flags };
   public static p4Latched: Query = { addresses: [0x86], group: QueryGroup.flags, propertyName: "p4Latched", displayName: "PORT4-L", formula: x => x[0], type: QueryType.flags, units: QueryUnit.flags };
   public static timAdjFlags: Query = { addresses: [0x87], group: QueryGroup.flags, propertyName: "timAdjFlags", displayName: "TIM-AF", formula: x => x[0], type: QueryType.flags, units: QueryUnit.flags };
-  public static tim61Tot0: Query = { addresses: [0x88], group: QueryGroup.debug, propertyName: "tim61Tot0", displayName: "TIM-61T0", formula: x => x[0], type: QueryType.number, units: QueryUnit.numberDec };
+  public static tim61Tot0: Query = { addresses: [0x88], group: QueryGroup.debug, propertyName: "tim61Tot0", displayName: "TIM-61T0", formula: x => x[0] / 256 * 90, type: QueryType.number, units: QueryUnit.degree };
   // 0x89 is enerLen. Accessible in 0x2B via obdTable mapping
   // 0x8A is timingAdv. Accessible in 0x06 via obdTable mapping
   // 0x8B is knockSum. Accessible in 0x26 via obdTable mapping
-  public static t200s_knock: Query = { addresses: [0x8C], group: QueryGroup.advanced, propertyName: "t200s_knock", displayName: "KNOCK-T", formula: x => x[0], type: QueryType.number, units: QueryUnit.hertz };
+  public static t200s_knock: Query = { addresses: [0x8C], group: QueryGroup.advanced, propertyName: "t200s_knock", displayName: "KNOCK-T", formula: x => x[0], type: QueryType.number, units: QueryUnit.hz };
   public static airCnt24: Query = { addresses: [0x8D, 0x8E, 0x8F], group: QueryGroup.advanced, propertyName: "airCnt24", displayName: "AIR-C24", formula: x => QueryValueHelper.uint24(x), type: QueryType.number, units: QueryUnit.numberDec };
 
   public static airCntNew: Query = { addresses: [0x90, 0x91], group: QueryGroup.debug, propertyName: "airCntNew", displayName: "AIR-CN", formula: x => QueryValueHelper.uint16(x), type: QueryType.number, units: QueryUnit.numberDec };
   public static oldAirCnt: Query = { addresses: [0x92, 0x93], group: QueryGroup.debug, propertyName: "oldAirCnt", displayName: "AIR-OC", formula: x => QueryValueHelper.uint16(x), type: QueryType.number, units: QueryUnit.numberDec };
   public static airDiffPos: Query = { addresses: [0x94], group: QueryGroup.debug, propertyName: "airDiffPos", displayName: "AIR-DP", formula: x => x[0], type: QueryType.number, units: QueryUnit.numberDec };
   public static airDiffNeg: Query = { addresses: [0x95], group: QueryGroup.debug, propertyName: "airDiffNeg", displayName: "AIR-DN", formula: x => x[0], type: QueryType.number, units: QueryUnit.numberDec };
-  public static t1_lastCas: Query = { addresses: [0x96, 0x97], group: QueryGroup.debug, propertyName: "t1_lastCas", displayName: "CAS-LT1", formula: x => QueryValueHelper.uint16(x), type: QueryType.number, units: QueryUnit.numberDec };
-  public static t2_lastMas: Query = { addresses: [0x98, 0x99], group: QueryGroup.debug, propertyName: "t2_lastMas", displayName: "MAS-LT2", formula: x => QueryValueHelper.uint16(x), type: QueryType.number, units: QueryUnit.numberDec };
+  public static t1_lastCas: Query = { addresses: [0x96, 0x97], group: QueryGroup.debug, propertyName: "t1_lastCas", displayName: "CAS-LT1", formula: x => QueryValueHelper.uint16(x), type: QueryType.number, units: QueryUnit.mHz };
+  public static t2_lastMas: Query = { addresses: [0x98, 0x99], group: QueryGroup.debug, propertyName: "t2_lastMas", displayName: "MAS-LT2", formula: x => QueryValueHelper.uint16(x), type: QueryType.number, units: QueryUnit.mHz };
   public static t2_diff8: Query = { addresses: [0x9A, 0x9B], group: QueryGroup.debug, propertyName: "t2_diff8", displayName: "T2-D8", formula: x => QueryValueHelper.uint16(x), type: QueryType.number, units: QueryUnit.numberDec };
   public static airQuantum: Query = { addresses: [0x9C], group: QueryGroup.debug, propertyName: "airQuantum", displayName: "AIR-Q", formula: x => QueryValueHelper.uint16(x), type: QueryType.number, units: QueryUnit.numberDec };
   public static masCasFlags: Query = { addresses: [0x9E], group: QueryGroup.flags, propertyName: "masCasFlags", displayName: "MAS-CAS-F", formula: x => x[0], type: QueryType.flags, units: QueryUnit.flags };
@@ -155,10 +155,10 @@ export class Queries {
   public static deadTime: Query = { addresses: [0xA6], group: QueryGroup.advanced, propertyName: "deadTime", displayName: "INJ-DT", formula: x => x[0] * 24, type: QueryType.number, units: QueryUnit.us };
   // 0xA7 is injPw. Accessible in 0x29 via obdTable mapping
   // 0xA8 is injPw. Accessible in 0x2A via obdTable mapping
-  public static inj1_offT: Query = { addresses: [0xA9, 0xAA], group: QueryGroup.advanced, propertyName: "inj1_offT", displayName: "INJ-1OT", formula: x => QueryValueHelper.uint16(x), type: QueryType.number, units: QueryUnit.numberDec };
-  public static inj3_offT: Query = { addresses: [0xAB, 0xAC], group: QueryGroup.advanced, propertyName: "inj3_offT", displayName: "INJ-3OT", formula: x => QueryValueHelper.uint16(x), type: QueryType.number, units: QueryUnit.numberDec };
-  public static inj4_offT: Query = { addresses: [0xAD, 0xAE], group: QueryGroup.advanced, propertyName: "inj4_offT", displayName: "INJ-4OT", formula: x => QueryValueHelper.uint16(x), type: QueryType.number, units: QueryUnit.numberDec };
-  public static inj2_offT: Query = { addresses: [0xAF, 0xB0], group: QueryGroup.advanced, propertyName: "inj2_offT", displayName: "INJ-2OT", formula: x => QueryValueHelper.uint16(x), type: QueryType.number, units: QueryUnit.numberDec };
+  public static inj1_offT: Query = { addresses: [0xA9, 0xAA], group: QueryGroup.advanced, propertyName: "inj1_offT", displayName: "INJ-1OT", formula: x => QueryValueHelper.uint16(x), type: QueryType.number, units: QueryUnit.mHz };
+  public static inj3_offT: Query = { addresses: [0xAB, 0xAC], group: QueryGroup.advanced, propertyName: "inj3_offT", displayName: "INJ-3OT", formula: x => QueryValueHelper.uint16(x), type: QueryType.number, units: QueryUnit.mHz };
+  public static inj4_offT: Query = { addresses: [0xAD, 0xAE], group: QueryGroup.advanced, propertyName: "inj4_offT", displayName: "INJ-4OT", formula: x => QueryValueHelper.uint16(x), type: QueryType.number, units: QueryUnit.mHz };
+  public static inj2_offT: Query = { addresses: [0xAF, 0xB0], group: QueryGroup.advanced, propertyName: "inj2_offT", displayName: "INJ-2OT", formula: x => QueryValueHelper.uint16(x), type: QueryType.number, units: QueryUnit.mHz };
 
   public static last_t1t2_clk: Query = { addresses: [0xB1], group: QueryGroup.debug, propertyName: "last_t1t2_clk", displayName: "T1T2-LC", formula: x => x[0], type: QueryType.number, units: QueryUnit.numberDec };
   public static injToAct: Query = { addresses: [0xB2], group: QueryGroup.flags, propertyName: "injToAct", displayName: "INJ-TA", formula: x => x[0], type: QueryType.flags, units: QueryUnit.flags };
