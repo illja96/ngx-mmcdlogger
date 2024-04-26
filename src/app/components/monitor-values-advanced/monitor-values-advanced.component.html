@@ -8,28 +8,38 @@
 
   <div class="card-body pb-0">
     <div class="row">
-      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.airVol" description="Air volume" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
-      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.injPw" description="Injector pulse width" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.isc0" description="Long term correction factors/feedback for the ISC step adjustment (8 bits)" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.iscY0" description="Short term correction factors/feedback for the ISC step adjustment" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.isc1" description="Long term learning variable when A/C is on (8 bits)" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.iscY1" description="ISC learning variable when A/C is on and PS is off" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.airVol" description="Air volume (8 bits)" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
       <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.enerLen" description="Coil energization time loaded from lookup table" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
       <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.airCnt16" description="Air count (16 bits)" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
       <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.o2BadCnt" description="Oxygen sensor bad counter" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
       <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.egrtBadCnt" description="Exhaust gas recirculation temperature bad counter" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
       <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.ftrimCntr" description="Fuel trim counter" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.isc0_16" description="Long term correction factors/feedback for the ISC step adjustment (16 bits)" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.isc1_16" description="Long term learning variable when A/C is on (16 bits)" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
       <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.faults" description="Faults" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
       <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.stFaults" description="Stored faults" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.timCas" description="CAS time" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
       <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.ignRelTime" description="Current ignition time" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
       <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.ignFallRelTime" description="Current ignition time measured from te cas falling edge" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
       <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.enerLenX" description="One of the coil energization durations" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
       <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.enerAbsTime" description="Coil energization absolute time" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
       <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.ignTime" description="Coil ignition absolute time" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
-      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.enerAbsTimeNext" description="Coil absolute energization time. Used when energization of the next cylinder is scheduled from the preceeding cylinder coil ignition time" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
-      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.t200s_knock" description="Knock attenuation timer" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.enerAbsTimeNext" description="Coil absolute energization time. Used when energization of the next cylinder is scheduled from the preceeding cylinder coil ignition ime" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.tim61" description="Current timing" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.tim61Tot0" description="New target timing" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
       <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.airCnt24" description="Air count (24 bits)" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
       <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.deadTime" description="Injector deadtime" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
       <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.inj1_offT" description="Injector #1 deactivation time" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
       <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.inj3_offT" description="Injector #3 deactivation time" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
       <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.inj4_offT" description="Injector #4 deactivation time" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
       <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.inj2_offT" description="Injector #2 deactivation time" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.knockSensor" description="Knock sensor" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.airVol16" description="Air volume (16 bits)" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>      
+      <app-monitor-value i18n-description [port]="port" [log]="log" [query]="Queries.iscY2" description="ISC learning variable when PS is on" class="mb-3 col-12 col-lg-6 col-xxl-4"></app-monitor-value>
     </div>
   </div>
 </div>

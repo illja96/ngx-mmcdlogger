@@ -20,5 +20,8 @@ export enum QueryUnit {
 
   celsius,
   fahrenheit,
-  kelvin
+  kelvin,
+
+  kmh,
+  mph
 }

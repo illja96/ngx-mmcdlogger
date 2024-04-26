@@ -10,19 +10,26 @@
     "Cntr",
     "Curr",
     "Datalogger",
+    "datalogging",
+    "deadtime",
     "devkit",
     "ECUVER",
     "egrt",
     "ener",
     "energization",
     "Filt",
+    "FTDI",
     "ftrim",
+    "MASCAS",
     "mivec",
     "mmcdlogger",
     "offcanvas",
     "Patrn",
+    "Prologic",
     "serialpolyfill",
     "Targ",
-    "TIMADV"
+    "TDCCAS",
+    "TIMADV",
+    "UART"
   ]
 }
